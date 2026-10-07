@@ -1,0 +1,3407 @@
+{
+ "as_of": "2026-10-07",
+ "stale_days": 90,
+ "banks": {
+  "fed": {
+   "rows": [
+    {
+     "house": "Citigroup",
+     "cells": {
+      "Jan": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-01-14",
+       "src": "fed_jan14",
+       "note": ""
+      },
+      "Mar": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-02-12",
+       "src": "fed_feb12",
+       "note": ""
+      },
+      "Apr": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-03-30",
+       "src": "fed_mar30",
+       "note": ""
+      },
+      "Jun": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-05-27",
+       "src": "fed_may27",
+       "note": ""
+      },
+      "Jul": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-05-27",
+       "src": "fed_may27",
+       "note": ""
+      },
+      "Sep": {
+       "call": null,
+       "status": "revised",
+       "ok": null,
+       "as_of": "2026-09-07",
+       "src": "fed_sep07",
+       "note": "revised after the August jobs report; new call not found"
+      }
+     },
+     "right": 5,
+     "scored": 5,
+     "leads": {},
+     "max_cuts": 3,
+     "last_cut_view": "2026-05-27",
+     "last_cut_src": "fed_may27",
+     "base_gap_bp": 100,
+     "base_stance": "cuts",
+     "timeline": [
+      {
+       "date": "2026-01-14",
+       "stance": "cuts",
+       "src": "fed_jan14",
+       "note": "",
+       "cuts": [
+        "Mar",
+        "Jul",
+        "Sep"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-02-06",
+       "stance": "cuts",
+       "src": "fed_feb06",
+       "note": "",
+       "cuts": [
+        "Mar",
+        "Jul",
+        "Sep"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-02-12",
+       "stance": "cuts",
+       "src": "fed_feb12",
+       "note": "",
+       "cuts": [
+        "Apr",
+        "Jul",
+        "Sep"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-03-30",
+       "stance": "cuts",
+       "src": "fed_mar30",
+       "note": "",
+       "cuts": [
+        "Jun",
+        "Jul",
+        "Sep"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-05-27",
+       "stance": "cuts",
+       "src": "fed_may27",
+       "note": "",
+       "cuts": [
+        "Sep",
+        "Oct",
+        "Dec"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-09-07",
+       "stance": "unknown",
+       "src": "fed_sep07",
+       "note": "revised after the August jobs report; new call not found",
+       "cuts": [],
+       "hikes": []
+      },
+      {
+       "date": "2026-09-17",
+       "stance": "hold",
+       "src": "fed_sep17",
+       "note": "",
+       "cuts": [],
+       "hikes": []
+      },
+      {
+       "date": "2026-10-01",
+       "stance": "hold",
+       "src": "fed_oct01",
+       "note": "",
+       "cuts": [],
+       "hikes": []
+      }
+     ],
+     "next": {
+      "call": "hold",
+      "status": "scored",
+      "as_of": "2026-10-01",
+      "src": "fed_oct01",
+      "note": ""
+     }
+    },
+    {
+     "house": "Goldman Sachs",
+     "cells": {
+      "Jan": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-01-14",
+       "src": "fed_jan14",
+       "note": ""
+      },
+      "Mar": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-02-12",
+       "src": "fed_feb12",
+       "note": ""
+      },
+      "Apr": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-03-30",
+       "src": "fed_mar30",
+       "note": ""
+      },
+      "Jun": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-05-27",
+       "src": "fed_may27",
+       "note": ""
+      },
+      "Jul": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-05-27",
+       "src": "fed_may27",
+       "note": ""
+      },
+      "Sep": {
+       "call": "hike",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-09-14",
+       "src": "fed_sep14",
+       "note": ""
+      }
+     },
+     "right": 6,
+     "scored": 6,
+     "leads": {
+      "Sep": {
+       "days": 2,
+       "since": "2026-09-14",
+       "src": "fed_sep14"
+      }
+     },
+     "max_cuts": 2,
+     "last_cut_view": "2026-05-27",
+     "last_cut_src": "fed_may27",
+     "base_gap_bp": 75,
+     "base_stance": "cuts",
+     "timeline": [
+      {
+       "date": "2026-01-14",
+       "stance": "cuts",
+       "src": "fed_jan14",
+       "note": "",
+       "cuts": [
+        "Jun",
+        "Sep"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-02-06",
+       "stance": "cuts",
+       "src": "fed_feb06",
+       "note": "",
+       "cuts": [
+        "Jun",
+        "Sep"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-02-12",
+       "stance": "cuts",
+       "src": "fed_feb12",
+       "note": "",
+       "cuts": [
+        "Jun",
+        "Sep"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-03-30",
+       "stance": "cuts",
+       "src": "fed_mar30",
+       "note": "",
+       "cuts": [
+        "Sep",
+        "Dec"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-05-27",
+       "stance": "cuts",
+       "src": "fed_may27",
+       "note": "",
+       "cuts": [
+        "Dec"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-09-14",
+       "stance": "hikes",
+       "src": "fed_sep14",
+       "note": "",
+       "cuts": [],
+       "hikes": [
+        "Sep"
+       ]
+      },
+      {
+       "date": "2026-09-17",
+       "stance": "hikes",
+       "src": "fed_sep17",
+       "note": "",
+       "cuts": [],
+       "hikes": [
+        "Oct"
+       ]
+      },
+      {
+       "date": "2026-10-01",
+       "stance": "hikes",
+       "src": "fed_oct01",
+       "note": "",
+       "cuts": [],
+       "hikes": [
+        "Dec"
+       ]
+      }
+     ],
+     "next": {
+      "call": "hold",
+      "status": "scored",
+      "as_of": "2026-10-01",
+      "src": "fed_oct01",
+      "note": ""
+     }
+    },
+    {
+     "house": "Morgan Stanley",
+     "cells": {
+      "Jan": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-01-14",
+       "src": "fed_jan14",
+       "note": ""
+      },
+      "Mar": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-02-12",
+       "src": "fed_feb12",
+       "note": ""
+      },
+      "Apr": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-03-30",
+       "src": "fed_mar30",
+       "note": ""
+      },
+      "Jun": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-05-27",
+       "src": "fed_may27",
+       "note": ""
+      },
+      "Jul": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-05-27",
+       "src": "fed_may27",
+       "note": ""
+      },
+      "Sep": {
+       "call": "hike",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-09-15",
+       "src": "fed_sep15",
+       "note": ""
+      }
+     },
+     "right": 6,
+     "scored": 6,
+     "leads": {
+      "Sep": {
+       "days": 1,
+       "since": "2026-09-15",
+       "src": "fed_sep15"
+      }
+     },
+     "max_cuts": 2,
+     "last_cut_view": "2026-03-30",
+     "last_cut_src": "fed_mar30",
+     "base_gap_bp": 75,
+     "base_stance": "cuts",
+     "timeline": [
+      {
+       "date": "2026-01-14",
+       "stance": "cuts",
+       "src": "fed_jan14",
+       "note": "",
+       "cuts": [
+        "Jun",
+        "Sep"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-02-06",
+       "stance": "cuts",
+       "src": "fed_feb06",
+       "note": "",
+       "cuts": [
+        "Jun",
+        "Sep"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-02-12",
+       "stance": "cuts",
+       "src": "fed_feb12",
+       "note": "",
+       "cuts": [
+        "Jun",
+        "Sep"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-03-30",
+       "stance": "cuts",
+       "src": "fed_mar30",
+       "note": "",
+       "cuts": [
+        "Sep",
+        "Dec"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-04-30",
+       "stance": "hold",
+       "src": "fed_apr30",
+       "note": "",
+       "cuts": [],
+       "hikes": []
+      },
+      {
+       "date": "2026-05-27",
+       "stance": "hold",
+       "src": "fed_may27",
+       "note": "",
+       "cuts": [],
+       "hikes": []
+      },
+      {
+       "date": "2026-09-15",
+       "stance": "hikes",
+       "src": "fed_sep15",
+       "note": "",
+       "cuts": [],
+       "hikes": [
+        "Sep",
+        "Dec"
+       ]
+      },
+      {
+       "date": "2026-09-17",
+       "stance": "hikes",
+       "src": "fed_sep17",
+       "note": "",
+       "cuts": [],
+       "hikes": [
+        "Dec"
+       ]
+      },
+      {
+       "date": "2026-10-01",
+       "stance": "hikes",
+       "src": "fed_oct01",
+       "note": "",
+       "cuts": [],
+       "hikes": [
+        "Dec"
+       ]
+      }
+     ],
+     "next": {
+      "call": "hold",
+      "status": "scored",
+      "as_of": "2026-10-01",
+      "src": "fed_oct01",
+      "note": ""
+     }
+    },
+    {
+     "house": "BofA Global Research",
+     "cells": {
+      "Jan": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-01-14",
+       "src": "fed_jan14",
+       "note": ""
+      },
+      "Mar": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-02-12",
+       "src": "fed_feb12",
+       "note": ""
+      },
+      "Apr": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-03-30",
+       "src": "fed_mar30",
+       "note": ""
+      },
+      "Jun": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-05-27",
+       "src": "fed_may27",
+       "note": ""
+      },
+      "Jul": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-06-22",
+       "src": "fed_jun22",
+       "note": ""
+      },
+      "Sep": {
+       "call": "hike",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-06-22",
+       "src": "fed_jun22",
+       "note": ""
+      }
+     },
+     "right": 6,
+     "scored": 6,
+     "leads": {
+      "Sep": {
+       "days": 86,
+       "since": "2026-06-22",
+       "src": "fed_jun22"
+      }
+     },
+     "max_cuts": 2,
+     "last_cut_view": "2026-03-30",
+     "last_cut_src": "fed_mar30",
+     "base_gap_bp": 75,
+     "base_stance": "cuts",
+     "timeline": [
+      {
+       "date": "2026-01-14",
+       "stance": "cuts",
+       "src": "fed_jan14",
+       "note": "",
+       "cuts": [
+        "Jun",
+        "Jul"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-02-06",
+       "stance": "cuts",
+       "src": "fed_feb06",
+       "note": "",
+       "cuts": [
+        "Jun",
+        "Jul"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-02-12",
+       "stance": "cuts",
+       "src": "fed_feb12",
+       "note": "",
+       "cuts": [
+        "Jun",
+        "Jul"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-03-30",
+       "stance": "cuts",
+       "src": "fed_mar30",
+       "note": "",
+       "cuts": [
+        "Jun",
+        "Jul"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-05-27",
+       "stance": "hold",
+       "src": "fed_may27",
+       "note": "",
+       "cuts": [],
+       "hikes": []
+      },
+      {
+       "date": "2026-06-22",
+       "stance": "hikes",
+       "src": "fed_jun22",
+       "note": "",
+       "cuts": [],
+       "hikes": [
+        "Sep",
+        "Oct",
+        "Dec"
+       ]
+      },
+      {
+       "date": "2026-09-17",
+       "stance": "hikes",
+       "src": "fed_sep17",
+       "note": "",
+       "cuts": [],
+       "hikes": [
+        "Oct",
+        "Dec"
+       ]
+      },
+      {
+       "date": "2026-10-01",
+       "stance": "hikes",
+       "src": "fed_oct01",
+       "note": "",
+       "cuts": [],
+       "hikes": [
+        "Oct",
+        "Dec"
+       ]
+      }
+     ],
+     "next": {
+      "call": "hike",
+      "status": "scored",
+      "as_of": "2026-10-01",
+      "src": "fed_oct01",
+      "note": ""
+     }
+    },
+    {
+     "house": "Wells Fargo",
+     "cells": {
+      "Jan": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-01-14",
+       "src": "fed_jan14",
+       "note": ""
+      },
+      "Mar": {
+       "call": "cut",
+       "status": "scored",
+       "ok": false,
+       "as_of": "2026-02-12",
+       "src": "fed_feb12",
+       "note": ""
+      },
+      "Apr": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-03-30",
+       "src": "fed_mar30",
+       "note": ""
+      },
+      "Jun": {
+       "call": "cut",
+       "status": "scored",
+       "ok": false,
+       "as_of": "2026-05-27",
+       "src": "fed_may27",
+       "note": ""
+      },
+      "Jul": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-05-27",
+       "src": "fed_may27",
+       "note": ""
+      },
+      "Sep": {
+       "call": "cut",
+       "status": "stale",
+       "ok": null,
+       "as_of": "2026-05-27",
+       "src": "fed_may27",
+       "note": "Last view found is 112 days old, so it is not scored."
+      }
+     },
+     "right": 3,
+     "scored": 5,
+     "leads": {},
+     "max_cuts": 2,
+     "last_cut_view": "2026-05-27",
+     "last_cut_src": "fed_may27",
+     "base_gap_bp": 75,
+     "base_stance": "cuts",
+     "timeline": [
+      {
+       "date": "2026-01-14",
+       "stance": "cuts",
+       "src": "fed_jan14",
+       "note": "",
+       "cuts": [
+        "Mar",
+        "Jun"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-02-06",
+       "stance": "cuts",
+       "src": "fed_feb06",
+       "note": "",
+       "cuts": [
+        "Mar",
+        "Jun"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-02-12",
+       "stance": "cuts",
+       "src": "fed_feb12",
+       "note": "",
+       "cuts": [
+        "Mar",
+        "Jun"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-03-30",
+       "stance": "cuts",
+       "src": "fed_mar30",
+       "note": "",
+       "cuts": [
+        "Jun",
+        "Sep"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-05-27",
+       "stance": "cuts",
+       "src": "fed_may27",
+       "note": "",
+       "cuts": [
+        "Jun",
+        "Sep"
+       ],
+       "hikes": []
+      }
+     ],
+     "next": {
+      "call": "hold",
+      "status": "stale",
+      "as_of": "2026-05-27",
+      "src": "fed_may27",
+      "note": "Last view found is 154 days old, so it is not scored."
+     }
+    },
+    {
+     "house": "Nomura",
+     "cells": {
+      "Jan": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-01-14",
+       "src": "fed_jan14",
+       "note": ""
+      },
+      "Mar": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-02-12",
+       "src": "fed_feb12",
+       "note": ""
+      },
+      "Apr": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-03-30",
+       "src": "fed_mar30",
+       "note": ""
+      },
+      "Jun": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-05-27",
+       "src": "fed_may27",
+       "note": ""
+      },
+      "Jul": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-05-27",
+       "src": "fed_may27",
+       "note": ""
+      },
+      "Sep": {
+       "call": "hold",
+       "status": "stale",
+       "ok": null,
+       "as_of": "2026-05-27",
+       "src": "fed_may27",
+       "note": "Last view found is 112 days old, so it is not scored."
+      }
+     },
+     "right": 5,
+     "scored": 5,
+     "leads": {},
+     "max_cuts": 2,
+     "last_cut_view": "2026-03-30",
+     "last_cut_src": "fed_mar30",
+     "base_gap_bp": 75,
+     "base_stance": "cuts",
+     "timeline": [
+      {
+       "date": "2026-01-14",
+       "stance": "cuts",
+       "src": "fed_jan14",
+       "note": "",
+       "cuts": [
+        "Jun",
+        "Sep"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-02-06",
+       "stance": "cuts",
+       "src": "fed_feb06",
+       "note": "",
+       "cuts": [
+        "Jun",
+        "Sep"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-02-12",
+       "stance": "cuts",
+       "src": "fed_feb12",
+       "note": "",
+       "cuts": [
+        "Jun",
+        "Sep"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-03-30",
+       "stance": "cuts",
+       "src": "fed_mar30",
+       "note": "",
+       "cuts": [
+        "Sep",
+        "Dec"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-05-21",
+       "stance": "hold",
+       "src": "fed_may21",
+       "note": "",
+       "cuts": [],
+       "hikes": []
+      },
+      {
+       "date": "2026-05-27",
+       "stance": "hold",
+       "src": "fed_may27",
+       "note": "",
+       "cuts": [],
+       "hikes": []
+      },
+      {
+       "date": "2026-09-17",
+       "stance": "hikes",
+       "src": "fed_sep17",
+       "note": "",
+       "cuts": [],
+       "hikes": [
+        "Dec"
+       ]
+      },
+      {
+       "date": "2026-10-01",
+       "stance": "hikes",
+       "src": "fed_oct01",
+       "note": "",
+       "cuts": [],
+       "hikes": [
+        "Dec"
+       ]
+      }
+     ],
+     "next": {
+      "call": "hold",
+      "status": "scored",
+      "as_of": "2026-10-01",
+      "src": "fed_oct01",
+      "note": ""
+     }
+    },
+    {
+     "house": "Barclays",
+     "cells": {
+      "Jan": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-01-14",
+       "src": "fed_jan14",
+       "note": ""
+      },
+      "Mar": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-02-12",
+       "src": "fed_feb12",
+       "note": ""
+      },
+      "Apr": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-02-12",
+       "src": "fed_feb12",
+       "note": ""
+      },
+      "Jun": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-05-27",
+       "src": "fed_may27",
+       "note": ""
+      },
+      "Jul": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-05-27",
+       "src": "fed_may27",
+       "note": ""
+      },
+      "Sep": {
+       "call": "hold",
+       "status": "stale",
+       "ok": null,
+       "as_of": "2026-05-27",
+       "src": "fed_may27",
+       "note": "Last view found is 112 days old, so it is not scored."
+      }
+     },
+     "right": 5,
+     "scored": 5,
+     "leads": {},
+     "max_cuts": 2,
+     "last_cut_view": "2026-04-30",
+     "last_cut_src": "fed_apr30",
+     "base_gap_bp": 75,
+     "base_stance": "cuts",
+     "timeline": [
+      {
+       "date": "2026-01-14",
+       "stance": "cuts",
+       "src": "fed_jan14",
+       "note": "",
+       "cuts": [
+        "Jun",
+        "Dec"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-02-06",
+       "stance": "cuts",
+       "src": "fed_feb06",
+       "note": "",
+       "cuts": [
+        "Jun",
+        "Dec"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-02-12",
+       "stance": "cuts",
+       "src": "fed_feb12",
+       "note": "",
+       "cuts": [
+        "Jun",
+        "Dec"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-04-30",
+       "stance": "cuts",
+       "src": "fed_apr30",
+       "note": "",
+       "cuts": [
+        "Sep"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-05-04",
+       "stance": "hold",
+       "src": "fed_may04",
+       "note": "",
+       "cuts": [],
+       "hikes": []
+      },
+      {
+       "date": "2026-05-27",
+       "stance": "hold",
+       "src": "fed_may27",
+       "note": "",
+       "cuts": [],
+       "hikes": []
+      },
+      {
+       "date": "2026-09-17",
+       "stance": "hikes",
+       "src": "fed_sep17",
+       "note": "",
+       "cuts": [],
+       "hikes": [
+        "Dec"
+       ]
+      },
+      {
+       "date": "2026-10-01",
+       "stance": "hikes",
+       "src": "fed_oct01",
+       "note": "",
+       "cuts": [],
+       "hikes": [
+        "Dec"
+       ]
+      }
+     ],
+     "next": {
+      "call": "hold",
+      "status": "scored",
+      "as_of": "2026-10-01",
+      "src": "fed_oct01",
+      "note": ""
+     }
+    },
+    {
+     "house": "UBS Global Research",
+     "cells": {
+      "Jan": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-01-14",
+       "src": "fed_jan14",
+       "note": ""
+      },
+      "Mar": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-02-12",
+       "src": "fed_feb12",
+       "note": ""
+      },
+      "Apr": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-02-12",
+       "src": "fed_feb12",
+       "note": ""
+      },
+      "Jun": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-05-27",
+       "src": "fed_may27",
+       "note": ""
+      },
+      "Jul": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-05-27",
+       "src": "fed_may27",
+       "note": ""
+      },
+      "Sep": {
+       "call": "hold",
+       "status": "stale",
+       "ok": null,
+       "as_of": "2026-05-27",
+       "src": "fed_may27",
+       "note": "Last view found is 112 days old, so it is not scored."
+      }
+     },
+     "right": 5,
+     "scored": 5,
+     "leads": {},
+     "max_cuts": 2,
+     "last_cut_view": "2026-05-27",
+     "last_cut_src": "fed_may27",
+     "base_gap_bp": 75,
+     "base_stance": "cuts",
+     "timeline": [
+      {
+       "date": "2026-01-14",
+       "stance": "cuts",
+       "src": "fed_jan14",
+       "note": "",
+       "cuts": [
+        "Jul",
+        "Oct"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-02-06",
+       "stance": "cuts",
+       "src": "fed_feb06",
+       "note": "",
+       "cuts": [
+        "Jul",
+        "Oct"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-02-12",
+       "stance": "cuts",
+       "src": "fed_feb12",
+       "note": "",
+       "cuts": [
+        "Jul",
+        "Oct"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-05-27",
+       "stance": "cuts",
+       "src": "fed_may27",
+       "note": "",
+       "cuts": [
+        "Dec"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-09-17",
+       "stance": "hikes",
+       "src": "fed_sep17",
+       "note": "",
+       "cuts": [],
+       "hikes": [
+        "Dec"
+       ]
+      },
+      {
+       "date": "2026-10-01",
+       "stance": "hikes",
+       "src": "fed_oct01",
+       "note": "",
+       "cuts": [],
+       "hikes": [
+        "Dec"
+       ]
+      }
+     ],
+     "next": {
+      "call": "hold",
+      "status": "scored",
+      "as_of": "2026-10-01",
+      "src": "fed_oct01",
+      "note": ""
+     }
+    },
+    {
+     "house": "UBS Global Wealth Mgmt",
+     "cells": {
+      "Jan": {
+       "call": null,
+       "status": "no_month",
+       "ok": null,
+       "as_of": "2026-01-14",
+       "src": "fed_jan14",
+       "note": "Timing not specific enough to score."
+      },
+      "Mar": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-02-12",
+       "src": "fed_feb12",
+       "note": ""
+      },
+      "Apr": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-02-12",
+       "src": "fed_feb12",
+       "note": ""
+      },
+      "Jun": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-06-16",
+       "src": "fed_jun16",
+       "note": ""
+      },
+      "Jul": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-06-16",
+       "src": "fed_jun16",
+       "note": ""
+      },
+      "Sep": {
+       "call": "hike",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-09-07",
+       "src": "fed_sep07",
+       "note": ""
+      }
+     },
+     "right": 5,
+     "scored": 5,
+     "leads": {
+      "Sep": {
+       "days": 9,
+       "since": "2026-09-07",
+       "src": "fed_sep07"
+      }
+     },
+     "max_cuts": 2,
+     "last_cut_view": "2026-05-27",
+     "last_cut_src": "fed_may27",
+     "base_gap_bp": 75,
+     "base_stance": "cuts",
+     "timeline": [
+      {
+       "date": "2026-01-14",
+       "stance": "cuts",
+       "src": "fed_jan14",
+       "note": "",
+       "cuts": [
+        "Q1"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-02-06",
+       "stance": "cuts",
+       "src": "fed_feb06",
+       "note": "",
+       "cuts": [
+        "Q1"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-02-12",
+       "stance": "cuts",
+       "src": "fed_feb12",
+       "note": "",
+       "cuts": [
+        "Jun",
+        "Sep"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-05-27",
+       "stance": "cuts",
+       "src": "fed_may27",
+       "note": "",
+       "cuts": [
+        "Dec"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-06-16",
+       "stance": "hold",
+       "src": "fed_jun16",
+       "note": "",
+       "cuts": [],
+       "hikes": []
+      },
+      {
+       "date": "2026-09-07",
+       "stance": "hikes",
+       "src": "fed_sep07",
+       "note": "",
+       "cuts": [],
+       "hikes": [
+        "Sep",
+        "Dec"
+       ]
+      },
+      {
+       "date": "2026-09-17",
+       "stance": "hikes",
+       "src": "fed_sep17",
+       "note": "",
+       "cuts": [],
+       "hikes": [
+        "?"
+       ]
+      },
+      {
+       "date": "2026-10-01",
+       "stance": "hikes",
+       "src": "fed_oct01",
+       "note": "",
+       "cuts": [],
+       "hikes": [
+        "Dec"
+       ]
+      }
+     ],
+     "next": {
+      "call": "hold",
+      "status": "scored",
+      "as_of": "2026-10-01",
+      "src": "fed_oct01",
+      "note": ""
+     }
+    },
+    {
+     "house": "Deutsche Bank",
+     "cells": {
+      "Jan": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-01-14",
+       "src": "fed_jan14",
+       "note": ""
+      },
+      "Mar": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-02-12",
+       "src": "fed_feb12",
+       "note": ""
+      },
+      "Apr": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-02-12",
+       "src": "fed_feb12",
+       "note": ""
+      },
+      "Jun": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-05-27",
+       "src": "fed_may27",
+       "note": ""
+      },
+      "Jul": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-06-22",
+       "src": "fed_jun22_db",
+       "note": ""
+      },
+      "Sep": {
+       "call": "hike",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-09-14",
+       "src": "fed_sep14",
+       "note": ""
+      }
+     },
+     "right": 6,
+     "scored": 6,
+     "leads": {
+      "Sep": {
+       "days": 86,
+       "since": "2026-06-22",
+       "src": "fed_jun22_db"
+      }
+     },
+     "max_cuts": 1,
+     "last_cut_view": "2026-02-12",
+     "last_cut_src": "fed_feb12",
+     "base_gap_bp": 50,
+     "base_stance": "cuts",
+     "timeline": [
+      {
+       "date": "2026-01-14",
+       "stance": "cuts",
+       "src": "fed_jan14",
+       "note": "",
+       "cuts": [
+        "Sep"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-02-06",
+       "stance": "cuts",
+       "src": "fed_feb06",
+       "note": "",
+       "cuts": [
+        "Sep"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-02-12",
+       "stance": "cuts",
+       "src": "fed_feb12",
+       "note": "",
+       "cuts": [
+        "Sep"
+       ],
+       "hikes": []
+      },
+      {
+       "date": "2026-05-27",
+       "stance": "hold",
+       "src": "fed_may27",
+       "note": "",
+       "cuts": [],
+       "hikes": []
+      },
+      {
+       "date": "2026-06-22",
+       "stance": "hikes",
+       "src": "fed_jun22_db",
+       "note": "",
+       "cuts": [],
+       "hikes": [
+        "Sep",
+        "Dec"
+       ]
+      },
+      {
+       "date": "2026-09-14",
+       "stance": "hikes",
+       "src": "fed_sep14",
+       "note": "",
+       "cuts": [],
+       "hikes": [
+        "Sep",
+        "Dec"
+       ]
+      },
+      {
+       "date": "2026-09-17",
+       "stance": "hikes",
+       "src": "fed_sep17",
+       "note": "",
+       "cuts": [],
+       "hikes": [
+        "Dec"
+       ]
+      },
+      {
+       "date": "2026-10-01",
+       "stance": "hikes",
+       "src": "fed_oct01",
+       "note": "",
+       "cuts": [],
+       "hikes": [
+        "Dec"
+       ]
+      }
+     ],
+     "next": {
+      "call": "hold",
+      "status": "scored",
+      "as_of": "2026-10-01",
+      "src": "fed_oct01",
+      "note": ""
+     }
+    },
+    {
+     "house": "HSBC",
+     "cells": {
+      "Jan": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-01-14",
+       "src": "fed_jan14",
+       "note": ""
+      },
+      "Mar": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-02-12",
+       "src": "fed_feb12",
+       "note": ""
+      },
+      "Apr": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-02-12",
+       "src": "fed_feb12",
+       "note": ""
+      },
+      "Jun": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-05-27",
+       "src": "fed_may27",
+       "note": ""
+      },
+      "Jul": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-05-27",
+       "src": "fed_may27",
+       "note": ""
+      },
+      "Sep": {
+       "call": "hike",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-09-14",
+       "src": "fed_sep14",
+       "note": ""
+      }
+     },
+     "right": 6,
+     "scored": 6,
+     "leads": {
+      "Sep": {
+       "days": 2,
+       "since": "2026-09-14",
+       "src": "fed_sep14"
+      }
+     },
+     "max_cuts": 0,
+     "last_cut_view": null,
+     "last_cut_src": null,
+     "base_gap_bp": 25,
+     "base_stance": "hold",
+     "timeline": [
+      {
+       "date": "2026-01-14",
+       "stance": "hold",
+       "src": "fed_jan14",
+       "note": "",
+       "cuts": [],
+       "hikes": []
+      },
+      {
+       "date": "2026-02-06",
+       "stance": "hold",
+       "src": "fed_feb06",
+       "note": "",
+       "cuts": [],
+       "hikes": []
+      },
+      {
+       "date": "2026-02-12",
+       "stance": "hold",
+       "src": "fed_feb12",
+       "note": "",
+       "cuts": [],
+       "hikes": []
+      },
+      {
+       "date": "2026-04-30",
+       "stance": "hold",
+       "src": "fed_apr30",
+       "note": "",
+       "cuts": [],
+       "hikes": []
+      },
+      {
+       "date": "2026-05-27",
+       "stance": "hold",
+       "src": "fed_may27",
+       "note": "",
+       "cuts": [],
+       "hikes": []
+      },
+      {
+       "date": "2026-09-14",
+       "stance": "hikes",
+       "src": "fed_sep14",
+       "note": "",
+       "cuts": [],
+       "hikes": [
+        "Sep"
+       ]
+      },
+      {
+       "date": "2026-09-17",
+       "stance": "hikes",
+       "src": "fed_sep17",
+       "note": "",
+       "cuts": [],
+       "hikes": [
+        "Dec"
+       ]
+      },
+      {
+       "date": "2026-10-01",
+       "stance": "hikes",
+       "src": "fed_oct01",
+       "note": "",
+       "cuts": [],
+       "hikes": [
+        "Dec"
+       ]
+      }
+     ],
+     "next": {
+      "call": "hold",
+      "status": "scored",
+      "as_of": "2026-10-01",
+      "src": "fed_oct01",
+      "note": ""
+     }
+    },
+    {
+     "house": "J.P. Morgan",
+     "cells": {
+      "Jan": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-01-14",
+       "src": "fed_jan14",
+       "note": ""
+      },
+      "Mar": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-02-12",
+       "src": "fed_feb12",
+       "note": ""
+      },
+      "Apr": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-02-12",
+       "src": "fed_feb12",
+       "note": ""
+      },
+      "Jun": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-05-27",
+       "src": "fed_may27",
+       "note": ""
+      },
+      "Jul": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-05-27",
+       "src": "fed_may27",
+       "note": ""
+      },
+      "Sep": {
+       "call": "hike",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-09-14",
+       "src": "fed_sep14",
+       "note": ""
+      }
+     },
+     "right": 6,
+     "scored": 6,
+     "leads": {
+      "Sep": {
+       "days": 2,
+       "since": "2026-09-14",
+       "src": "fed_sep14"
+      }
+     },
+     "max_cuts": 0,
+     "last_cut_view": null,
+     "last_cut_src": null,
+     "base_gap_bp": 25,
+     "base_stance": "hold",
+     "timeline": [
+      {
+       "date": "2026-01-14",
+       "stance": "hold",
+       "src": "fed_jan14",
+       "note": "",
+       "cuts": [],
+       "hikes": []
+      },
+      {
+       "date": "2026-02-06",
+       "stance": "hold",
+       "src": "fed_feb06",
+       "note": "",
+       "cuts": [],
+       "hikes": []
+      },
+      {
+       "date": "2026-02-12",
+       "stance": "hold",
+       "src": "fed_feb12",
+       "note": "",
+       "cuts": [],
+       "hikes": []
+      },
+      {
+       "date": "2026-04-30",
+       "stance": "hold",
+       "src": "fed_apr30",
+       "note": "",
+       "cuts": [],
+       "hikes": []
+      },
+      {
+       "date": "2026-05-27",
+       "stance": "hold",
+       "src": "fed_may27",
+       "note": "",
+       "cuts": [],
+       "hikes": []
+      },
+      {
+       "date": "2026-09-14",
+       "stance": "hikes",
+       "src": "fed_sep14",
+       "note": "",
+       "cuts": [],
+       "hikes": [
+        "Sep",
+        "Dec"
+       ]
+      },
+      {
+       "date": "2026-09-17",
+       "stance": "hikes",
+       "src": "fed_sep17",
+       "note": "",
+       "cuts": [],
+       "hikes": [
+        "Dec"
+       ]
+      },
+      {
+       "date": "2026-10-01",
+       "stance": "hikes",
+       "src": "fed_oct01",
+       "note": "",
+       "cuts": [],
+       "hikes": [
+        "Dec"
+       ]
+      }
+     ],
+     "next": {
+      "call": "hold",
+      "status": "scored",
+      "as_of": "2026-10-01",
+      "src": "fed_oct01",
+      "note": ""
+     }
+    },
+    {
+     "house": "Standard Chartered",
+     "cells": {
+      "Jan": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-01-14",
+       "src": "fed_jan14",
+       "note": ""
+      },
+      "Mar": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-02-12",
+       "src": "fed_feb12",
+       "note": ""
+      },
+      "Apr": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-02-12",
+       "src": "fed_feb12",
+       "note": ""
+      },
+      "Jun": {
+       "call": "hold",
+       "status": "stale",
+       "ok": null,
+       "as_of": "2026-02-12",
+       "src": "fed_feb12",
+       "note": "Last view found is 125 days old, so it is not scored."
+      },
+      "Jul": {
+       "call": "hold",
+       "status": "stale",
+       "ok": null,
+       "as_of": "2026-02-12",
+       "src": "fed_feb12",
+       "note": "Last view found is 167 days old, so it is not scored."
+      },
+      "Sep": {
+       "call": "hold",
+       "status": "stale",
+       "ok": null,
+       "as_of": "2026-02-12",
+       "src": "fed_feb12",
+       "note": "Last view found is 216 days old, so it is not scored."
+      }
+     },
+     "right": 3,
+     "scored": 3,
+     "leads": {},
+     "max_cuts": 0,
+     "last_cut_view": null,
+     "last_cut_src": null,
+     "base_gap_bp": 25,
+     "base_stance": "hold",
+     "timeline": [
+      {
+       "date": "2026-01-14",
+       "stance": "hold",
+       "src": "fed_jan14",
+       "note": "",
+       "cuts": [],
+       "hikes": []
+      },
+      {
+       "date": "2026-02-06",
+       "stance": "hold",
+       "src": "fed_feb06",
+       "note": "",
+       "cuts": [],
+       "hikes": []
+      },
+      {
+       "date": "2026-02-12",
+       "stance": "hold",
+       "src": "fed_feb12",
+       "note": "",
+       "cuts": [],
+       "hikes": []
+      },
+      {
+       "date": "2026-10-01",
+       "stance": "hikes",
+       "src": "fed_oct01",
+       "note": "",
+       "cuts": [],
+       "hikes": [
+        "Dec"
+       ]
+      }
+     ],
+     "next": {
+      "call": "hold",
+      "status": "scored",
+      "as_of": "2026-10-01",
+      "src": "fed_oct01",
+      "note": ""
+     }
+    },
+    {
+     "house": "Macquarie",
+     "cells": {
+      "Jan": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-01-14",
+       "src": "fed_jan14",
+       "note": "hike in Q4"
+      },
+      "Mar": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-02-12",
+       "src": "fed_feb12",
+       "note": "hike in Q4"
+      },
+      "Apr": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-02-12",
+       "src": "fed_feb12",
+       "note": "hike in Q4"
+      },
+      "Jun": {
+       "call": "hold",
+       "status": "stale",
+       "ok": null,
+       "as_of": "2026-02-12",
+       "src": "fed_feb12",
+       "note": "Last view found is 125 days old, so it is not scored."
+      },
+      "Jul": {
+       "call": null,
+       "status": "no_month",
+       "ok": null,
+       "as_of": "2026-06-22",
+       "src": "fed_jun22",
+       "note": "hikes to begin this year, month not given"
+      },
+      "Sep": {
+       "call": null,
+       "status": "no_month",
+       "ok": null,
+       "as_of": "2026-09-07",
+       "src": "fed_sep07",
+       "note": "revised after the August jobs report; new call not found"
+      }
+     },
+     "right": 3,
+     "scored": 3,
+     "leads": {},
+     "max_cuts": 0,
+     "last_cut_view": null,
+     "last_cut_src": null,
+     "base_gap_bp": null,
+     "base_stance": "hikes",
+     "timeline": [
+      {
+       "date": "2026-01-14",
+       "stance": "hikes",
+       "src": "fed_jan14",
+       "note": "hike in Q4",
+       "cuts": [],
+       "hikes": [
+        "Oct",
+        "Dec"
+       ]
+      },
+      {
+       "date": "2026-02-06",
+       "stance": "hikes",
+       "src": "fed_feb06",
+       "note": "hike in Q4",
+       "cuts": [],
+       "hikes": [
+        "Oct",
+        "Dec"
+       ]
+      },
+      {
+       "date": "2026-02-12",
+       "stance": "hikes",
+       "src": "fed_feb12",
+       "note": "hike in Q4",
+       "cuts": [],
+       "hikes": [
+        "Oct",
+        "Dec"
+       ]
+      },
+      {
+       "date": "2026-06-22",
+       "stance": "hikes",
+       "src": "fed_jun22",
+       "note": "hikes to begin this year, month not given",
+       "cuts": [],
+       "hikes": [
+        "?"
+       ]
+      },
+      {
+       "date": "2026-09-07",
+       "stance": "hikes",
+       "src": "fed_sep07",
+       "note": "revised after the August jobs report; new call not found",
+       "cuts": [],
+       "hikes": [
+        "?"
+       ]
+      },
+      {
+       "date": "2026-09-17",
+       "stance": "hikes",
+       "src": "fed_sep17",
+       "note": "",
+       "cuts": [],
+       "hikes": [
+        "Dec"
+       ]
+      },
+      {
+       "date": "2026-10-01",
+       "stance": "hikes",
+       "src": "fed_oct01",
+       "note": "",
+       "cuts": [],
+       "hikes": [
+        "Dec"
+       ]
+      }
+     ],
+     "next": {
+      "call": "hold",
+      "status": "scored",
+      "as_of": "2026-10-01",
+      "src": "fed_oct01",
+      "note": ""
+     }
+    },
+    {
+     "house": "BNP Paribas",
+     "cells": {
+      "Jan": {
+       "call": null,
+       "status": "none",
+       "ok": null,
+       "as_of": null,
+       "src": null,
+       "note": "No call found before this meeting."
+      },
+      "Mar": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-02-12",
+       "src": "fed_feb12",
+       "note": ""
+      },
+      "Apr": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-02-12",
+       "src": "fed_feb12",
+       "note": ""
+      },
+      "Jun": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-05-27",
+       "src": "fed_may27",
+       "note": ""
+      },
+      "Jul": {
+       "call": null,
+       "status": "no_month",
+       "ok": null,
+       "as_of": "2026-06-22",
+       "src": "fed_jun22",
+       "note": "hikes to begin this year, month not given"
+      },
+      "Sep": {
+       "call": null,
+       "status": "no_month",
+       "ok": null,
+       "as_of": "2026-06-22",
+       "src": "fed_jun22",
+       "note": "hikes to begin this year, month not given"
+      }
+     },
+     "right": 3,
+     "scored": 3,
+     "leads": {},
+     "max_cuts": 0,
+     "last_cut_view": null,
+     "last_cut_src": null,
+     "base_gap_bp": 25,
+     "base_stance": "hold",
+     "timeline": [
+      {
+       "date": "2026-02-06",
+       "stance": "hold",
+       "src": "fed_feb06",
+       "note": "",
+       "cuts": [],
+       "hikes": []
+      },
+      {
+       "date": "2026-02-12",
+       "stance": "hold",
+       "src": "fed_feb12",
+       "note": "",
+       "cuts": [],
+       "hikes": []
+      },
+      {
+       "date": "2026-05-27",
+       "stance": "hold",
+       "src": "fed_may27",
+       "note": "",
+       "cuts": [],
+       "hikes": []
+      },
+      {
+       "date": "2026-06-22",
+       "stance": "hikes",
+       "src": "fed_jun22",
+       "note": "hikes to begin this year, month not given",
+       "cuts": [],
+       "hikes": [
+        "?"
+       ]
+      },
+      {
+       "date": "2026-09-17",
+       "stance": "hikes",
+       "src": "fed_sep17",
+       "note": "",
+       "cuts": [],
+       "hikes": [
+        "Dec"
+       ]
+      },
+      {
+       "date": "2026-10-01",
+       "stance": "hikes",
+       "src": "fed_oct01",
+       "note": "",
+       "cuts": [],
+       "hikes": [
+        "Dec"
+       ]
+      }
+     ],
+     "next": {
+      "call": "hold",
+      "status": "scored",
+      "as_of": "2026-10-01",
+      "src": "fed_oct01",
+      "note": ""
+     }
+    }
+   ],
+   "consensus": {
+    "Jan": {
+     "tally": {
+      "hold": 13
+     },
+     "majority": "hold",
+     "ok": true,
+     "n": 13,
+     "wrong": []
+    },
+    "Mar": {
+     "tally": {
+      "hold": 14,
+      "cut": 1
+     },
+     "majority": "hold",
+     "ok": true,
+     "n": 15,
+     "wrong": [
+      "Wells Fargo"
+     ]
+    },
+    "Apr": {
+     "tally": {
+      "hold": 15
+     },
+     "majority": "hold",
+     "ok": true,
+     "n": 15,
+     "wrong": []
+    },
+    "Jun": {
+     "tally": {
+      "hold": 12,
+      "cut": 1
+     },
+     "majority": "hold",
+     "ok": true,
+     "n": 13,
+     "wrong": [
+      "Wells Fargo"
+     ]
+    },
+    "Jul": {
+     "tally": {
+      "hold": 12
+     },
+     "majority": "hold",
+     "ok": true,
+     "n": 12,
+     "wrong": []
+    },
+    "Sep": {
+     "tally": {
+      "hike": 7
+     },
+     "majority": "hike",
+     "ok": true,
+     "n": 7,
+     "wrong": []
+    }
+   },
+   "next_tally": {
+    "hold": [
+     "Citigroup",
+     "Goldman Sachs",
+     "Morgan Stanley",
+     "Nomura",
+     "Barclays",
+     "UBS Global Research",
+     "UBS Global Wealth Mgmt",
+     "Deutsche Bank",
+     "HSBC",
+     "J.P. Morgan",
+     "Standard Chartered",
+     "Macquarie",
+     "BNP Paribas"
+    ],
+    "hike": [
+     "BofA Global Research"
+    ]
+   },
+   "summary": {
+    "houses": 15,
+    "scored_calls": 75,
+    "right_calls": 73,
+    "houses_with_miss": [
+     "Wells Fargo"
+    ],
+    "consensus_right": 6,
+    "consensus_scored": 6,
+    "base": {
+     "n": 15,
+     "cuts": 10,
+     "hold": 4,
+     "hikes": 1,
+     "median_gap_bp": 75
+    }
+   }
+  },
+  "ecb": {
+   "rows": [
+    {
+     "house": "Barclays",
+     "cells": {
+      "Apr": {
+       "call": "hike",
+       "status": "scored",
+       "ok": false,
+       "as_of": "2026-03-20",
+       "src": "ecb_mar20",
+       "note": ""
+      },
+      "Jun": {
+       "call": null,
+       "status": "no_month",
+       "ok": null,
+       "as_of": "2026-03-20",
+       "src": "ecb_mar20",
+       "note": "Timing not specific enough to score."
+      },
+      "Jul": {
+       "call": null,
+       "status": "no_month",
+       "ok": null,
+       "as_of": "2026-03-20",
+       "src": "ecb_mar20",
+       "note": "Timing not specific enough to score."
+      },
+      "Sep": {
+       "call": null,
+       "status": "no_month",
+       "ok": null,
+       "as_of": "2026-03-20",
+       "src": "ecb_mar20",
+       "note": "Timing not specific enough to score."
+      }
+     },
+     "right": 0,
+     "scored": 1,
+     "leads": {},
+     "max_cuts": 0,
+     "last_cut_view": null,
+     "last_cut_src": null,
+     "base_gap_bp": null,
+     "base_stance": null,
+     "timeline": [
+      {
+       "date": "2026-03-20",
+       "stance": "hikes",
+       "src": "ecb_mar20",
+       "note": "",
+       "cuts": [],
+       "hikes": [
+        "Apr",
+        "?"
+       ]
+      }
+     ],
+     "next": {
+      "call": null,
+      "status": "no_month",
+      "as_of": "2026-03-20",
+      "src": "ecb_mar20",
+      "note": "Timing not specific enough to score."
+     }
+    },
+    {
+     "house": "J.P. Morgan",
+     "cells": {
+      "Apr": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-03-20",
+       "src": "ecb_mar20",
+       "note": ""
+      },
+      "Jun": {
+       "call": "hike",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-05-01",
+       "src": "ecb_may01",
+       "note": "two hikes beginning in June; second month not given"
+      },
+      "Jul": {
+       "call": null,
+       "status": "no_month",
+       "ok": null,
+       "as_of": "2026-05-01",
+       "src": "ecb_may01",
+       "note": "two hikes beginning in June; second month not given"
+      },
+      "Sep": {
+       "call": null,
+       "status": "no_month",
+       "ok": null,
+       "as_of": "2026-05-01",
+       "src": "ecb_may01",
+       "note": "two hikes beginning in June; second month not given"
+      }
+     },
+     "right": 2,
+     "scored": 2,
+     "leads": {
+      "Jun": {
+       "days": 83,
+       "since": "2026-03-20",
+       "src": "ecb_mar20"
+      }
+     },
+     "max_cuts": 0,
+     "last_cut_view": null,
+     "last_cut_src": null,
+     "base_gap_bp": null,
+     "base_stance": null,
+     "timeline": [
+      {
+       "date": "2026-03-20",
+       "stance": "hikes",
+       "src": "ecb_mar20",
+       "note": "",
+       "cuts": [],
+       "hikes": [
+        "Jun",
+        "Jul"
+       ]
+      },
+      {
+       "date": "2026-05-01",
+       "stance": "hikes",
+       "src": "ecb_may01",
+       "note": "two hikes beginning in June; second month not given",
+       "cuts": [],
+       "hikes": [
+        "Jun",
+        "?"
+       ]
+      }
+     ],
+     "next": {
+      "call": null,
+      "status": "no_month",
+      "as_of": "2026-05-01",
+      "src": "ecb_may01",
+      "note": "two hikes beginning in June; second month not given"
+     }
+    },
+    {
+     "house": "Morgan Stanley",
+     "cells": {
+      "Apr": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-03-20",
+       "src": "ecb_mar20",
+       "note": ""
+      },
+      "Jun": {
+       "call": "hike",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-03-20",
+       "src": "ecb_mar20",
+       "note": ""
+      },
+      "Jul": {
+       "call": "hold",
+       "status": "stale",
+       "ok": null,
+       "as_of": "2026-03-20",
+       "src": "ecb_mar20",
+       "note": "Last view found is 125 days old, so it is not scored."
+      },
+      "Sep": {
+       "call": "hike",
+       "status": "stale",
+       "ok": null,
+       "as_of": "2026-03-20",
+       "src": "ecb_mar20",
+       "note": "Last view found is 174 days old, so it is not scored."
+      }
+     },
+     "right": 2,
+     "scored": 2,
+     "leads": {
+      "Jun": {
+       "days": 83,
+       "since": "2026-03-20",
+       "src": "ecb_mar20"
+      },
+      "Sep": {
+       "days": 174,
+       "since": "2026-03-20",
+       "src": "ecb_mar20"
+      }
+     },
+     "max_cuts": 0,
+     "last_cut_view": null,
+     "last_cut_src": null,
+     "base_gap_bp": null,
+     "base_stance": null,
+     "timeline": [
+      {
+       "date": "2026-03-20",
+       "stance": "hikes",
+       "src": "ecb_mar20",
+       "note": "",
+       "cuts": [],
+       "hikes": [
+        "Jun",
+        "Sep"
+       ]
+      },
+      {
+       "date": "2026-09-15",
+       "stance": "hikes",
+       "src": "fed_sep15",
+       "note": "another 25bp in December to 2.75%",
+       "cuts": [],
+       "hikes": [
+        "Dec"
+       ]
+      }
+     ],
+     "next": {
+      "call": "hold",
+      "status": "scored",
+      "as_of": "2026-09-15",
+      "src": "fed_sep15",
+      "note": "another 25bp in December to 2.75%"
+     }
+    },
+    {
+     "house": "Goldman Sachs",
+     "cells": {
+      "Apr": {
+       "call": "hike",
+       "status": "revised",
+       "ok": null,
+       "as_of": "2026-03-23",
+       "src": "ecb_mar23",
+       "note": "Called an April hike on 23 March, then moved it to June and September. The date of that change is not shown in the source, so April is not scored."
+      },
+      "Jun": {
+       "call": "hike",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-05-01",
+       "src": "ecb_may01",
+       "note": "two hikes beginning in June; later moved to June and September (Newsquawk, date not shown)"
+      },
+      "Jul": {
+       "call": null,
+       "status": "no_month",
+       "ok": null,
+       "as_of": "2026-05-01",
+       "src": "ecb_may01",
+       "note": "two hikes beginning in June; later moved to June and September (Newsquawk, date not shown)"
+      },
+      "Sep": {
+       "call": null,
+       "status": "no_month",
+       "ok": null,
+       "as_of": "2026-05-01",
+       "src": "ecb_may01",
+       "note": "two hikes beginning in June; later moved to June and September (Newsquawk, date not shown)"
+      }
+     },
+     "right": 1,
+     "scored": 1,
+     "leads": {
+      "Jun": {
+       "days": 80,
+       "since": "2026-03-23",
+       "src": "ecb_mar23"
+      }
+     },
+     "max_cuts": 0,
+     "last_cut_view": null,
+     "last_cut_src": null,
+     "base_gap_bp": null,
+     "base_stance": null,
+     "timeline": [
+      {
+       "date": "2026-03-23",
+       "stance": "hikes",
+       "src": "ecb_mar23",
+       "note": "previously no change all year",
+       "cuts": [],
+       "hikes": [
+        "Apr",
+        "Jun"
+       ]
+      },
+      {
+       "date": "2026-05-01",
+       "stance": "hikes",
+       "src": "ecb_may01",
+       "note": "two hikes beginning in June; later moved to June and September (Newsquawk, date not shown)",
+       "cuts": [],
+       "hikes": [
+        "Jun",
+        "?"
+       ]
+      }
+     ],
+     "next": {
+      "call": null,
+      "status": "no_month",
+      "as_of": "2026-05-01",
+      "src": "ecb_may01",
+      "note": "two hikes beginning in June; later moved to June and September (Newsquawk, date not shown)"
+     }
+    },
+    {
+     "house": "Standard Chartered",
+     "cells": {
+      "Apr": {
+       "call": null,
+       "status": "none",
+       "ok": null,
+       "as_of": null,
+       "src": null,
+       "note": "No call found before this meeting."
+      },
+      "Jun": {
+       "call": "hike",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-05-01",
+       "src": "ecb_may01",
+       "note": "previously no change through 2026"
+      },
+      "Jul": {
+       "call": null,
+       "status": "no_month",
+       "ok": null,
+       "as_of": "2026-05-01",
+       "src": "ecb_may01",
+       "note": "previously no change through 2026"
+      },
+      "Sep": {
+       "call": null,
+       "status": "no_month",
+       "ok": null,
+       "as_of": "2026-05-01",
+       "src": "ecb_may01",
+       "note": "previously no change through 2026"
+      }
+     },
+     "right": 1,
+     "scored": 1,
+     "leads": {
+      "Jun": {
+       "days": 41,
+       "since": "2026-05-01",
+       "src": "ecb_may01"
+      }
+     },
+     "max_cuts": 0,
+     "last_cut_view": null,
+     "last_cut_src": null,
+     "base_gap_bp": null,
+     "base_stance": null,
+     "timeline": [
+      {
+       "date": "2026-05-01",
+       "stance": "hikes",
+       "src": "ecb_may01",
+       "note": "previously no change through 2026",
+       "cuts": [],
+       "hikes": [
+        "Jun",
+        "?"
+       ]
+      }
+     ],
+     "next": {
+      "call": null,
+      "status": "no_month",
+      "as_of": "2026-05-01",
+      "src": "ecb_may01",
+      "note": "previously no change through 2026"
+     }
+    },
+    {
+     "house": "Deutsche Bank",
+     "cells": {
+      "Apr": {
+       "call": null,
+       "status": "none",
+       "ok": null,
+       "as_of": null,
+       "src": null,
+       "note": "No call found before this meeting."
+      },
+      "Jun": {
+       "call": null,
+       "status": "none",
+       "ok": null,
+       "as_of": null,
+       "src": null,
+       "note": "No call found before this meeting."
+      },
+      "Jul": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-07-20",
+       "src": "ecb_jul_prev",
+       "note": "pause in July, final hike to 2.50% in September"
+      },
+      "Sep": {
+       "call": "hike",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-07-20",
+       "src": "ecb_jul_prev",
+       "note": "pause in July, final hike to 2.50% in September"
+      }
+     },
+     "right": 2,
+     "scored": 2,
+     "leads": {
+      "Sep": {
+       "days": 52,
+       "since": "2026-07-20",
+       "src": "ecb_jul_prev"
+      }
+     },
+     "max_cuts": 0,
+     "last_cut_view": null,
+     "last_cut_src": null,
+     "base_gap_bp": null,
+     "base_stance": null,
+     "timeline": [
+      {
+       "date": "2026-07-20",
+       "stance": "hikes",
+       "src": "ecb_jul_prev",
+       "note": "pause in July, final hike to 2.50% in September",
+       "cuts": [],
+       "hikes": [
+        "Sep"
+       ]
+      }
+     ],
+     "next": {
+      "call": "hold",
+      "status": "stale",
+      "as_of": "2026-07-20",
+      "src": "ecb_jul_prev",
+      "note": "Last view found is 101 days old, so it is not scored."
+     }
+    },
+    {
+     "house": "TD Securities",
+     "cells": {
+      "Apr": {
+       "call": null,
+       "status": "none",
+       "ok": null,
+       "as_of": null,
+       "src": null,
+       "note": "No call found before this meeting."
+      },
+      "Jun": {
+       "call": null,
+       "status": "none",
+       "ok": null,
+       "as_of": null,
+       "src": null,
+       "note": "No call found before this meeting."
+      },
+      "Jul": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-07-20",
+       "src": "ecb_jul_prev",
+       "note": "hold in July, September in play"
+      },
+      "Sep": {
+       "call": null,
+       "status": "no_month",
+       "ok": null,
+       "as_of": "2026-07-20",
+       "src": "ecb_jul_prev",
+       "note": "hold in July, September in play"
+      }
+     },
+     "right": 1,
+     "scored": 1,
+     "leads": {},
+     "max_cuts": 0,
+     "last_cut_view": null,
+     "last_cut_src": null,
+     "base_gap_bp": null,
+     "base_stance": null,
+     "timeline": [
+      {
+       "date": "2026-07-20",
+       "stance": "hikes",
+       "src": "ecb_jul_prev",
+       "note": "hold in July, September in play",
+       "cuts": [],
+       "hikes": [
+        "?"
+       ]
+      }
+     ],
+     "next": {
+      "call": null,
+      "status": "no_month",
+      "as_of": "2026-07-20",
+      "src": "ecb_jul_prev",
+      "note": "hold in July, September in play"
+     }
+    },
+    {
+     "house": "ING",
+     "cells": {
+      "Apr": {
+       "call": null,
+       "status": "none",
+       "ok": null,
+       "as_of": null,
+       "src": null,
+       "note": "No call found before this meeting."
+      },
+      "Jun": {
+       "call": null,
+       "status": "none",
+       "ok": null,
+       "as_of": null,
+       "src": null,
+       "note": "No call found before this meeting."
+      },
+      "Jul": {
+       "call": "hold",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-07-20",
+       "src": "ecb_jul_prev",
+       "note": "hold in July, hints of September"
+      },
+      "Sep": {
+       "call": null,
+       "status": "no_month",
+       "ok": null,
+       "as_of": "2026-07-20",
+       "src": "ecb_jul_prev",
+       "note": "hold in July, hints of September"
+      }
+     },
+     "right": 1,
+     "scored": 1,
+     "leads": {},
+     "max_cuts": 0,
+     "last_cut_view": null,
+     "last_cut_src": null,
+     "base_gap_bp": null,
+     "base_stance": null,
+     "timeline": [
+      {
+       "date": "2026-07-20",
+       "stance": "hikes",
+       "src": "ecb_jul_prev",
+       "note": "hold in July, hints of September",
+       "cuts": [],
+       "hikes": [
+        "?"
+       ]
+      }
+     ],
+     "next": {
+      "call": null,
+      "status": "no_month",
+      "as_of": "2026-07-20",
+      "src": "ecb_jul_prev",
+      "note": "hold in July, hints of September"
+     }
+    },
+    {
+     "house": "UBS",
+     "cells": {
+      "Apr": {
+       "call": null,
+       "status": "none",
+       "ok": null,
+       "as_of": null,
+       "src": null,
+       "note": "No call found before this meeting."
+      },
+      "Jun": {
+       "call": null,
+       "status": "none",
+       "ok": null,
+       "as_of": null,
+       "src": null,
+       "note": "No call found before this meeting."
+      },
+      "Jul": {
+       "call": null,
+       "status": "none",
+       "ok": null,
+       "as_of": null,
+       "src": null,
+       "note": "No call found before this meeting."
+      },
+      "Sep": {
+       "call": null,
+       "status": "none",
+       "ok": null,
+       "as_of": null,
+       "src": null,
+       "note": "No call found before this meeting."
+      }
+     },
+     "right": 0,
+     "scored": 0,
+     "leads": {},
+     "max_cuts": 0,
+     "last_cut_view": null,
+     "last_cut_src": null,
+     "base_gap_bp": null,
+     "base_stance": null,
+     "timeline": [
+      {
+       "date": "2026-09-11",
+       "stance": "hikes",
+       "src": "ecb_sep11",
+       "note": "final hike in December, then pause",
+       "cuts": [],
+       "hikes": [
+        "Dec"
+       ]
+      }
+     ],
+     "next": {
+      "call": "hold",
+      "status": "scored",
+      "as_of": "2026-09-11",
+      "src": "ecb_sep11",
+      "note": "final hike in December, then pause"
+     }
+    }
+   ],
+   "consensus": {
+    "Apr": {
+     "tally": {
+      "hike": 1,
+      "hold": 2
+     },
+     "majority": "hold",
+     "ok": true,
+     "n": 3,
+     "wrong": [
+      "Barclays"
+     ]
+    },
+    "Jun": {
+     "tally": {
+      "hike": 4
+     },
+     "majority": "hike",
+     "ok": true,
+     "n": 4,
+     "wrong": []
+    },
+    "Jul": {
+     "tally": {
+      "hold": 3
+     },
+     "majority": "hold",
+     "ok": true,
+     "n": 3,
+     "wrong": []
+    },
+    "Sep": {
+     "tally": {
+      "hike": 1
+     },
+     "majority": "hike",
+     "ok": true,
+     "n": 1,
+     "wrong": []
+    }
+   },
+   "next_tally": {
+    "hold": [
+     "Morgan Stanley",
+     "UBS"
+    ]
+   },
+   "summary": {
+    "houses": 9,
+    "scored_calls": 11,
+    "right_calls": 10,
+    "houses_with_miss": [
+     "Barclays"
+    ],
+    "consensus_right": 4,
+    "consensus_scored": 4
+   }
+  },
+  "rbi": {
+   "rows": [
+    {
+     "house": "SBI Research",
+     "cells": {
+      "Jun": {
+       "call": null,
+       "status": "none",
+       "ok": null,
+       "as_of": null,
+       "src": null,
+       "note": "No call found before this meeting."
+      },
+      "Aug": {
+       "call": null,
+       "status": "none",
+       "ok": null,
+       "as_of": null,
+       "src": null,
+       "note": "No call found before this meeting."
+      },
+      "Oct": {
+       "call": "hike",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-09-11",
+       "src": "rbi_sbi",
+       "note": ""
+      }
+     },
+     "right": 1,
+     "scored": 1,
+     "leads": {
+      "Oct": {
+       "days": 26,
+       "since": "2026-09-11",
+       "src": "rbi_sbi"
+      }
+     },
+     "max_cuts": 0,
+     "last_cut_view": null,
+     "last_cut_src": null,
+     "base_gap_bp": null,
+     "base_stance": null,
+     "timeline": [
+      {
+       "date": "2026-09-11",
+       "stance": "hikes",
+       "src": "rbi_sbi",
+       "note": "",
+       "cuts": [],
+       "hikes": [
+        "Oct",
+        "Dec"
+       ]
+      }
+     ],
+     "next": {
+      "call": "hike",
+      "status": "scored",
+      "as_of": "2026-09-11",
+      "src": "rbi_sbi",
+      "note": ""
+     }
+    },
+    {
+     "house": "Nomura",
+     "cells": {
+      "Jun": {
+       "call": null,
+       "status": "none",
+       "ok": null,
+       "as_of": null,
+       "src": null,
+       "note": "No call found before this meeting."
+      },
+      "Aug": {
+       "call": null,
+       "status": "none",
+       "ok": null,
+       "as_of": null,
+       "src": null,
+       "note": "No call found before this meeting."
+      },
+      "Oct": {
+       "call": "hike",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-09-22",
+       "src": "rbi_nomura",
+       "note": ""
+      }
+     },
+     "right": 1,
+     "scored": 1,
+     "leads": {
+      "Oct": {
+       "days": 15,
+       "since": "2026-09-22",
+       "src": "rbi_nomura"
+      }
+     },
+     "max_cuts": 0,
+     "last_cut_view": null,
+     "last_cut_src": null,
+     "base_gap_bp": null,
+     "base_stance": null,
+     "timeline": [
+      {
+       "date": "2026-09-22",
+       "stance": "hikes",
+       "src": "rbi_nomura",
+       "note": "",
+       "cuts": [],
+       "hikes": [
+        "Oct",
+        "Dec"
+       ]
+      }
+     ],
+     "next": {
+      "call": "hike",
+      "status": "scored",
+      "as_of": "2026-09-22",
+      "src": "rbi_nomura",
+      "note": ""
+     }
+    },
+    {
+     "house": "HSBC",
+     "cells": {
+      "Jun": {
+       "call": null,
+       "status": "none",
+       "ok": null,
+       "as_of": null,
+       "src": null,
+       "note": "No call found before this meeting."
+      },
+      "Aug": {
+       "call": null,
+       "status": "none",
+       "ok": null,
+       "as_of": null,
+       "src": null,
+       "note": "No call found before this meeting."
+      },
+      "Oct": {
+       "call": "hike",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-09-27",
+       "src": "rbi_hsbc",
+       "note": "described as a long-held view; earliest report found is 27 September"
+      }
+     },
+     "right": 1,
+     "scored": 1,
+     "leads": {
+      "Oct": {
+       "days": 10,
+       "since": "2026-09-27",
+       "src": "rbi_hsbc"
+      }
+     },
+     "max_cuts": 0,
+     "last_cut_view": null,
+     "last_cut_src": null,
+     "base_gap_bp": null,
+     "base_stance": null,
+     "timeline": [
+      {
+       "date": "2026-09-27",
+       "stance": "hikes",
+       "src": "rbi_hsbc",
+       "note": "described as a long-held view; earliest report found is 27 September",
+       "cuts": [],
+       "hikes": [
+        "Oct",
+        "Dec"
+       ]
+      }
+     ],
+     "next": {
+      "call": "hike",
+      "status": "scored",
+      "as_of": "2026-09-27",
+      "src": "rbi_hsbc",
+      "note": "described as a long-held view; earliest report found is 27 September"
+     }
+    },
+    {
+     "house": "Goldman Sachs",
+     "cells": {
+      "Jun": {
+       "call": null,
+       "status": "none",
+       "ok": null,
+       "as_of": null,
+       "src": null,
+       "note": "No call found before this meeting."
+      },
+      "Aug": {
+       "call": null,
+       "status": "none",
+       "ok": null,
+       "as_of": null,
+       "src": null,
+       "note": "No call found before this meeting."
+      },
+      "Oct": {
+       "call": "hike",
+       "status": "scored",
+       "ok": true,
+       "as_of": "2026-10-05",
+       "src": "rbi_bs",
+       "note": "brought forward to October and December"
+      }
+     },
+     "right": 1,
+     "scored": 1,
+     "leads": {
+      "Oct": {
+       "days": 2,
+       "since": "2026-10-05",
+       "src": "rbi_bs"
+      }
+     },
+     "max_cuts": 0,
+     "last_cut_view": null,
+     "last_cut_src": null,
+     "base_gap_bp": null,
+     "base_stance": null,
+     "timeline": [
+      {
+       "date": "2026-10-05",
+       "stance": "hikes",
+       "src": "rbi_bs",
+       "note": "brought forward to October and December",
+       "cuts": [],
+       "hikes": [
+        "Oct",
+        "Dec"
+       ]
+      }
+     ],
+     "next": {
+      "call": "hike",
+      "status": "scored",
+      "as_of": "2026-10-05",
+      "src": "rbi_bs",
+      "note": "brought forward to October and December"
+     }
+    },
+    {
+     "house": "Bank of Baroda",
+     "cells": {
+      "Jun": {
+       "call": null,
+       "status": "none",
+       "ok": null,
+       "as_of": null,
+       "src": null,
+       "note": "No call found before this meeting."
+      },
+      "Aug": {
+       "call": null,
+       "status": "none",
+       "ok": null,
+       "as_of": null,
+       "src": null,
+       "note": "No call found before this meeting."
+      },
+      "Oct": {
+       "call": "hold",
+       "status": "scored",
+       "ok": false,
+       "as_of": "2026-10-05",
+       "src": "rbi_bob",
+       "note": "hold in October, 50-75bp cycle from December"
+      }
+     },
+     "right": 0,
+     "scored": 1,
+     "leads": {},
+     "max_cuts": 0,
+     "last_cut_view": null,
+     "last_cut_src": null,
+     "base_gap_bp": null,
+     "base_stance": null,
+     "timeline": [
+      {
+       "date": "2026-10-05",
+       "stance": "hikes",
+       "src": "rbi_bob",
+       "note": "hold in October, 50-75bp cycle from December",
+       "cuts": [],
+       "hikes": [
+        "Dec"
+       ]
+      }
+     ],
+     "next": {
+      "call": "hike",
+      "status": "scored",
+      "as_of": "2026-10-05",
+      "src": "rbi_bob",
+      "note": "hold in October, 50-75bp cycle from December"
+     }
+    },
+    {
+     "house": "JM Financial",
+     "cells": {
+      "Jun": {
+       "call": null,
+       "status": "none",
+       "ok": null,
+       "as_of": null,
+       "src": null,
+       "note": "No call found before this meeting."
+      },
+      "Aug": {
+       "call": null,
+       "status": "none",
+       "ok": null,
+       "as_of": null,
+       "src": null,
+       "note": "No call found before this meeting."
+      },
+      "Oct": {
+       "call": null,
+       "status": "revised",
+       "ok": null,
+       "as_of": "2026-10-05",
+       "src": "rbi_jm",
+       "note": "said October versus December was finely balanced; hedged, not scored"
+      }
+     },
+     "right": 0,
+     "scored": 0,
+     "leads": {},
+     "max_cuts": 0,
+     "last_cut_view": null,
+     "last_cut_src": null,
+     "base_gap_bp": null,
+     "base_stance": null,
+     "timeline": [
+      {
+       "date": "2026-10-05",
+       "stance": "unknown",
+       "src": "rbi_jm",
+       "note": "said October versus December was finely balanced; hedged, not scored",
+       "cuts": [],
+       "hikes": []
+      }
+     ],
+     "next": {
+      "call": null,
+      "status": "revised",
+      "as_of": "2026-10-05",
+      "src": "rbi_jm",
+      "note": "said October versus December was finely balanced; hedged, not scored"
+     }
+    }
+   ],
+   "consensus": {
+    "Jun": {
+     "tally": {},
+     "majority": null,
+     "ok": null,
+     "n": 0,
+     "wrong": []
+    },
+    "Aug": {
+     "tally": {},
+     "majority": null,
+     "ok": null,
+     "n": 0,
+     "wrong": []
+    },
+    "Oct": {
+     "tally": {
+      "hike": 4,
+      "hold": 1
+     },
+     "majority": "hike",
+     "ok": true,
+     "n": 5,
+     "wrong": [
+      "Bank of Baroda"
+     ]
+    }
+   },
+   "next_tally": {
+    "hike": [
+     "SBI Research",
+     "Nomura",
+     "HSBC",
+     "Goldman Sachs",
+     "Bank of Baroda"
+    ]
+   },
+   "summary": {
+    "houses": 6,
+    "scored_calls": 5,
+    "right_calls": 4,
+    "houses_with_miss": [
+     "Bank of Baroda"
+    ],
+    "consensus_right": 1,
+    "consensus_scored": 1
+   }
+  }
+ }
+}

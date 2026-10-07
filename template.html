@@ -1,0 +1,311 @@
+<title>Rate Call Tracker</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: one research-desk column. Verdict first, then a tab per central bank, each read top-down:
+   next decision -> who moved first -> meeting grid -> evidence. Pitch and method sit below the tabs. */
+:root{
+  --bg:#f4f5f8; --surface:#ffffff; --ink:#131a26; --muted:#5a6473; --line:#dde1e8; --accent:#3a3f9c; --accent-soft:#ecedf8;
+  --cut:#2a78d6; --hike:#eb6834; --hold:#b7bdc8; --bar:#3a3f9c;
+  --good:#0a7a2a; --bad:#c22f2f; --good-soft:#e4f3e7; --bad-soft:#fbe6e4; --none-soft:#eef0f4;
+  --display:"IBM Plex Sans Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"IBM Plex Sans",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#11141a; --surface:#191d25; --ink:#eef1f5; --muted:#a2abb8; --line:#2b313c; --accent:#a4a9ff; --accent-soft:#23263f;
+  --cut:#3987e5; --hike:#d95926; --hold:#525a67; --bar:#8c92f0;
+  --good:#4fc46a; --bad:#f07a70; --good-soft:#17301d; --bad-soft:#3a1e1c; --none-soft:#20252e; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#11141a; --surface:#191d25; --ink:#eef1f5; --muted:#a2abb8; --line:#2b313c; --accent:#a4a9ff; --accent-soft:#23263f;
+  --cut:#3987e5; --hike:#d95926; --hold:#525a67; --bar:#8c92f0;
+  --good:#4fc46a; --bad:#f07a70; --good-soft:#17301d; --bad-soft:#3a1e1c; --none-soft:#20252e; color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:400 15px/1.55 var(--body);margin:0}
+.wrap{max-width:980px;margin:0 auto;padding-inline:20px;padding-block:28px 64px;display:flex;flex-direction:column;gap:28px}
+a{color:var(--accent);text-underline-offset:2px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+h1,h2,h3{font-family:var(--display);font-weight:600;margin:0;text-wrap:balance;letter-spacing:.005em}
+h1{font-size:34px;line-height:1.1}
+h2{font-size:22px;line-height:1.2}
+h3{font-size:17px}
+p{margin:0;max-width:68ch}
+.eyebrow{font:500 12px/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+header.top{display:flex;flex-direction:column;gap:10px}
+.verdict{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:18px 20px;display:flex;flex-direction:column;gap:8px}
+.verdict .big{font:600 24px/1.25 var(--display)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+.tabs button{font:600 15px var(--display);color:var(--muted);background:none;border:0;border-bottom:3px solid transparent;padding:10px 14px;cursor:pointer}
+.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
+.tabs button span{font:400 12px var(--mono);margin-left:6px}
+.panel{display:flex;flex-direction:column;gap:30px}
+section{display:flex;flex-direction:column;gap:12px}
+.next{background:var(--accent-soft);border-left:4px solid var(--accent);padding:16px 18px;display:flex;flex-direction:column;gap:8px}
+.next .do{font-weight:500}
+.split{display:flex;gap:10px;flex-wrap:wrap}
+.chip{font:500 13px var(--mono);background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:3px 8px}
+.leads{display:grid;grid-template-columns:minmax(110px,190px) 1fr;gap:8px 12px;align-items:center}
+.leads .name{min-width:0;font-weight:500}
+.leads .track{min-width:0;display:flex;align-items:center;gap:8px}
+.leads .bar{height:12px;background:var(--bar);border-radius:0 4px 4px 0;min-width:3px}
+.leads .val{font:500 13px var(--mono);white-space:nowrap}
+.leads .val a{font-weight:400}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+th{font:500 12px var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+td.c,th.c{text-align:center} tbody td:first-child{white-space:nowrap;font-weight:500}
+.cell{display:inline-block;min-width:54px;padding:2px 6px;border-radius:3px;font:500 12px var(--mono);white-space:nowrap;text-decoration:none;color:var(--ink)}
+.cell.ok{background:var(--good-soft)} .cell.ok b{color:var(--good)}
+.cell.no{background:var(--bad-soft)} .cell.no b{color:var(--bad)}
+.cell.na{background:var(--none-soft);color:var(--muted)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.legend i{display:inline-block;width:14px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.chart{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:12px}
+.chart svg{display:block;width:100%;height:auto}
+.chart text{font-family:var(--body);fill:var(--ink)}
+.chart .ax{fill:var(--muted);font-family:var(--mono);font-size:11px}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--bg);font-size:12px;line-height:1.4;padding:6px 8px;border-radius:4px;max-width:240px;z-index:2}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.two>div{min-width:0;display:flex;flex-direction:column;gap:8px}
+ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;max-width:68ch}
+details summary{cursor:pointer;font-weight:500}
+details[open] summary{margin-bottom:10px}
+.pitch{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:22px;gap:16px}
+footer{color:var(--muted);font-size:13px}
+@media (max-width:520px){ h1{font-size:28px} .verdict .big{font-size:20px} .wrap{padding-inline:16px} }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="eyebrow">Central bank forecast scorecard · data to <span id="asof"></span></div>
+    <h1>Rate Call Tracker</h1>
+    <p>Every bank and research house publishes a view before a rate decision. This page records who said what, when they said it, and what the Fed, the ECB and the RBI then did in 2026. Each entry links to the report it came from.</p>
+  </header>
+
+  <div class="verdict" id="verdict"></div>
+
+  <div>
+    <div class="tabs" role="tablist" id="tabs"></div>
+  </div>
+  <div class="panel" id="panel"></div>
+
+  <section class="pitch" id="sga">
+    <div class="eyebrow">What SG Analytics could do with this</div>
+    <h2>A track record line for every macro note that goes to a client</h2>
+    <p>SG Analytics writes macro updates, CIO newsletters and asset strategy reports for asset managers, wealth managers and sell-side teams in the US and Europe. Before a Fed or ECB decision those notes say what the consensus expects. They rarely say whose view has earned the most weight.</p>
+    <div class="two">
+      <div>
+        <h3>The work it removes</h3>
+        <ul>
+          <li>Collecting each house's preview before a meeting and logging the call by hand.</li>
+          <li>Going back after the decision to check who was right, which usually does not happen at all.</li>
+          <li>Rebuilding the same table for the next client who asks.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>What a client gets</h3>
+        <ul>
+          <li>One line in the pre-meeting note: the consensus, the dissenters, and each dissenter's record at the last turn.</li>
+          <li>An alert when a house with a good record breaks from the pack.</li>
+          <li>A quarterly scorecard a CIO can use to decide which sell-side research to keep paying for.</li>
+        </ul>
+      </div>
+    </div>
+    <p><b>Where it extends.</b> The scoring code does not care which bank it is scoring. The same file format covers the Bank of England and the Bank of Japan, and the same idea applies to earnings estimates, GDP and inflation prints, and price targets. The Fed and ECB tabs here use the houses SG Analytics' clients already read.</p>
+    <p><b>What already exists.</b> Bloomberg ranks economists by forecast accuracy on its terminal, and FocusEconomics, Consensus Economics and LSEG give annual accuracy awards. Those are paywalled or once a year, and they score the final number. None of them, as far as we know, publishes how many days ahead a house moved before a turn, which is the measure that separates houses on this page.</p>
+  </section>
+
+  <section id="method">
+    <div class="eyebrow">Method and limits</div>
+    <h2>How a call is scored</h2>
+    <ul id="methodlist"></ul>
+  </section>
+  <footer>Built from public reports of each house's forecast. Not investment advice. Scores are computed by <span class="num">score.py</span> from <span class="num">data.json</span>; nothing on this page is typed in by hand except the commentary.</footer>
+</div>
+
+<script>
+const DATA = /*DATA*/;
+const SCORES = /*SCORES*/;
+const NOTES = {
+ fed: {
+  story: "In February ten of fifteen houses forecast Fed cuts for 2026. None came. The Fed held five times and then raised rates on 16 September, its first hike in three years.",
+  next: s => `${s.hold} of ${s.total} houses expect no change. BofA Global Research is the only one forecasting a hike, and it was one of the two houses first to put a hike on September. Goldman Sachs had October too, then moved to December by 1 October. Futures priced about a 38% chance of an October hike on that date.`,
+  act: "For the pre-meeting note: lead with the hold, and give BofA's October case its own paragraph. The house that moved earliest last time is the outlier this time.",
+  nextSrc: ["fed_oct01","fed_sep17"]
+ },
+ ecb: {
+  story: "The ECB held at 2.00% in April, raised to 2.25% on 11 June, paused in July and raised again to 2.50% on 10 September. Coverage here is thinner: named calls from nine houses.",
+  next: s => `No house in this set has a hike in October. The open question is December. UBS and Morgan Stanley both forecast one more hike then, to 2.75%, while 91% of economists in the 31 Aug-3 Sep Reuters poll expected the rate to end the year at 2.50%. Rate futures were pricing a third move.`,
+  act: "For the pre-meeting note: October is not the story. Set out the December split, and note that Morgan Stanley's June and September calls from March both came good.",
+  nextSrc: ["ecb_sep11","fed_sep15","ecb_sep_poll"]
+ },
+ rbi: {
+  story: "The RBI held at 5.25% through August. An earlier Reuters survey had it on hold for the rest of 2026. On 7 October it raised the repo rate to 5.50% in a unanimous vote, its first hike since February 2023, and changed its stance to calibrated tightening.",
+  next: s => `All ${s.hike} houses with a view expect another 25bp in December. That includes Bank of Baroda, which missed October because it expected the cycle to start in December.`,
+  act: "For the pre-meeting note: December has no dissenters in this set, so the useful question is the size of the cycle. Bank of Baroda puts it at 50-75bp in total.",
+  nextSrc: ["rbi_bob","rbi_hsbc","rbi_sbi"]
+ }
+};
+const $ = (t, a={}, ...kids) => { const e=document.createElement(t); for(const k in a){ if(k==='class') e.className=a[k]; else if(k==='html') e.innerHTML=a[k]; else e.setAttribute(k,a[k]); } kids.flat().forEach(k=>e.append(k)); return e; };
+const fmt = d => d ? new Date(d+'T00:00:00Z').toLocaleDateString('en-GB',{day:'numeric',month:'short',timeZone:'UTC'}) : '';
+const src = id => DATA.sources[id];
+const link = (id, text) => { const s=src(id); return $('a',{href:s.url,target:'_blank',rel:'noopener',title:s.title}, text||('source, '+fmt(s.date))); };
+const word = {hold:'hold',hike:'hike',cut:'cut'};
+
+function verdict(){
+  let sc=0, rt=0; for(const k in SCORES.banks){ sc+=SCORES.banks[k].summary.scored_calls; rt+=SCORES.banks[k].summary.right_calls; }
+  const f=SCORES.banks.fed, leads=f.rows.filter(r=>r.leads.Sep).map(r=>r.leads.Sep.days);
+  const v=document.getElementById('verdict');
+  v.append($('div',{class:'eyebrow'},'The finding'),
+   $('div',{class:'big'},`On the day, almost everyone is right: ${rt} of ${sc} scored calls matched the decision. What separates houses is how early they moved.`),
+   $('p',{},`Before the Fed's September hike the earliest houses had it ${Math.max(...leads)} days ahead and the latest ${Math.min(...leads)} day ahead. A plain count of who was right would rank them the same.`));
+  document.getElementById('asof').textContent = fmt(DATA.as_of)+' 2026';
+}
+
+function leadBlock(bankKey, mId){
+  const b=DATA.banks[bankKey], s=SCORES.banks[bankKey], m=b.meetings.find(x=>x.id===mId);
+  const rows=s.rows.filter(r=>r.leads[mId]).sort((a,c)=>c.leads[mId].days-a.leads[mId].days);
+  const max=Math.max(...rows.map(r=>r.leads[mId].days));
+  const g=$('div',{class:'leads'});
+  rows.forEach(r=>{ const L=r.leads[mId];
+    g.append($('div',{class:'name'},r.house),
+     $('div',{class:'track'}, $('div',{class:'bar',style:`width:${Math.max(1,L.days/max*62)}%`}),
+       $('div',{class:'val'}, `${L.days}d `, link(L.src, 'since '+fmt(L.since))))); });
+  const rest=s.rows.filter(r=>!r.leads[mId]);
+  const sec=$('section',{}, $('h2',{},`Who had the ${fmt(m.decision)} ${m.outcome} first`),
+    $('p',{class:'muted'},`Days between the first report we found of a house forecasting a ${m.outcome} at this meeting and the decision. A longer bar is an earlier call.`), g);
+  if(rest.length){ const ul=$('ul',{class:'muted'});
+    rest.forEach(r=>{ const c=r.cells[mId]; const li=$('li',{}, $('b',{},r.house), ': ');
+      if(c.status==='scored') li.append(`forecast a ${c.call} (${fmt(c.as_of)}). `);
+      else if(c.status==='none') li.append('no call found before the meeting. ');
+      else li.append((c.note||'not scored')+' ');
+      if(c.src) li.append(link(c.src)); ul.append(li); });
+    sec.append($('details',{}, $('summary',{},`${rest.length} houses with no ${m.outcome} call found before this meeting`), ul)); }
+  return sec;
+}
+
+function grid(bankKey){
+  const b=DATA.banks[bankKey], s=SCORES.banks[bankKey];
+  const t=$('table'); const hr=$('tr',{}, $('th',{},'House'));
+  b.meetings.forEach(m=>hr.append($('th',{class:'c'}, `${fmt(m.decision)} `, $('br'), m.outcome+' '+m.rate)));
+  hr.append($('th',{class:'c'},'Right')); t.append($('thead',{},hr)); const tb=$('tbody');
+  s.rows.forEach(r=>{ const tr=$('tr',{}, $('td',{}, r.house));
+    b.meetings.forEach(m=>{ const c=r.cells[m.id]; let el;
+      const tip = c.status==='scored' ? `Forecast: ${c.call}, as of ${fmt(c.as_of)}` : (c.note||'No call found');
+      if(c.status==='scored'){ el=$(c.src?'a':'span',{class:'cell '+(c.ok?'ok':'no'),title:tip}, $('b',{},c.ok?'✓ ':'✗ '), c.call);
+        if(c.src){ el.href=src(c.src).url; el.target='_blank'; el.rel='noopener'; } }
+      else el=$('span',{class:'cell na',title:tip}, c.status==='none'?'no call':c.status==='stale'?'stale':'unscored');
+      tr.append($('td',{class:'c'},el)); });
+    tr.append($('td',{class:'c num'}, r.scored?`${r.right}/${r.scored}`:'–')); tb.append(tr); });
+  t.append(tb);
+  const cs=s.summary;
+  return $('section',{}, $('h2',{},'Meeting by meeting'),
+    $('p',{class:'muted'},`Each cell is the last view we found before the decision. ${cs.right_calls} of ${cs.scored_calls} scored calls were right. The majority view was right at ${cs.consensus_right} of ${cs.consensus_scored} meetings, so weighting houses by track record would not have changed the meeting-eve answer once.`),
+    $('div',{class:'scroll'},t),
+    $('div',{class:'legend'}, $('span',{html:'<span class="cell ok"><b>✓</b></span> matched the decision'}), $('span',{html:'<span class="cell no"><b>✗</b></span> did not'}), $('span',{html:`<span class="cell na">unscored</span> revised, timing not given, or older than ${SCORES.stale_days} days`})));
+}
+
+function fedChart(){
+  const s=SCORES.banks.fed, b=DATA.banks.fed;
+  const rows=[...s.rows].sort((a,c)=>(a.base_gap_bp??-1)-(c.base_gap_bp??-1));
+  const box=$('div',{class:'chart'}); const tip=$('div',{class:'tip',hidden:''}); box.append(tip);
+  const t0=Date.UTC(2026,0,1), t1=new Date(DATA.as_of+'T00:00:00Z').getTime();
+  const col={cuts:'var(--cut)',hold:'var(--hold)',hikes:'var(--hike)'};
+  const label={cuts:'forecasting cuts',hold:'forecasting no change',hikes:'forecasting hikes',unknown:'revised, new call not found'};
+  function draw(){
+    box.querySelectorAll('svg').forEach(x=>x.remove());
+    const W=Math.max(300, box.clientWidth-24), small=W<560, L=small?112:178, R=10, rh=22, top=30, H=top+rows.length*rh+8;
+    const x=t=>L+(t-t0)/(t1-t0)*(W-L-R);
+    const ns='http://www.w3.org/2000/svg', el=(n,a,txt)=>{const e=document.createElementNS(ns,n); for(const k in a) e.setAttribute(k,a[k]); if(txt!=null) e.textContent=txt; return e;};
+    const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':'Each house\'s published Fed stance through 2026'});
+    const defs=el('defs',{}); const p=el('pattern',{id:'hatch',width:6,height:6,patternUnits:'userSpaceOnUse',patternTransform:'rotate(45)'});
+    p.append(el('rect',{width:6,height:6,fill:'var(--none-soft)'}), el('rect',{width:2,height:6,fill:'var(--hold)'})); defs.append(p); svg.append(defs);
+    ['Jan','Mar','May','Jul','Sep'].forEach((mn,i)=>{ const t=Date.UTC(2026,i*2,1); svg.append(el('line',{x1:x(t),x2:x(t),y1:top-4,y2:H-6,stroke:'var(--line)','stroke-width':1}), el('text',{x:x(t)+3,y:12,class:'ax'},mn)); });
+    rows.forEach((r,i)=>{ const y=top+i*rh;
+      svg.append(el('text',{x:0,y:y+13,'font-size':small?11:13}, small?r.house.replace('Global ','').replace('Research','Res.').replace('Wealth Mgmt','WM').replace('Standard Chartered','StanChart'):r.house));
+      r.timeline.forEach((seg,j)=>{ const a=new Date(seg.date+'T00:00:00Z').getTime(), z=j+1<r.timeline.length?new Date(r.timeline[j+1].date+'T00:00:00Z').getTime():t1;
+        if(z<=a) return; const w=Math.max(2,x(z)-x(a)-2);
+        const rect=el('rect',{x:x(a),y:y+3,width:w,height:14,rx:2,fill:seg.stance==='unknown'?'url(#hatch)':col[seg.stance],tabindex:0});
+        const detail=seg.stance==='cuts'?` (${seg.cuts.length} in 2026: ${seg.cuts.join(', ')})`:seg.stance==='hikes'&&seg.hikes[0]!=='?'?` (${seg.hikes.join(', ')})`:'';
+        const show=ev=>{ tip.hidden=false; tip.textContent=`${r.house}, from ${fmt(seg.date)}: ${label[seg.stance]}${detail}. ${seg.note||''}`;
+          const bb=box.getBoundingClientRect(), rb=rect.getBoundingClientRect(); tip.style.left=Math.min(Math.max(4,rb.left-bb.left),bb.width-250)+'px'; tip.style.top=(rb.bottom-bb.top+6)+'px'; };
+        rect.addEventListener('mouseenter',show); rect.addEventListener('focus',show);
+        rect.addEventListener('mouseleave',()=>tip.hidden=true); rect.addEventListener('blur',()=>tip.hidden=true);
+        svg.append(rect); }); });
+    const hx=x(new Date('2026-09-16T00:00:00Z').getTime());
+    svg.append(el('line',{x1:hx,x2:hx,y1:top-6,y2:H-4,stroke:'var(--ink)','stroke-width':1.5,'stroke-dasharray':'3 3'}), el('text',{x:hx-4,y:24,'text-anchor':'end','font-size':11,'font-weight':600},'Fed hikes, 16 Sep'));
+    box.append(svg);
+  }
+  requestAnimationFrame(draw); window.addEventListener('resize',draw);
+  const bs=s.summary.base;
+  return $('section',{}, $('h2',{},'When each house changed its mind'),
+    $('p',{class:'muted'},`Each bar is a house's published view for 2026, from the date we first found it. On 12 February, ${bs.cuts} of ${bs.n} houses forecast cuts, ${bs.hold} forecast no change and ${bs.hikes} forecast a hike. Houses are ordered by how far today's rate sits above their February year-end forecast.`),
+    box,
+    $('div',{class:'legend'}, $('span',{html:'<i style="background:var(--cut)"></i>Forecasting cuts'}), $('span',{html:'<i style="background:var(--hold)"></i>Forecasting no change'}), $('span',{html:'<i style="background:var(--hike)"></i>Forecasting hikes'}), $('span',{html:'<i style="background:repeating-linear-gradient(45deg,var(--hold) 0 2px,var(--none-soft) 2px 6px)"></i>Revised, new call not found'})));
+}
+
+function fedBase(){
+  const s=SCORES.banks.fed; const rows=[...s.rows].sort((a,c)=>(c.base_gap_bp??-1)-(a.base_gap_bp??-1));
+  const t=$('table'); t.append($('thead',{}, $('tr',{}, $('th',{},'House'), $('th',{},'12 Feb view'), $('th',{class:'c'},'Rate now vs Feb forecast'), $('th',{},'Last seen forecasting a 2026 cut'))));
+  const tb=$('tbody'); rows.forEach(r=>{ const b=r.timeline.filter(x=>x.date<='2026-02-12').pop();
+    const view=!b?'':b.stance==='cuts'?`${b.cuts.length} cut${b.cuts.length>1?'s':''} (${b.cuts.join(', ')})`:b.stance==='hikes'?'hike in Q4':'no change';
+    tb.append($('tr',{}, $('td',{},r.house), $('td',{},view), $('td',{class:'c num'}, r.base_gap_bp==null?'direction right':'+'+r.base_gap_bp+'bp'),
+      $('td',{}, r.last_cut_view? link(r.last_cut_src, fmt(r.last_cut_view)) : 'never'))); });
+  t.append(tb);
+  return $('section',{}, $('h2',{},'February forecasts against today'),
+    $('p',{class:'muted'},`The Fed funds range is ${DATA.banks.fed.rate_now}. The median house in February expected it to end 2026 ${s.summary.base.median_gap_bp}bp lower. Macquarie was the only house forecasting a hike, and J.P. Morgan, HSBC, BNP Paribas and Standard Chartered never forecast a cut.`),
+    $('div',{class:'scroll'},t));
+}
+
+function polls(bankKey){
+  const b=DATA.banks[bankKey]; if(!b.polls) return null; const ul=$('ul');
+  b.polls.forEach(p=>{ const m=b.meetings.find(x=>x.id===p.meeting);
+    ul.append($('li',{}, `${fmt(m.decision)} (${m.outcome}): ${p.label}, ${p.right} of ${p.total} expected a ${p.call} (${Math.round(p.right/p.total*100)}%). `, link(p.src))); });
+  if(b.sep_path){ ul.append($('li',{}, 'Share of economists expecting the September hike, poll by poll: '+b.sep_path.map(x=>`${x.pct}% (${x.label})`).join(', ')+'. ', link('ecb_aug_poll'), ' ', link('ecb_sep_poll'))); }
+  return $('section',{}, $('h2',{},'What the polls said'), $('p',{class:'muted'},'Polls give a count, not names, so they are shown for context and are not part of any house\'s score.'), ul);
+}
+
+function evidence(bankKey){
+  const s=SCORES.banks[bankKey]; const all=[]; s.rows.forEach(r=>r.timeline.forEach(x=>all.push({h:r.house,...x}))); all.sort((a,c)=>a.date<c.date?-1:a.date>c.date?1:0);
+  const t=$('table'); t.append($('thead',{}, $('tr',{}, $('th',{},'Reported'), $('th',{},'House'), $('th',{},'View'), $('th',{},'Source'))));
+  const tb=$('tbody'); all.forEach(x=>{ let v=x.stance==='cuts'?'Cuts: '+x.cuts.join(', '):x.stance==='hikes'?'Hikes: '+x.hikes.join(', ').replace('?','month not given'):x.stance==='hold'?'No change':'Revised'; if(x.note) v+='. '+x.note;
+    const sc=src(x.src); tb.append($('tr',{}, $('td',{class:'num'},fmt(x.date)+(sc.approx?' (approx.)':'')), $('td',{},x.h), $('td',{},v), $('td',{}, link(x.src, sc.title)))); });
+  t.append(tb);
+  return $('section',{}, $('details',{}, $('summary',{},`Evidence: all ${all.length} dated views behind this tab`), $('div',{class:'scroll'},t)));
+}
+
+function render(key){
+  const b=DATA.banks[key], s=SCORES.banks[key], n=NOTES[key], P=document.getElementById('panel'); P.replaceChildren();
+  const nt=s.next_tally, st={hold:(nt.hold||[]).length, hike:(nt.hike||[]).length, cut:(nt.cut||[]).length}; st.total=st.hold+st.hike+st.cut;
+  const chips=$('div',{class:'split'}); ['hold','hike','cut'].forEach(k=>{ if(st[k]) chips.append($('span',{class:'chip'},`${st[k]} ${k}`)); });
+  const srcs=$('span',{class:'muted'},'Sources: '); n.nextSrc.forEach((id,i)=>{ if(i) srcs.append(', '); srcs.append(link(id, fmt(src(id).date))); });
+  P.append($('p',{}, n.story),
+    $('div',{class:'next'}, $('div',{class:'eyebrow'},`Next decision · ${b.next.label} · ${b.rate_label} now ${b.rate_now}`), chips, $('p',{}, n.next(st)), $('p',{class:'do'}, n.act), srcs));
+  b.meetings.filter(m=>m.outcome!=='hold').forEach(m=>P.append(leadBlock(key,m.id)));
+  if(key==='fed'){ P.append(fedChart(), fedBase()); }
+  P.append(grid(key)); const pl=polls(key); if(pl) P.append(pl); P.append(evidence(key));
+  document.querySelectorAll('#tabs button').forEach(x=>x.setAttribute('aria-selected', x.dataset.k===key));
+}
+function tabs(){
+  const T=document.getElementById('tabs');
+  for(const k in DATA.banks){ const b=DATA.banks[k], s=SCORES.banks[k].summary;
+    const bt=$('button',{role:'tab','data-k':k,id:'tab-'+k}, b.name, $('span',{},`${s.houses} houses`));
+    bt.addEventListener('click',()=>{ render(k); try{ history.replaceState(null,'','#'+k); }catch(e){} }); T.append(bt); }
+}
+function method(){
+  const items=[
+   'A call is the last published view we found before the decision date. Dates are when the view was reported, which can be a day or two after the house wrote it.',
+   `A view older than ${SCORES.stale_days} days at the decision is marked stale and not scored. A house may have changed its mind without a report we could find.`,
+   'If a report says a house revised its forecast but does not say to what, that house is not scored until its next dated view.',
+   'Lead time counts back from the decision to the first report of the house forecasting that move at that meeting, with no later report reversing it. Morgan Stanley\'s 174 days on the ECB\'s September hike rests on one March report.',
+   'Coverage is uneven. The Fed tab draws on Reuters broker tables covering fifteen houses. The ECB and RBI tabs rest on individual reports, so a missing house means we found no dated call, not that it made none.',
+   'Two Fed tables (30 March and 27 May) were read from search listings because the hosting page would not open for us. Their links are included and should be checked before this is sent outside.',
+   'One year holds one turn per bank. That is too few to prove that weighting by track record beats the consensus. Testing that needs the same data for 2022 to 2025.'];
+  const ul=document.getElementById('methodlist'); items.forEach(i=>ul.append($('li',{},i)));
+}
+verdict(); tabs(); method();
+const start=(location.hash||'').slice(1); render(DATA.banks[start]?start:'fed');
+</script>

@@ -1,0 +1,1297 @@
+{
+ "as_of": "2026-10-07",
+ "stale_days": 90,
+ "sources": {
+  "fed_jan14": {
+   "date": "2026-01-14",
+   "title": "Wall Street brokerages pencil in mid-2026 Fed rate cuts (Reuters, via BNN Bloomberg)",
+   "url": "https://www.bnnbloomberg.ca/business/2026/01/14/wall-street-brokerages-pencil-in-mid2026-fed-rate-cuts/"
+  },
+  "fed_feb06": {
+   "date": "2026-02-06",
+   "title": "Wall Street brokerages pencil in mid-2026 Fed rate cuts (Reuters, via CP24)",
+   "url": "https://www.cp24.com/news/2026/02/06/wall-street-brokerages-pencil-in-mid2026-fed-rate-cuts"
+  },
+  "fed_feb12": {
+   "date": "2026-02-12",
+   "title": "Factbox: Wall Street brokerages pencil Fed rate cuts in mid-2026 (Reuters, via WHBL)",
+   "url": "https://whbl.com/?p=925050"
+  },
+  "fed_mar30": {
+   "date": "2026-03-30",
+   "title": "Factbox: Wall Street brokerages stick to two Fed rate cuts in 2026 (Reuters, via Sahm Capital)",
+   "url": "https://www.sahmcapital.com/news/content/factbox-wall-street-brokerages-stick-to-two-fed-rate-cuts-in-2026-2026-03-30",
+   "weak": true
+  },
+  "fed_apr30": {
+   "date": "2026-04-30",
+   "title": "Rate-cut hopes ebb as global brokerages brace for longer Fed restraint (Reuters, via Kitco)",
+   "url": "https://www.kitco.com/news/off-the-wire/2026-04-30/rate-cut-hopes-ebb-global-brokerages-brace-longer-fed-restraint"
+  },
+  "fed_may04": {
+   "date": "2026-05-04",
+   "title": "Barclays becomes latest brokerage to bet on no Fed rate cuts in 2026 (Reuters, via SRN News)",
+   "url": "https://srnnews.com/barclays-becomes-latest-brokerage-to-bet-on-no-fed-rate-cuts-in-2026/"
+  },
+  "fed_may21": {
+   "date": "2026-05-21",
+   "title": "Nomura forecasts no Fed rate cuts in 2026 as inflation rises (Reuters, via WEVE)",
+   "url": "https://979weve.com/?p=842658"
+  },
+  "fed_may27": {
+   "date": "2026-05-27",
+   "title": "Factbox: Most brokerages see no Fed policy easing this year (Reuters, via Sahm Capital)",
+   "url": "https://www.sahmcapital.com/news/content/factbox-most-brokerages-see-no-fed-policy-easing-this-year-2026-05-27",
+   "weak": true
+  },
+  "fed_jun16": {
+   "date": "2026-06-16",
+   "title": "UBS expects no Fed easing this year; sees hawkish tone in June meeting (Reuters, via Kitco)",
+   "url": "https://www.kitco.com/news/off-the-wire/2026-06-16/ubs-expects-no-fed-easing-year-sees-hawkish-tone-june-meeting"
+  },
+  "fed_jun22": {
+   "date": "2026-06-22",
+   "title": "BofA forecasts 75 bps of rate hikes in 2026 on labour market resilience, new Fed chair (Reuters, via Kitco)",
+   "url": "https://www.kitco.com/news/off-the-wire/2026-06-22/bofa-forecasts-75-bps-rate-hikes-2026-labour-market-resilience-new-fed"
+  },
+  "fed_jun22_db": {
+   "date": "2026-06-22",
+   "title": "BofA and Deutsche Bank predict interest rate rise in September (IDN Financials)",
+   "url": "https://www.idnfinancials.com/news/65109/bofa-and-deutsche-bank-predict-interest-rate-rise-in-september"
+  },
+  "fed_sep07": {
+   "date": "2026-09-07",
+   "title": "UBS forecasts two US Fed rate hikes in 2026 after strong jobs report (Reuters, via Kitco)",
+   "url": "https://www.kitco.com/news/off-the-wire/2026-09-08/ubs-forecasts-two-us-fed-rate-hikes-2026-after-strong-jobs-report"
+  },
+  "fed_sep14": {
+   "date": "2026-09-14",
+   "title": "Global banks coalesce around Fed hike call after inflation surprises (Reuters, via Kitco)",
+   "url": "https://www.kitco.com/news/off-the-wire/2026-09-14/global-banks-coalesce-around-fed-hike-call-after-inflation-surprises"
+  },
+  "fed_sep15": {
+   "date": "2026-09-15",
+   "title": "Morgan Stanley turns more hawkish, forecasts two Fed hikes and ECB move (Reuters, via Kitco)",
+   "url": "https://www.kitco.com/news/off-the-wire/2026-09-15/morgan-stanley-turns-more-hawkish-forecasts-two-fed-hikes-and-ecb-move"
+  },
+  "fed_sep17": {
+   "date": "2026-09-17",
+   "title": "Major brokerages see one more Fed rate hike in 2026 after policy meeting (Reuters, via BNN Bloomberg)",
+   "url": "https://www.bnnbloomberg.ca/business/economics/2026/09/17/major-brokerages-see-one-more-fed-rate-hike-in-2026-after-policy-meeting/"
+  },
+  "fed_oct01": {
+   "date": "2026-10-01",
+   "title": "Major brokerages expect next Fed rate hike in December (Reuters, via Capital.com)",
+   "url": "https://capital.com/en-ae/news/major-brokerages-expect-next-fed-rate-hike-in-december"
+  },
+  "ecb_mar20": {
+   "date": "2026-03-20",
+   "title": "ECB rate hike expected in 2026 (Finance News Network)",
+   "url": "https://www.finnewsnetwork.com.au/archives/finance_news_network4282842.html"
+  },
+  "ecb_mar23": {
+   "date": "2026-03-23",
+   "title": "Goldman Sachs expects ECB rate hikes in April and June as inflation concerns mount (Reuters, via Kitco)",
+   "url": "https://www.kitco.com/news/off-the-wire/2026-03-23/goldman-sachs-expects-ecb-rate-hikes-april-and-june-inflation-concerns"
+  },
+  "ecb_gs_rev": {
+   "date": null,
+   "title": "Goldman Sachs expects the ECB to deliver 25bp rate hikes in June and September 2026, prev. April and June (Newsquawk, date not shown)",
+   "url": "https://www.newsquawk.com/headlines/goldman-sachs-expects-the-ecb-to-deliver-25bp-rate-hikes-in-june-and-september-2026-prev-saw-hikes-in-april-and-june"
+  },
+  "ecb_may01": {
+   "date": "2026-05-01",
+   "title": "Standard Chartered pivots to June ECB hike from no hike in 2026 outlook (Reuters, via Zawya)",
+   "url": "https://www.zawya.com/en/world/uk-and-europe/standard-chartered-pivots-to-june-ecb-hike-from-no-hike-in-2026-outlook-gb0z1mex"
+  },
+  "ecb_jun": {
+   "date": "2026-06-11",
+   "title": "Euro Area: The ECB hikes for the first time in nearly three years in June (FocusEconomics)",
+   "url": "https://www.focus-economics.com/countries/euro-area/news/monetary-policy/euro-area-central-bank-meeting-11-06-2026-the-ecb-hikes-for-the-first-time-in-nearly-three-years-in-june/"
+  },
+  "ecb_jul_poll": {
+   "date": "2026-07-16",
+   "title": "ECB to hold deposit rate on July 23 but could raise in September (Mezha, reporting a 13-16 July poll of 74 economists)",
+   "url": "https://mezha.net/eng/?p=3031999"
+  },
+  "ecb_jul_prev": {
+   "date": "2026-07-20",
+   "title": "ECB previews from Deutsche Bank, TD Securities and ING, week of the 23 July meeting (investingLive ECB tag page)",
+   "url": "https://investinglive.com/Tag/ecb/",
+   "approx": true
+  },
+  "ecb_aug_poll": {
+   "date": "2026-08-14",
+   "title": "ECB poised to deliver another rate hike in September, poll (investingLive, August Reuters poll)",
+   "url": "https://investinglive.com/central-banks/ecb-poised-to-deliver-another-rate-hike-in-september-poll/",
+   "approx": true
+  },
+  "ecb_sep_poll": {
+   "date": "2026-09-03",
+   "title": "ECB to raise rates a second time in Sept, but then done (Reuters poll 31 Aug to 3 Sep, via Kuwait Times)",
+   "url": "https://kuwaittimes.com/article/49142/business/ecb-to-raise-rates-a-second-time-in-sept-but-then-done/"
+  },
+  "ecb_sep11": {
+   "date": "2026-09-11",
+   "title": "UBS expects the ECB to deliver a final 25bps hike in December 2026, before then pausing (Newsquawk)",
+   "url": "https://www.newsquawk.com/headlines/ubs-expects-the-ecb-to-deliver-a-final-25bps-hike-in-december-2026-before-then-pausing"
+  },
+  "rbi_jun": {
+   "date": "2026-06-04",
+   "title": "RBI Governor to announce interest rate decision on Friday (PTI poll, via ETV Bharat)",
+   "url": "https://www.etvbharat.com/amp/en/business/rbi-governor-to-announce-interest-rate-decision-on-friday-enn26060404978"
+  },
+  "rbi_aug": {
+   "date": "2026-08-05",
+   "title": "RBI MPC August 2026 meeting highlights: repo rate held, forecasts revised (GoldenPi)",
+   "url": "https://goldenpi.com/blog/bond-news/rbi-mpc-august-2026-meeting-highlights-repo-rate-held-forecasts-revised/"
+  },
+  "rbi_sbi": {
+   "date": "2026-09-11",
+   "title": "RBI may hike rates in October (SBI Research report dated 11 September, via Indian Pay Calculator)",
+   "url": "https://www.indianpaycalculator.in/govt-news/rbi-october-2026-rate-hike-sbi-research-fd-emi"
+  },
+  "rbi_nomura": {
+   "date": "2026-09-22",
+   "title": "RBI could implement 2 rate hikes in 2026 amid sticky inflation: report (Telangana Today)",
+   "url": "https://telanganatoday.com/rbi-could-implement-2-rate-hikes-in-2026-amid-sticky-inflation-report"
+  },
+  "rbi_hsbc": {
+   "date": "2026-09-27",
+   "title": "Odds of rate hike at RBI's October MPC meet on the rise: economists (DT Next)",
+   "url": "https://www.dtnext.in/news/business/odds-of-rate-hike-at-rbis-october-mpc-meet-on-the-rise-economists"
+  },
+  "rbi_polls": {
+   "date": "2026-10-02",
+   "title": "RBI policy decision on 7 October: what economists expect (BlinkMoney, citing Reuters and Business Standard polls)",
+   "url": "https://blinkmoney.in/news/rbi-policy-decision-on-7-october-what-economists-expect-and-what-it-means-for-borrowers"
+  },
+  "rbi_timing": {
+   "date": "2026-10-01",
+   "title": "RBI rate hike 2026: timing debate ahead of MPC meeting (Multibagg)",
+   "url": "https://www.multibagg.ai/market-pulse/articles/rbi-rate-hike-2026-timing-cmunu3mjq00082spc0bwbgyv2",
+   "approx": true
+  },
+  "rbi_bob": {
+   "date": "2026-10-05",
+   "title": "RBI likely to hold repo rate in Oct policy, begin 50-75 bps hike cycle in Dec: BoB (The Tribune)",
+   "url": "https://www.tribuneindia.com/news/bank-of-baroda/rbi-likely-to-hold-repo-rate-in-oct-policy-begin-50-75-bps-hike-cycle-in-dec-bob"
+  },
+  "rbi_bs": {
+   "date": "2026-10-05",
+   "title": "RBI's panel starts monetary policy deliberations, 0.25 bps rate hike likely (Business Standard)",
+   "url": "https://www.business-standard.com/amp/economy/news/rbi-s-panel-starts-monetary-policy-deliberations-0-25-bps-rate-hike-likely-126100500635_1.html"
+  },
+  "rbi_jm": {
+   "date": "2026-10-05",
+   "title": "RBI MPC October 2026: rate hike dilemma deepens (Business Today)",
+   "url": "https://businesstoday.in/markets/stocks/story/rbi-mpc-october-2026-rate-hike-dilemma-deepens-as-crude-rupee-pressures-mount-experts-weigh-in-559578-2026-10-05"
+  },
+  "rbi_oct": {
+   "date": "2026-10-07",
+   "title": "RBI MPC October meeting 2026 live updates: repo rate hiked by 25 bps to 5.50% (Upstox)",
+   "url": "https://upstox.com/news/market-news/economy/rbi-mpc-meeting-october-7-2026-live-updates-governor-sanjay-malhotra-speech-repo-rate-hike-key-highlights/liveblog-201398/"
+  }
+ },
+ "banks": {
+  "fed": {
+   "name": "US Federal Reserve",
+   "short": "Fed",
+   "rate_label": "Fed funds target range",
+   "rate_now": "3.75%-4.00%",
+   "rate_now_mid": 3.875,
+   "meetings": [
+    {
+     "id": "Jan",
+     "decision": "2026-01-28",
+     "outcome": "hold",
+     "rate": "3.50%-3.75%",
+     "src": "fed_feb06"
+    },
+    {
+     "id": "Mar",
+     "decision": "2026-03-18",
+     "outcome": "hold",
+     "rate": "3.50%-3.75%",
+     "src": "fed_mar30"
+    },
+    {
+     "id": "Apr",
+     "decision": "2026-04-29",
+     "outcome": "hold",
+     "rate": "3.50%-3.75%",
+     "src": "fed_apr30"
+    },
+    {
+     "id": "Jun",
+     "decision": "2026-06-17",
+     "outcome": "hold",
+     "rate": "3.50%-3.75%",
+     "src": "fed_jun22"
+    },
+    {
+     "id": "Jul",
+     "decision": "2026-07-29",
+     "outcome": "hold",
+     "rate": "3.50%-3.75%",
+     "src": "fed_sep17"
+    },
+    {
+     "id": "Sep",
+     "decision": "2026-09-16",
+     "outcome": "hike",
+     "rate": "3.75%-4.00%",
+     "src": "fed_sep17"
+    }
+   ],
+   "turn": "Sep",
+   "next": {
+    "id": "Oct",
+    "decision": "2026-10-28",
+    "label": "27-28 October 2026"
+   },
+   "snapshots": [
+    {
+     "src": "fed_jan14",
+     "houses": {
+      "Citigroup": {
+       "cuts": [
+        "Mar",
+        "Jul",
+        "Sep"
+       ],
+       "ye": 2.875
+      },
+      "Goldman Sachs": {
+       "cuts": [
+        "Jun",
+        "Sep"
+       ],
+       "ye": 3.125
+      },
+      "Morgan Stanley": {
+       "cuts": [
+        "Jun",
+        "Sep"
+       ],
+       "ye": 3.125
+      },
+      "BofA Global Research": {
+       "cuts": [
+        "Jun",
+        "Jul"
+       ],
+       "ye": 3.125
+      },
+      "Wells Fargo": {
+       "cuts": [
+        "Mar",
+        "Jun"
+       ],
+       "ye": 3.125
+      },
+      "Nomura": {
+       "cuts": [
+        "Jun",
+        "Sep"
+       ],
+       "ye": 3.125
+      },
+      "Barclays": {
+       "cuts": [
+        "Jun",
+        "Dec"
+       ],
+       "ye": 3.125
+      },
+      "UBS Global Research": {
+       "cuts": [
+        "Jul",
+        "Oct"
+       ],
+       "ye": 3.125
+      },
+      "UBS Global Wealth Mgmt": {
+       "cuts": [
+        "Q1"
+       ],
+       "ye": null
+      },
+      "Deutsche Bank": {
+       "cuts": [
+        "Sep"
+       ],
+       "ye": 3.375
+      },
+      "HSBC": {
+       "ye": 3.625
+      },
+      "J.P. Morgan": {
+       "ye": 3.625
+      },
+      "Standard Chartered": {
+       "ye": 3.625
+      },
+      "Macquarie": {
+       "hikes": [
+        "Oct",
+        "Dec"
+       ],
+       "ye": null,
+       "note": "hike in Q4"
+      }
+     }
+    },
+    {
+     "src": "fed_feb06",
+     "houses": {
+      "Citigroup": {
+       "cuts": [
+        "Mar",
+        "Jul",
+        "Sep"
+       ],
+       "ye": 2.875
+      },
+      "Goldman Sachs": {
+       "cuts": [
+        "Jun",
+        "Sep"
+       ],
+       "ye": 3.125
+      },
+      "Morgan Stanley": {
+       "cuts": [
+        "Jun",
+        "Sep"
+       ],
+       "ye": 3.125
+      },
+      "BofA Global Research": {
+       "cuts": [
+        "Jun",
+        "Jul"
+       ],
+       "ye": 3.125
+      },
+      "Wells Fargo": {
+       "cuts": [
+        "Mar",
+        "Jun"
+       ],
+       "ye": 3.125
+      },
+      "Nomura": {
+       "cuts": [
+        "Jun",
+        "Sep"
+       ],
+       "ye": 3.125
+      },
+      "Barclays": {
+       "cuts": [
+        "Jun",
+        "Dec"
+       ],
+       "ye": 3.125
+      },
+      "UBS Global Research": {
+       "cuts": [
+        "Jul",
+        "Oct"
+       ],
+       "ye": 3.125
+      },
+      "UBS Global Wealth Mgmt": {
+       "cuts": [
+        "Q1"
+       ],
+       "ye": null
+      },
+      "Deutsche Bank": {
+       "cuts": [
+        "Sep"
+       ],
+       "ye": 3.375
+      },
+      "BNP Paribas": {
+       "ye": 3.625
+      },
+      "HSBC": {
+       "ye": 3.625
+      },
+      "J.P. Morgan": {
+       "ye": 3.625
+      },
+      "Standard Chartered": {
+       "ye": 3.625
+      },
+      "Macquarie": {
+       "hikes": [
+        "Oct",
+        "Dec"
+       ],
+       "ye": null,
+       "note": "hike in Q4"
+      }
+     }
+    },
+    {
+     "src": "fed_feb12",
+     "baseline": true,
+     "houses": {
+      "Citigroup": {
+       "cuts": [
+        "Apr",
+        "Jul",
+        "Sep"
+       ],
+       "ye": 2.875
+      },
+      "Goldman Sachs": {
+       "cuts": [
+        "Jun",
+        "Sep"
+       ],
+       "ye": 3.125
+      },
+      "Morgan Stanley": {
+       "cuts": [
+        "Jun",
+        "Sep"
+       ],
+       "ye": 3.125
+      },
+      "BofA Global Research": {
+       "cuts": [
+        "Jun",
+        "Jul"
+       ],
+       "ye": 3.125
+      },
+      "Wells Fargo": {
+       "cuts": [
+        "Mar",
+        "Jun"
+       ],
+       "ye": 3.125
+      },
+      "Nomura": {
+       "cuts": [
+        "Jun",
+        "Sep"
+       ],
+       "ye": 3.125
+      },
+      "Barclays": {
+       "cuts": [
+        "Jun",
+        "Dec"
+       ],
+       "ye": 3.125
+      },
+      "UBS Global Research": {
+       "cuts": [
+        "Jul",
+        "Oct"
+       ],
+       "ye": 3.125
+      },
+      "UBS Global Wealth Mgmt": {
+       "cuts": [
+        "Jun",
+        "Sep"
+       ],
+       "ye": 3.125
+      },
+      "Deutsche Bank": {
+       "cuts": [
+        "Sep"
+       ],
+       "ye": 3.375
+      },
+      "BNP Paribas": {
+       "ye": 3.625
+      },
+      "HSBC": {
+       "ye": 3.625
+      },
+      "J.P. Morgan": {
+       "ye": 3.625
+      },
+      "Standard Chartered": {
+       "ye": 3.625
+      },
+      "Macquarie": {
+       "hikes": [
+        "Oct",
+        "Dec"
+       ],
+       "ye": null,
+       "note": "hike in Q4"
+      }
+     }
+    },
+    {
+     "src": "fed_mar30",
+     "houses": {
+      "Citigroup": {
+       "cuts": [
+        "Jun",
+        "Jul",
+        "Sep"
+       ],
+       "ye": 2.875
+      },
+      "Goldman Sachs": {
+       "cuts": [
+        "Sep",
+        "Dec"
+       ],
+       "ye": 3.125
+      },
+      "Morgan Stanley": {
+       "cuts": [
+        "Sep",
+        "Dec"
+       ],
+       "ye": 3.125
+      },
+      "BofA Global Research": {
+       "cuts": [
+        "Jun",
+        "Jul"
+       ],
+       "ye": 3.125
+      },
+      "Wells Fargo": {
+       "cuts": [
+        "Jun",
+        "Sep"
+       ],
+       "ye": 3.125
+      },
+      "Nomura": {
+       "cuts": [
+        "Sep",
+        "Dec"
+       ],
+       "ye": 3.125
+      }
+     }
+    },
+    {
+     "src": "fed_apr30",
+     "houses": {
+      "Morgan Stanley": {
+       "ye": 3.625
+      },
+      "Barclays": {
+       "cuts": [
+        "Sep"
+       ],
+       "ye": 3.375
+      },
+      "J.P. Morgan": {
+       "ye": 3.625
+      },
+      "HSBC": {
+       "ye": 3.625
+      }
+     }
+    },
+    {
+     "src": "fed_may04",
+     "houses": {
+      "Barclays": {
+       "ye": 3.625
+      }
+     }
+    },
+    {
+     "src": "fed_may21",
+     "houses": {
+      "Nomura": {
+       "ye": 3.625
+      }
+     }
+    },
+    {
+     "src": "fed_may27",
+     "houses": {
+      "Citigroup": {
+       "cuts": [
+        "Sep",
+        "Oct",
+        "Dec"
+       ],
+       "ye": 2.875
+      },
+      "Wells Fargo": {
+       "cuts": [
+        "Jun",
+        "Sep"
+       ],
+       "ye": 3.125
+      },
+      "UBS Global Wealth Mgmt": {
+       "cuts": [
+        "Dec"
+       ],
+       "ye": 3.375
+      },
+      "Goldman Sachs": {
+       "cuts": [
+        "Dec"
+       ],
+       "ye": 3.375
+      },
+      "UBS Global Research": {
+       "cuts": [
+        "Dec"
+       ],
+       "ye": 3.375
+      },
+      "Nomura": {
+       "ye": 3.625
+      },
+      "BofA Global Research": {
+       "ye": 3.625
+      },
+      "Barclays": {
+       "ye": 3.625
+      },
+      "Morgan Stanley": {
+       "ye": 3.625
+      },
+      "Deutsche Bank": {
+       "ye": 3.625
+      },
+      "BNP Paribas": {
+       "ye": 3.625
+      },
+      "HSBC": {
+       "ye": 3.625
+      },
+      "J.P. Morgan": {
+       "ye": 3.625
+      }
+     }
+    },
+    {
+     "src": "fed_jun16",
+     "houses": {
+      "UBS Global Wealth Mgmt": {
+       "ye": 3.625
+      }
+     }
+    },
+    {
+     "src": "fed_jun22",
+     "houses": {
+      "BofA Global Research": {
+       "hikes": [
+        "Sep",
+        "Oct",
+        "Dec"
+       ],
+       "ye": 4.375
+      },
+      "BNP Paribas": {
+       "hikes": [
+        "?"
+       ],
+       "note": "hikes to begin this year, month not given"
+      },
+      "Macquarie": {
+       "hikes": [
+        "?"
+       ],
+       "note": "hikes to begin this year, month not given"
+      }
+     }
+    },
+    {
+     "src": "fed_jun22_db",
+     "houses": {
+      "Deutsche Bank": {
+       "hikes": [
+        "Sep",
+        "Dec"
+       ],
+       "ye": 4.125
+      }
+     }
+    },
+    {
+     "src": "fed_sep07",
+     "houses": {
+      "UBS Global Wealth Mgmt": {
+       "hikes": [
+        "Sep",
+        "Dec"
+       ],
+       "ye": 4.125
+      },
+      "Citigroup": {
+       "unknown": true,
+       "note": "revised after the August jobs report; new call not found"
+      },
+      "Macquarie": {
+       "hikes": [
+        "?"
+       ],
+       "note": "revised after the August jobs report; new call not found"
+      }
+     }
+    },
+    {
+     "src": "fed_sep14",
+     "houses": {
+      "Goldman Sachs": {
+       "hikes": [
+        "Sep"
+       ]
+      },
+      "J.P. Morgan": {
+       "hikes": [
+        "Sep",
+        "Dec"
+       ],
+       "ye": 4.125
+      },
+      "HSBC": {
+       "hikes": [
+        "Sep"
+       ]
+      },
+      "Deutsche Bank": {
+       "hikes": [
+        "Sep",
+        "Dec"
+       ],
+       "ye": 4.125
+      }
+     }
+    },
+    {
+     "src": "fed_sep15",
+     "houses": {
+      "Morgan Stanley": {
+       "hikes": [
+        "Sep",
+        "Dec"
+       ],
+       "ye": 4.125
+      }
+     }
+    },
+    {
+     "src": "fed_sep17",
+     "houses": {
+      "BofA Global Research": {
+       "hikes": [
+        "Oct",
+        "Dec"
+       ],
+       "ye": 4.375
+      },
+      "Goldman Sachs": {
+       "hikes": [
+        "Oct"
+       ],
+       "ye": 4.125
+      },
+      "J.P. Morgan": {
+       "hikes": [
+        "Dec"
+       ],
+       "ye": 4.125
+      },
+      "Nomura": {
+       "hikes": [
+        "Dec"
+       ],
+       "ye": 4.125
+      },
+      "HSBC": {
+       "hikes": [
+        "Dec"
+       ],
+       "ye": 4.125
+      },
+      "Barclays": {
+       "hikes": [
+        "Dec"
+       ],
+       "ye": 4.125
+      },
+      "Deutsche Bank": {
+       "hikes": [
+        "Dec"
+       ],
+       "ye": 4.125
+      },
+      "UBS Global Wealth Mgmt": {
+       "hikes": [
+        "?"
+       ],
+       "ye": 4.125
+      },
+      "UBS Global Research": {
+       "hikes": [
+        "Dec"
+       ],
+       "ye": 4.125
+      },
+      "Morgan Stanley": {
+       "hikes": [
+        "Dec"
+       ],
+       "ye": 4.125
+      },
+      "Macquarie": {
+       "hikes": [
+        "Dec"
+       ],
+       "ye": 4.125
+      },
+      "BNP Paribas": {
+       "hikes": [
+        "Dec"
+       ],
+       "ye": 4.125
+      },
+      "Citigroup": {
+       "ye": 3.875
+      }
+     }
+    },
+    {
+     "src": "fed_oct01",
+     "houses": {
+      "BofA Global Research": {
+       "hikes": [
+        "Oct",
+        "Dec"
+       ],
+       "ye": 4.375
+      },
+      "Goldman Sachs": {
+       "hikes": [
+        "Dec"
+       ],
+       "ye": 4.125
+      },
+      "J.P. Morgan": {
+       "hikes": [
+        "Dec"
+       ],
+       "ye": 4.125
+      },
+      "Nomura": {
+       "hikes": [
+        "Dec"
+       ],
+       "ye": 4.125
+      },
+      "HSBC": {
+       "hikes": [
+        "Dec"
+       ],
+       "ye": 4.125
+      },
+      "Barclays": {
+       "hikes": [
+        "Dec"
+       ],
+       "ye": 4.125
+      },
+      "Deutsche Bank": {
+       "hikes": [
+        "Dec"
+       ],
+       "ye": 4.125
+      },
+      "UBS Global Wealth Mgmt": {
+       "hikes": [
+        "Dec"
+       ],
+       "ye": 4.125
+      },
+      "UBS Global Research": {
+       "hikes": [
+        "Dec"
+       ],
+       "ye": 4.125
+      },
+      "Morgan Stanley": {
+       "hikes": [
+        "Dec"
+       ],
+       "ye": 4.125
+      },
+      "Macquarie": {
+       "hikes": [
+        "Dec"
+       ],
+       "ye": 4.125
+      },
+      "BNP Paribas": {
+       "hikes": [
+        "Dec"
+       ],
+       "ye": 4.125
+      },
+      "Standard Chartered": {
+       "hikes": [
+        "Dec"
+       ],
+       "ye": 4.125
+      },
+      "Citigroup": {
+       "ye": 3.875
+      }
+     }
+    }
+   ],
+   "overrides": []
+  },
+  "ecb": {
+   "name": "European Central Bank",
+   "short": "ECB",
+   "rate_label": "Deposit facility rate",
+   "rate_now": "2.50%",
+   "rate_now_mid": 2.5,
+   "meetings": [
+    {
+     "id": "Apr",
+     "decision": "2026-04-30",
+     "outcome": "hold",
+     "rate": "2.00%",
+     "src": "ecb_may01"
+    },
+    {
+     "id": "Jun",
+     "decision": "2026-06-11",
+     "outcome": "hike",
+     "rate": "2.25%",
+     "src": "ecb_jun"
+    },
+    {
+     "id": "Jul",
+     "decision": "2026-07-23",
+     "outcome": "hold",
+     "rate": "2.25%",
+     "src": "ecb_jul_poll"
+    },
+    {
+     "id": "Sep",
+     "decision": "2026-09-10",
+     "outcome": "hike",
+     "rate": "2.50%",
+     "src": "ecb_sep_poll"
+    }
+   ],
+   "turn": "Jun",
+   "next": {
+    "id": "Oct",
+    "decision": "2026-10-29",
+    "label": "29 October 2026"
+   },
+   "snapshots": [
+    {
+     "src": "ecb_mar20",
+     "houses": {
+      "Barclays": {
+       "hikes": [
+        "Apr",
+        "?"
+       ]
+      },
+      "J.P. Morgan": {
+       "hikes": [
+        "Jun",
+        "Jul"
+       ]
+      },
+      "Morgan Stanley": {
+       "hikes": [
+        "Jun",
+        "Sep"
+       ]
+      }
+     }
+    },
+    {
+     "src": "ecb_mar23",
+     "houses": {
+      "Goldman Sachs": {
+       "hikes": [
+        "Apr",
+        "Jun"
+       ],
+       "note": "previously no change all year"
+      }
+     }
+    },
+    {
+     "src": "ecb_may01",
+     "houses": {
+      "Standard Chartered": {
+       "hikes": [
+        "Jun",
+        "?"
+       ],
+       "note": "previously no change through 2026"
+      },
+      "Goldman Sachs": {
+       "hikes": [
+        "Jun",
+        "?"
+       ],
+       "note": "two hikes beginning in June; later moved to June and September (Newsquawk, date not shown)"
+      },
+      "J.P. Morgan": {
+       "hikes": [
+        "Jun",
+        "?"
+       ],
+       "note": "two hikes beginning in June; second month not given"
+      }
+     }
+    },
+    {
+     "src": "ecb_jul_prev",
+     "houses": {
+      "Deutsche Bank": {
+       "hikes": [
+        "Sep"
+       ],
+       "note": "pause in July, final hike to 2.50% in September"
+      },
+      "TD Securities": {
+       "hikes": [
+        "?"
+       ],
+       "explicit_hold": [
+        "Jul"
+       ],
+       "note": "hold in July, September in play"
+      },
+      "ING": {
+       "hikes": [
+        "?"
+       ],
+       "explicit_hold": [
+        "Jul"
+       ],
+       "note": "hold in July, hints of September"
+      }
+     }
+    },
+    {
+     "src": "ecb_sep11",
+     "houses": {
+      "UBS": {
+       "hikes": [
+        "Dec"
+       ],
+       "note": "final hike in December, then pause"
+      }
+     }
+    },
+    {
+     "src": "fed_sep15",
+     "houses": {
+      "Morgan Stanley": {
+       "hikes": [
+        "Dec"
+       ],
+       "note": "another 25bp in December to 2.75%"
+      }
+     }
+    }
+   ],
+   "overrides": [
+    {
+     "house": "Goldman Sachs",
+     "meeting": "Apr",
+     "status": "unscored",
+     "reason": "Called an April hike on 23 March, then moved it to June and September. The date of that change is not shown in the source, so April is not scored."
+    }
+   ],
+   "polls": [
+    {
+     "meeting": "Jul",
+     "label": "13-16 July poll",
+     "right": 74,
+     "total": 74,
+     "call": "hold",
+     "src": "ecb_jul_poll"
+    },
+    {
+     "meeting": "Sep",
+     "label": "31 Aug-3 Sep poll",
+     "right": 65,
+     "total": 65,
+     "call": "hike",
+     "src": "ecb_sep_poll"
+    }
+   ],
+   "sep_path": [
+    {
+     "label": "June poll",
+     "pct": 65,
+     "src": "ecb_aug_poll"
+    },
+    {
+     "label": "July poll",
+     "pct": 72,
+     "src": "ecb_aug_poll"
+    },
+    {
+     "label": "August poll",
+     "pct": 83,
+     "src": "ecb_aug_poll"
+    },
+    {
+     "label": "31 Aug-3 Sep poll",
+     "pct": 100,
+     "src": "ecb_sep_poll"
+    }
+   ]
+  },
+  "rbi": {
+   "name": "Reserve Bank of India",
+   "short": "RBI",
+   "rate_label": "Policy repo rate",
+   "rate_now": "5.50%",
+   "rate_now_mid": 5.5,
+   "meetings": [
+    {
+     "id": "Jun",
+     "decision": "2026-06-05",
+     "outcome": "hold",
+     "rate": "5.25%",
+     "src": "rbi_jun"
+    },
+    {
+     "id": "Aug",
+     "decision": "2026-08-05",
+     "outcome": "hold",
+     "rate": "5.25%",
+     "src": "rbi_aug"
+    },
+    {
+     "id": "Oct",
+     "decision": "2026-10-07",
+     "outcome": "hike",
+     "rate": "5.50%",
+     "src": "rbi_oct"
+    }
+   ],
+   "turn": "Oct",
+   "next": {
+    "id": "Dec",
+    "decision": null,
+    "label": "December 2026"
+   },
+   "snapshots": [
+    {
+     "src": "rbi_sbi",
+     "houses": {
+      "SBI Research": {
+       "hikes": [
+        "Oct",
+        "Dec"
+       ]
+      }
+     }
+    },
+    {
+     "src": "rbi_nomura",
+     "houses": {
+      "Nomura": {
+       "hikes": [
+        "Oct",
+        "Dec"
+       ]
+      }
+     }
+    },
+    {
+     "src": "rbi_hsbc",
+     "houses": {
+      "HSBC": {
+       "hikes": [
+        "Oct",
+        "Dec"
+       ],
+       "note": "described as a long-held view; earliest report found is 27 September"
+      }
+     }
+    },
+    {
+     "src": "rbi_bs",
+     "houses": {
+      "Goldman Sachs": {
+       "hikes": [
+        "Oct",
+        "Dec"
+       ],
+       "note": "brought forward to October and December"
+      }
+     }
+    },
+    {
+     "src": "rbi_bob",
+     "houses": {
+      "Bank of Baroda": {
+       "hikes": [
+        "Dec"
+       ],
+       "note": "hold in October, 50-75bp cycle from December"
+      }
+     }
+    },
+    {
+     "src": "rbi_jm",
+     "houses": {
+      "JM Financial": {
+       "unknown": true,
+       "note": "said October versus December was finely balanced; hedged, not scored"
+      }
+     }
+    }
+   ],
+   "overrides": [],
+   "polls": [
+    {
+     "meeting": "Jun",
+     "label": "PTI poll",
+     "right": 11,
+     "total": 15,
+     "call": "hold",
+     "src": "rbi_jun"
+    },
+    {
+     "meeting": "Oct",
+     "label": "Reuters poll",
+     "right": 35,
+     "total": 61,
+     "call": "hike",
+     "src": "rbi_polls"
+    },
+    {
+     "meeting": "Oct",
+     "label": "Business Standard poll",
+     "right": 8,
+     "total": 10,
+     "call": "hike",
+     "src": "rbi_polls"
+    }
+   ]
+  }
+ }
+}
