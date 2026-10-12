@@ -117,14 +117,43 @@ for c in C["claims"]:
     rows.append({**c, "verdict": v, "actual": actual, "why": why, "err": err,
                  "horizon_days": (day(c["deadline"]) - day(c["made_on"])).days})
 
+# Head-to-head: compare each checked claim with other houses' claims on the same question
+# (same source, same kind, same deadline, same meeting or year). Points: correct 1, partly 0.5, wrong 0.
+PTS = {"correct": 1, "partly": 0.5, "wrong": 0}
+qs = {}
+for r in rows:
+    if r["verdict"] in PTS:
+        qs.setdefault((r["src"], r["kind"], r["deadline"], r.get("year"), r.get("meeting")), []).append(r)
+for q in qs.values():
+    for r in q:
+        others = [PTS[o["verdict"]] for o in q if o is not r]
+        r["peers"] = len(others)
+        r["edge"] = round(PTS[r["verdict"]] - sum(others) / len(others), 3) if others else None
+
 houses = {}
 for r in rows:
     h = houses.setdefault(r["house"], {"house": r["house"], "correct": 0, "partly": 0, "wrong": 0,
                                        "untested": 0, "needs_revision": 0, "unjudgeable": 0})
     h[r["verdict"]] += 1
+MIN_RANK = 5
 for h in houses.values():
     h["judged"] = h["correct"] + h["partly"] + h["wrong"]
     h["score"] = round((h["correct"] + 0.5 * h["partly"]) / h["judged"], 3) if h["judged"] else None
+    mine = [r for r in rows if r["house"] == h["house"] and r["verdict"] in PTS]
+    e = [r["edge"] for r in mine if r.get("edge") is not None]
+    m = [abs(r["err"]) for r in mine if r["err"] is not None and r["kind"] in ("level", "year_total", "move")]
+    h["edge"] = round(sum(e) / len(e), 3) if e else None
+    h["edge_n"] = len(e)
+    h["miss_bp"] = round(sum(m) / len(m)) if m else None
+    h["ranked"] = h["judged"] >= MIN_RANK and len(e) >= 3
+    withedge = [r for r in mine if r.get("edge") is not None]
+    best = max(withedge, key=lambda r: (r["edge"], r["horizon_days"]), default=None)
+    worst = max([r for r in mine if r["err"] is not None], key=lambda r: abs(r["err"]), default=None)
+    h["best"] = best["id"] if best and best["edge"] > 0 else None
+    h["worst"] = worst["id"] if worst and abs(worst["err"]) > 25 else None
+ranked = sorted([h for h in houses.values() if h["ranked"]], key=lambda h: (-h["edge"], -h["score"]))
+for i, h in enumerate(ranked, 1):
+    h["rank"] = i
 
 years = {}
 for r in rows:
@@ -145,7 +174,8 @@ for r in rows:
 
 out = {"as_of": C["as_of"], "domain": C["domain"], "extracted_by": C["extracted_by"], "sources": C["sources"],
        "rate_now": mid_on(AS_OF), "remaining_meetings": [m.isoformat() for m in REMAINING],
-       "tally": tally, "houses": sorted(houses.values(), key=lambda h: (-(h["score"] or -1), -h["judged"])),
+       "tally": tally, "houses": ranked + sorted([h for h in houses.values() if not h["ranked"]], key=lambda h: (-(h["edge"] if h["edge"] is not None else -9), -h["judged"])),
+       "min_rank": MIN_RANK,
        "years": sorted(years.values(), key=lambda y: y["year"]), "horizon": horizon, "claims": rows}
 json.dump(out, open("claims/verdicts.json", "w"), indent=1)
 
@@ -155,5 +185,4 @@ for b in horizon:
 for y in out["years"]:
     print(" ", y)
 for h in out["houses"]:
-    print("  %-30s judged=%2d score=%s  c%d p%d w%d u%d nr%d" % (h["house"], h["judged"], h["score"], h["correct"],
-          h["partly"], h["wrong"], h["untested"], h["needs_revision"]))
+    print("  %-4s %-30s judged=%2d score=%s edge=%s miss=%s" % (h.get("rank", ""), h["house"], h["judged"], h["score"], h["edge"], h["miss_bp"]))

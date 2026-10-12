@@ -79,7 +79,7 @@ The tracker starts from a decision and asks who saw it coming. The catalog start
 - Of 112 claims whose deadline has passed, 32 were exactly right, 27 were one move off, 53 were wrong.
 - Claims made up to two months before their deadline were right 20 of 27 times. Beyond two months, 12 of 85.
 - Every turn was missed: none of the claims for 2019 came true, and all twelve 2022 year totals fell short by 250 bp or more.
-- Most big houses did not beat the Fed's own dot plot on the same rules.
+- **League table (ranking of houses).** Houses with 5+ checked forecasts are ranked by "beat the pack": for each forecast, the house's result (correct 1, partly 0.5, wrong 0) minus the average of every other house answering the same question in the same report. This controls for easy versus hard questions. Goldman Sachs ranks #1 (+0.14), Deutsche Bank last (−0.19). On raw score BofA and UBS Wealth lead, but mostly on questions everyone got right. The table also shows raw score, average miss in bp, and each house's best call and biggest miss, and can be re-sorted by any of the three.
 - 13 published 2026 calls (January's year-end cut forecasts and the Fed's December 2025 dots) need revision after September's hike; 15 can still come true.
 
 **How it works**

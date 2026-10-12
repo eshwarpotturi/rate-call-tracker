@@ -149,160 +149,6 @@
  },
  "houses": [
   {
-   "house": "ABN AMRO",
-   "correct": 1,
-   "partly": 0,
-   "wrong": 0,
-   "untested": 0,
-   "needs_revision": 0,
-   "unjudgeable": 0,
-   "judged": 1,
-   "score": 1.0
-  },
-  {
-   "house": "Nordea Markets",
-   "correct": 1,
-   "partly": 0,
-   "wrong": 0,
-   "untested": 0,
-   "needs_revision": 0,
-   "unjudgeable": 0,
-   "judged": 1,
-   "score": 1.0
-  },
-  {
-   "house": "ING",
-   "correct": 1,
-   "partly": 0,
-   "wrong": 0,
-   "untested": 0,
-   "needs_revision": 0,
-   "unjudgeable": 0,
-   "judged": 1,
-   "score": 1.0
-  },
-  {
-   "house": "TD Securities",
-   "correct": 1,
-   "partly": 1,
-   "wrong": 0,
-   "untested": 0,
-   "needs_revision": 0,
-   "unjudgeable": 0,
-   "judged": 2,
-   "score": 0.75
-  },
-  {
-   "house": "Jefferies",
-   "correct": 1,
-   "partly": 1,
-   "wrong": 0,
-   "untested": 0,
-   "needs_revision": 0,
-   "unjudgeable": 0,
-   "judged": 2,
-   "score": 0.75
-  },
-  {
-   "house": "Wells Fargo",
-   "correct": 1,
-   "partly": 2,
-   "wrong": 0,
-   "untested": 0,
-   "needs_revision": 1,
-   "unjudgeable": 0,
-   "judged": 3,
-   "score": 0.667
-  },
-  {
-   "house": "BofA Global Research",
-   "correct": 4,
-   "partly": 1,
-   "wrong": 4,
-   "untested": 2,
-   "needs_revision": 1,
-   "unjudgeable": 0,
-   "judged": 9,
-   "score": 0.5
-  },
-  {
-   "house": "UBS Global Wealth Mgmt",
-   "correct": 1,
-   "partly": 3,
-   "wrong": 1,
-   "untested": 1,
-   "needs_revision": 0,
-   "unjudgeable": 0,
-   "judged": 5,
-   "score": 0.5
-  },
-  {
-   "house": "Bloomberg economist survey",
-   "correct": 1,
-   "partly": 0,
-   "wrong": 1,
-   "untested": 0,
-   "needs_revision": 0,
-   "unjudgeable": 0,
-   "judged": 2,
-   "score": 0.5
-  },
-  {
-   "house": "Societe Generale",
-   "correct": 1,
-   "partly": 0,
-   "wrong": 1,
-   "untested": 0,
-   "needs_revision": 0,
-   "unjudgeable": 0,
-   "judged": 2,
-   "score": 0.5
-  },
-  {
-   "house": "UBS Global Research",
-   "correct": 1,
-   "partly": 0,
-   "wrong": 1,
-   "untested": 1,
-   "needs_revision": 1,
-   "unjudgeable": 0,
-   "judged": 2,
-   "score": 0.5
-  },
-  {
-   "house": "Primary dealers (Reuters poll)",
-   "correct": 0,
-   "partly": 1,
-   "wrong": 0,
-   "untested": 0,
-   "needs_revision": 0,
-   "unjudgeable": 0,
-   "judged": 1,
-   "score": 0.5
-  },
-  {
-   "house": "Wall St banks (Reuters poll)",
-   "correct": 0,
-   "partly": 1,
-   "wrong": 0,
-   "untested": 0,
-   "needs_revision": 0,
-   "unjudgeable": 0,
-   "judged": 1,
-   "score": 0.5
-  },
-  {
-   "house": "FOMC (dot plot median)",
-   "correct": 2,
-   "partly": 4,
-   "wrong": 3,
-   "untested": 0,
-   "needs_revision": 1,
-   "unjudgeable": 0,
-   "judged": 9,
-   "score": 0.444
-  },
-  {
    "house": "Goldman Sachs",
    "correct": 4,
    "partly": 3,
@@ -311,84 +157,14 @@
    "needs_revision": 1,
    "unjudgeable": 0,
    "judged": 13,
-   "score": 0.423
-  },
-  {
-   "house": "Morgan Stanley",
-   "correct": 2,
-   "partly": 1,
-   "wrong": 4,
-   "untested": 1,
-   "needs_revision": 1,
-   "unjudgeable": 0,
-   "judged": 7,
-   "score": 0.357
-  },
-  {
-   "house": "Deutsche Bank",
-   "correct": 2,
-   "partly": 1,
-   "wrong": 4,
-   "untested": 1,
-   "needs_revision": 1,
-   "unjudgeable": 0,
-   "judged": 7,
-   "score": 0.357
-  },
-  {
-   "house": "Barclays",
-   "correct": 2,
-   "partly": 2,
-   "wrong": 5,
-   "untested": 1,
-   "needs_revision": 1,
-   "unjudgeable": 0,
-   "judged": 9,
-   "score": 0.333
-  },
-  {
-   "house": "Citigroup",
-   "correct": 1,
-   "partly": 2,
-   "wrong": 3,
-   "untested": 1,
-   "needs_revision": 1,
-   "unjudgeable": 1,
-   "judged": 6,
-   "score": 0.333
-  },
-  {
-   "house": "UBS",
-   "correct": 1,
-   "partly": 0,
-   "wrong": 2,
-   "untested": 0,
-   "needs_revision": 0,
-   "unjudgeable": 0,
-   "judged": 3,
-   "score": 0.333
-  },
-  {
-   "house": "BNP Paribas",
-   "correct": 1,
-   "partly": 0,
-   "wrong": 2,
-   "untested": 1,
-   "needs_revision": 0,
-   "unjudgeable": 0,
-   "judged": 3,
-   "score": 0.333
-  },
-  {
-   "house": "Macquarie",
-   "correct": 1,
-   "partly": 0,
-   "wrong": 2,
-   "untested": 1,
-   "needs_revision": 0,
-   "unjudgeable": 0,
-   "judged": 3,
-   "score": 0.333
+   "score": 0.423,
+   "edge": 0.138,
+   "edge_n": 12,
+   "miss_bp": 58,
+   "ranked": true,
+   "best": "c012",
+   "worst": "c036",
+   "rank": 1
   },
   {
    "house": "J.P. Morgan",
@@ -399,7 +175,292 @@
    "needs_revision": 1,
    "unjudgeable": 0,
    "judged": 10,
-   "score": 0.3
+   "score": 0.3,
+   "edge": 0.06,
+   "edge_n": 10,
+   "miss_bp": 72,
+   "ranked": true,
+   "best": "c022",
+   "worst": "c029",
+   "rank": 2
+  },
+  {
+   "house": "Morgan Stanley",
+   "correct": 2,
+   "partly": 1,
+   "wrong": 4,
+   "untested": 1,
+   "needs_revision": 1,
+   "unjudgeable": 0,
+   "judged": 7,
+   "score": 0.357,
+   "edge": 0.048,
+   "edge_n": 6,
+   "miss_bp": 75,
+   "ranked": true,
+   "best": "c070",
+   "worst": "c030",
+   "rank": 3
+  },
+  {
+   "house": "UBS Global Wealth Mgmt",
+   "correct": 1,
+   "partly": 3,
+   "wrong": 1,
+   "untested": 1,
+   "needs_revision": 0,
+   "unjudgeable": 0,
+   "judged": 5,
+   "score": 0.5,
+   "edge": 0.006,
+   "edge_n": 5,
+   "miss_bp": 19,
+   "ranked": true,
+   "best": "c103",
+   "worst": "c069",
+   "rank": 4
+  },
+  {
+   "house": "Barclays",
+   "correct": 2,
+   "partly": 2,
+   "wrong": 5,
+   "untested": 1,
+   "needs_revision": 1,
+   "unjudgeable": 0,
+   "judged": 9,
+   "score": 0.333,
+   "edge": -0.03,
+   "edge_n": 8,
+   "miss_bp": 71,
+   "ranked": true,
+   "best": "c085",
+   "worst": "c040",
+   "rank": 5
+  },
+  {
+   "house": "Citigroup",
+   "correct": 1,
+   "partly": 2,
+   "wrong": 3,
+   "untested": 1,
+   "needs_revision": 1,
+   "unjudgeable": 1,
+   "judged": 6,
+   "score": 0.333,
+   "edge": -0.039,
+   "edge_n": 5,
+   "miss_bp": 75,
+   "ranked": true,
+   "best": "c059",
+   "worst": "c033",
+   "rank": 6
+  },
+  {
+   "house": "BofA Global Research",
+   "correct": 4,
+   "partly": 1,
+   "wrong": 4,
+   "untested": 2,
+   "needs_revision": 1,
+   "unjudgeable": 0,
+   "judged": 9,
+   "score": 0.5,
+   "edge": -0.1,
+   "edge_n": 7,
+   "miss_bp": 59,
+   "ranked": true,
+   "best": "c047",
+   "worst": "c037",
+   "rank": 7
+  },
+  {
+   "house": "Deutsche Bank",
+   "correct": 2,
+   "partly": 1,
+   "wrong": 4,
+   "untested": 1,
+   "needs_revision": 1,
+   "unjudgeable": 0,
+   "judged": 7,
+   "score": 0.357,
+   "edge": -0.186,
+   "edge_n": 6,
+   "miss_bp": 96,
+   "ranked": true,
+   "best": "c082",
+   "worst": "c039",
+   "rank": 8
+  },
+  {
+   "house": "ING",
+   "correct": 1,
+   "partly": 0,
+   "wrong": 0,
+   "untested": 0,
+   "needs_revision": 0,
+   "unjudgeable": 0,
+   "judged": 1,
+   "score": 1.0,
+   "edge": 0.818,
+   "edge_n": 1,
+   "miss_bp": 0,
+   "ranked": false,
+   "best": "c102",
+   "worst": null
+  },
+  {
+   "house": "ABN AMRO",
+   "correct": 1,
+   "partly": 0,
+   "wrong": 0,
+   "untested": 0,
+   "needs_revision": 0,
+   "unjudgeable": 0,
+   "judged": 1,
+   "score": 1.0,
+   "edge": 0.5,
+   "edge_n": 1,
+   "miss_bp": null,
+   "ranked": false,
+   "best": "c019",
+   "worst": null
+  },
+  {
+   "house": "Nordea Markets",
+   "correct": 1,
+   "partly": 0,
+   "wrong": 0,
+   "untested": 0,
+   "needs_revision": 0,
+   "unjudgeable": 0,
+   "judged": 1,
+   "score": 1.0,
+   "edge": 0.5,
+   "edge_n": 1,
+   "miss_bp": null,
+   "ranked": false,
+   "best": "c020",
+   "worst": null
+  },
+  {
+   "house": "Wells Fargo",
+   "correct": 1,
+   "partly": 2,
+   "wrong": 0,
+   "untested": 0,
+   "needs_revision": 1,
+   "unjudgeable": 0,
+   "judged": 3,
+   "score": 0.667,
+   "edge": 0.303,
+   "edge_n": 2,
+   "miss_bp": 25,
+   "ranked": false,
+   "best": "c057",
+   "worst": null
+  },
+  {
+   "house": "TD Securities",
+   "correct": 1,
+   "partly": 1,
+   "wrong": 0,
+   "untested": 0,
+   "needs_revision": 0,
+   "unjudgeable": 0,
+   "judged": 2,
+   "score": 0.75,
+   "edge": 0.13,
+   "edge_n": 2,
+   "miss_bp": 12,
+   "ranked": false,
+   "best": "c090",
+   "worst": null
+  },
+  {
+   "house": "Jefferies",
+   "correct": 1,
+   "partly": 1,
+   "wrong": 0,
+   "untested": 0,
+   "needs_revision": 0,
+   "unjudgeable": 0,
+   "judged": 2,
+   "score": 0.75,
+   "edge": 0.13,
+   "edge_n": 2,
+   "miss_bp": 12,
+   "ranked": false,
+   "best": "c092",
+   "worst": null
+  },
+  {
+   "house": "Societe Generale",
+   "correct": 1,
+   "partly": 0,
+   "wrong": 1,
+   "untested": 0,
+   "needs_revision": 0,
+   "unjudgeable": 0,
+   "judged": 2,
+   "score": 0.5,
+   "edge": 0.125,
+   "edge_n": 2,
+   "miss_bp": 150,
+   "ranked": false,
+   "best": "c045",
+   "worst": "c035"
+  },
+  {
+   "house": "UBS",
+   "correct": 1,
+   "partly": 0,
+   "wrong": 2,
+   "untested": 0,
+   "needs_revision": 0,
+   "unjudgeable": 0,
+   "judged": 3,
+   "score": 0.333,
+   "edge": 0.009,
+   "edge_n": 3,
+   "miss_bp": 167,
+   "ranked": false,
+   "best": "c041",
+   "worst": "c031"
+  },
+  {
+   "house": "BNP Paribas",
+   "correct": 1,
+   "partly": 0,
+   "wrong": 2,
+   "untested": 1,
+   "needs_revision": 0,
+   "unjudgeable": 0,
+   "judged": 3,
+   "score": 0.333,
+   "edge": -0.008,
+   "edge_n": 3,
+   "miss_bp": 117,
+   "ranked": false,
+   "best": "c042",
+   "worst": "c032"
+  },
+  {
+   "house": "Macquarie",
+   "correct": 1,
+   "partly": 0,
+   "wrong": 2,
+   "untested": 1,
+   "needs_revision": 0,
+   "unjudgeable": 0,
+   "judged": 3,
+   "score": 0.333,
+   "edge": -0.076,
+   "edge_n": 3,
+   "miss_bp": 50,
+   "ranked": false,
+   "best": "c074",
+   "worst": "c086"
   },
   {
    "house": "Credit Suisse",
@@ -410,7 +471,13 @@
    "needs_revision": 0,
    "unjudgeable": 0,
    "judged": 2,
-   "score": 0.25
+   "score": 0.25,
+   "edge": -0.156,
+   "edge_n": 2,
+   "miss_bp": 138,
+   "ranked": false,
+   "best": null,
+   "worst": "c034"
   },
   {
    "house": "HSBC",
@@ -421,51 +488,30 @@
    "needs_revision": 1,
    "unjudgeable": 0,
    "judged": 2,
-   "score": 0.25
+   "score": 0.25,
+   "edge": -0.156,
+   "edge_n": 2,
+   "miss_bp": 150,
+   "ranked": false,
+   "best": null,
+   "worst": "c038"
   },
   {
-   "house": "Nomura",
-   "correct": 0,
+   "house": "UBS Global Research",
+   "correct": 1,
    "partly": 0,
-   "wrong": 2,
+   "wrong": 1,
    "untested": 1,
    "needs_revision": 1,
    "unjudgeable": 0,
    "judged": 2,
-   "score": 0.0
-  },
-  {
-   "house": "Rabobank",
-   "correct": 0,
-   "partly": 0,
-   "wrong": 1,
-   "untested": 0,
-   "needs_revision": 0,
-   "unjudgeable": 0,
-   "judged": 1,
-   "score": 0.0
-  },
-  {
-   "house": "Westpac",
-   "correct": 0,
-   "partly": 0,
-   "wrong": 1,
-   "untested": 0,
-   "needs_revision": 0,
-   "unjudgeable": 0,
-   "judged": 1,
-   "score": 0.0
-  },
-  {
-   "house": "Danske Bank",
-   "correct": 0,
-   "partly": 0,
-   "wrong": 1,
-   "untested": 0,
-   "needs_revision": 0,
-   "unjudgeable": 0,
-   "judged": 1,
-   "score": 0.0
+   "score": 0.5,
+   "edge": -0.156,
+   "edge_n": 2,
+   "miss_bp": 25,
+   "ranked": false,
+   "best": "c077",
+   "worst": "c089"
   },
   {
    "house": "Berenberg",
@@ -476,7 +522,149 @@
    "needs_revision": 0,
    "unjudgeable": 0,
    "judged": 1,
-   "score": 0.0
+   "score": 0.0,
+   "edge": -0.273,
+   "edge_n": 1,
+   "miss_bp": 75,
+   "ranked": false,
+   "best": null,
+   "worst": "c106"
+  },
+  {
+   "house": "Nomura",
+   "correct": 0,
+   "partly": 0,
+   "wrong": 2,
+   "untested": 1,
+   "needs_revision": 1,
+   "unjudgeable": 0,
+   "judged": 2,
+   "score": 0.0,
+   "edge": -0.289,
+   "edge_n": 2,
+   "miss_bp": 50,
+   "ranked": false,
+   "best": null,
+   "worst": "c052"
+  },
+  {
+   "house": "Wall St banks (Reuters poll)",
+   "correct": 0,
+   "partly": 1,
+   "wrong": 0,
+   "untested": 0,
+   "needs_revision": 0,
+   "unjudgeable": 0,
+   "judged": 1,
+   "score": 0.5,
+   "edge": -0.5,
+   "edge_n": 1,
+   "miss_bp": 25,
+   "ranked": false,
+   "best": null,
+   "worst": null
+  },
+  {
+   "house": "Danske Bank",
+   "correct": 0,
+   "partly": 0,
+   "wrong": 1,
+   "untested": 0,
+   "needs_revision": 0,
+   "unjudgeable": 0,
+   "judged": 1,
+   "score": 0.0,
+   "edge": -1.0,
+   "edge_n": 1,
+   "miss_bp": null,
+   "ranked": false,
+   "best": null,
+   "worst": null
+  },
+  {
+   "house": "FOMC (dot plot median)",
+   "correct": 2,
+   "partly": 4,
+   "wrong": 3,
+   "untested": 0,
+   "needs_revision": 1,
+   "unjudgeable": 0,
+   "judged": 9,
+   "score": 0.444,
+   "edge": null,
+   "edge_n": 0,
+   "miss_bp": 81,
+   "ranked": false,
+   "best": null,
+   "worst": "c006"
+  },
+  {
+   "house": "Bloomberg economist survey",
+   "correct": 1,
+   "partly": 0,
+   "wrong": 1,
+   "untested": 0,
+   "needs_revision": 0,
+   "unjudgeable": 0,
+   "judged": 2,
+   "score": 0.5,
+   "edge": null,
+   "edge_n": 0,
+   "miss_bp": 238,
+   "ranked": false,
+   "best": null,
+   "worst": "c028"
+  },
+  {
+   "house": "Primary dealers (Reuters poll)",
+   "correct": 0,
+   "partly": 1,
+   "wrong": 0,
+   "untested": 0,
+   "needs_revision": 0,
+   "unjudgeable": 0,
+   "judged": 1,
+   "score": 0.5,
+   "edge": null,
+   "edge_n": 0,
+   "miss_bp": 25,
+   "ranked": false,
+   "best": null,
+   "worst": null
+  },
+  {
+   "house": "Rabobank",
+   "correct": 0,
+   "partly": 0,
+   "wrong": 1,
+   "untested": 0,
+   "needs_revision": 0,
+   "unjudgeable": 0,
+   "judged": 1,
+   "score": 0.0,
+   "edge": null,
+   "edge_n": 0,
+   "miss_bp": 25,
+   "ranked": false,
+   "best": null,
+   "worst": null
+  },
+  {
+   "house": "Westpac",
+   "correct": 0,
+   "partly": 0,
+   "wrong": 1,
+   "untested": 0,
+   "needs_revision": 0,
+   "unjudgeable": 0,
+   "judged": 1,
+   "score": 0.0,
+   "edge": null,
+   "edge_n": 0,
+   "miss_bp": 125,
+   "ranked": false,
+   "best": null,
+   "worst": "c017"
   },
   {
    "house": "Standard Chartered",
@@ -487,9 +675,16 @@
    "needs_revision": 1,
    "unjudgeable": 1,
    "judged": 0,
-   "score": null
+   "score": null,
+   "edge": null,
+   "edge_n": 0,
+   "miss_bp": null,
+   "ranked": false,
+   "best": null,
+   "worst": null
   }
  ],
+ "min_rank": 5,
  "years": [
   {
    "year": "2017",
@@ -599,7 +794,9 @@
    "actual": "1.375%",
    "why": "Same target range.",
    "err": 0,
-   "horizon_days": 382
+   "horizon_days": 382,
+   "peers": 0,
+   "edge": null
   },
   {
    "id": "c002",
@@ -617,7 +814,9 @@
    "actual": "2.375%",
    "why": "Off by -25 bp.",
    "err": -25,
-   "horizon_days": 383
+   "horizon_days": 383,
+   "peers": 0,
+   "edge": null
   },
   {
    "id": "c003",
@@ -635,7 +834,9 @@
    "actual": "1.625%",
    "why": "Off by +125 bp.",
    "err": 125,
-   "horizon_days": 377
+   "horizon_days": 377,
+   "peers": 0,
+   "edge": null
   },
   {
    "id": "c004",
@@ -653,7 +854,9 @@
    "actual": "0.125%",
    "why": "Off by +150 bp.",
    "err": 150,
-   "horizon_days": 386
+   "horizon_days": 386,
+   "peers": 0,
+   "edge": null
   },
   {
    "id": "c005",
@@ -671,7 +874,9 @@
    "actual": "0.125%",
    "why": "Same target range.",
    "err": 0,
-   "horizon_days": 380
+   "horizon_days": 380,
+   "peers": 0,
+   "edge": null
   },
   {
    "id": "c006",
@@ -689,7 +894,9 @@
    "actual": "4.375%",
    "why": "Off by -350 bp.",
    "err": -350,
-   "horizon_days": 381
+   "horizon_days": 381,
+   "peers": 0,
+   "edge": null
   },
   {
    "id": "c007",
@@ -707,7 +914,9 @@
    "actual": "5.375%",
    "why": "Off by -25 bp.",
    "err": -25,
-   "horizon_days": 382
+   "horizon_days": 382,
+   "peers": 0,
+   "edge": null
   },
   {
    "id": "c008",
@@ -725,7 +934,9 @@
    "actual": "4.375%",
    "why": "Off by +25 bp.",
    "err": 25,
-   "horizon_days": 384
+   "horizon_days": 384,
+   "peers": 0,
+   "edge": null
   },
   {
    "id": "c009",
@@ -743,7 +954,9 @@
    "actual": "3.625%",
    "why": "Off by +25 bp.",
    "err": 25,
-   "horizon_days": 378
+   "horizon_days": 378,
+   "peers": 0,
+   "edge": null
   },
   {
    "id": "c010",
@@ -778,7 +991,9 @@
    "actual": "+75 bp in 2017",
    "why": "Off by -25 bp.",
    "err": -25,
-   "horizon_days": 381
+   "horizon_days": 381,
+   "peers": 0,
+   "edge": null
   },
   {
    "id": "c012",
@@ -795,7 +1010,9 @@
    "actual": "+100 bp in 2018",
    "why": "Exact.",
    "err": 0,
-   "horizon_days": 407
+   "horizon_days": 407,
+   "peers": 1,
+   "edge": 0.5
   },
   {
    "id": "c013",
@@ -812,7 +1029,9 @@
    "actual": "+100 bp in 2018",
    "why": "Off by -25 bp.",
    "err": -25,
-   "horizon_days": 407
+   "horizon_days": 407,
+   "peers": 1,
+   "edge": -0.5
   },
   {
    "id": "c014",
@@ -829,7 +1048,9 @@
    "actual": "-75 bp in 2019",
    "why": "Off by +175 bp.",
    "err": 175,
-   "horizon_days": 395
+   "horizon_days": 395,
+   "peers": 1,
+   "edge": 0.0
   },
   {
    "id": "c015",
@@ -846,7 +1067,9 @@
    "actual": "-75 bp in 2019",
    "why": "Off by +175 bp.",
    "err": 175,
-   "horizon_days": 395
+   "horizon_days": 395,
+   "peers": 1,
+   "edge": 0.0
   },
   {
    "id": "c016",
@@ -863,7 +1086,9 @@
    "actual": "+0 bp",
    "why": "No change by that meeting.",
    "err": 25,
-   "horizon_days": 91
+   "horizon_days": 91,
+   "peers": 0,
+   "edge": null
   },
   {
    "id": "c017",
@@ -880,7 +1105,9 @@
    "actual": "1.875%",
    "why": "Off by +125 bp.",
    "err": 125,
-   "horizon_days": 285
+   "horizon_days": 285,
+   "peers": 0,
+   "edge": null
   },
   {
    "id": "c018",
@@ -898,7 +1125,9 @@
    "actual": "Dots showed 2 hikes",
    "why": "Scored against the median dot published that day.",
    "err": 25,
-   "horizon_days": 0
+   "horizon_days": 0,
+   "peers": 2,
+   "edge": -1.0
   },
   {
    "id": "c019",
@@ -916,7 +1145,9 @@
    "actual": "Dots showed 2 hikes",
    "why": "Scored against the median dot published that day.",
    "err": 0,
-   "horizon_days": 0
+   "horizon_days": 0,
+   "peers": 2,
+   "edge": 0.5
   },
   {
    "id": "c020",
@@ -934,7 +1165,9 @@
    "actual": "Dots showed 2 hikes",
    "why": "Scored against the median dot published that day.",
    "err": 0,
-   "horizon_days": 0
+   "horizon_days": 0,
+   "peers": 2,
+   "edge": 0.5
   },
   {
    "id": "c021",
@@ -967,7 +1200,9 @@
    "actual": "-100 bp",
    "why": "Fed moved -100 bp by that meeting. The move came early, at an unscheduled meeting.",
    "err": 0,
-   "horizon_days": 8
+   "horizon_days": 8,
+   "peers": 1,
+   "edge": 0.5
   },
   {
    "id": "c023",
@@ -984,7 +1219,9 @@
    "actual": "-100 bp",
    "why": "Fed moved -100 bp by that meeting. The move came early, at an unscheduled meeting.",
    "err": 50,
-   "horizon_days": 8
+   "horizon_days": 8,
+   "peers": 1,
+   "edge": -0.5
   },
   {
    "id": "c024",
@@ -1001,7 +1238,9 @@
    "actual": "0.125%",
    "why": "Same target range.",
    "err": 0,
-   "horizon_days": 112
+   "horizon_days": 112,
+   "peers": 0,
+   "edge": null
   },
   {
    "id": "c025",
@@ -1018,7 +1257,9 @@
    "actual": "0.125%",
    "why": "Same target range.",
    "err": 0,
-   "horizon_days": 51
+   "horizon_days": 51,
+   "peers": 0,
+   "edge": null
   },
   {
    "id": "c026",
@@ -1051,7 +1292,9 @@
    "actual": "0.125%",
    "why": "Same target range.",
    "err": 0,
-   "horizon_days": 291
+   "horizon_days": 291,
+   "peers": 0,
+   "edge": null
   },
   {
    "id": "c028",
@@ -1068,7 +1311,9 @@
    "actual": "5.375%",
    "why": "Off by -475 bp.",
    "err": -475,
-   "horizon_days": 1021
+   "horizon_days": 1021,
+   "peers": 0,
+   "edge": null
   },
   {
    "id": "c029",
@@ -1085,7 +1330,9 @@
    "actual": "+425 bp in 2022",
    "why": "Off by -250 bp.",
    "err": -250,
-   "horizon_days": 316
+   "horizon_days": 316,
+   "peers": 11,
+   "edge": 0.0
   },
   {
    "id": "c030",
@@ -1102,7 +1349,9 @@
    "actual": "+425 bp in 2022",
    "why": "Off by -275 bp.",
    "err": -275,
-   "horizon_days": 316
+   "horizon_days": 316,
+   "peers": 11,
+   "edge": 0.0
   },
   {
    "id": "c031",
@@ -1119,7 +1368,9 @@
    "actual": "+425 bp in 2022",
    "why": "Off by -275 bp.",
    "err": -275,
-   "horizon_days": 316
+   "horizon_days": 316,
+   "peers": 11,
+   "edge": 0.0
   },
   {
    "id": "c032",
@@ -1136,7 +1387,9 @@
    "actual": "+425 bp in 2022",
    "why": "Off by -275 bp.",
    "err": -275,
-   "horizon_days": 316
+   "horizon_days": 316,
+   "peers": 11,
+   "edge": 0.0
   },
   {
    "id": "c033",
@@ -1153,7 +1406,9 @@
    "actual": "+425 bp in 2022",
    "why": "Off by -275 bp.",
    "err": -275,
-   "horizon_days": 316
+   "horizon_days": 316,
+   "peers": 11,
+   "edge": 0.0
   },
   {
    "id": "c034",
@@ -1170,7 +1425,9 @@
    "actual": "+425 bp in 2022",
    "why": "Off by -250 bp.",
    "err": -250,
-   "horizon_days": 316
+   "horizon_days": 316,
+   "peers": 11,
+   "edge": 0.0
   },
   {
    "id": "c035",
@@ -1187,7 +1444,9 @@
    "actual": "+425 bp in 2022",
    "why": "Off by -300 bp.",
    "err": -300,
-   "horizon_days": 316
+   "horizon_days": 316,
+   "peers": 11,
+   "edge": 0.0
   },
   {
    "id": "c036",
@@ -1204,7 +1463,9 @@
    "actual": "+425 bp in 2022",
    "why": "Off by -250 bp.",
    "err": -250,
-   "horizon_days": 316
+   "horizon_days": 316,
+   "peers": 11,
+   "edge": 0.0
   },
   {
    "id": "c037",
@@ -1221,7 +1482,9 @@
    "actual": "+425 bp in 2022",
    "why": "Off by -250 bp.",
    "err": -250,
-   "horizon_days": 316
+   "horizon_days": 316,
+   "peers": 11,
+   "edge": 0.0
   },
   {
    "id": "c038",
@@ -1238,7 +1501,9 @@
    "actual": "+425 bp in 2022",
    "why": "Off by -275 bp.",
    "err": -275,
-   "horizon_days": 316
+   "horizon_days": 316,
+   "peers": 11,
+   "edge": 0.0
   },
   {
    "id": "c039",
@@ -1255,7 +1520,9 @@
    "actual": "+425 bp in 2022",
    "why": "Off by -250 bp.",
    "err": -250,
-   "horizon_days": 316
+   "horizon_days": 316,
+   "peers": 11,
+   "edge": 0.0
   },
   {
    "id": "c040",
@@ -1272,7 +1539,9 @@
    "actual": "+425 bp in 2022",
    "why": "Off by -300 bp.",
    "err": -300,
-   "horizon_days": 316
+   "horizon_days": 316,
+   "peers": 11,
+   "edge": 0.0
   },
   {
    "id": "c041",
@@ -1289,7 +1558,9 @@
    "actual": "+25 bp",
    "why": "Fed moved +25 bp by that meeting.",
    "err": 0,
-   "horizon_days": 26
+   "horizon_days": 26,
+   "peers": 8,
+   "edge": 0.25
   },
   {
    "id": "c042",
@@ -1306,7 +1577,9 @@
    "actual": "+25 bp",
    "why": "Fed moved +25 bp by that meeting.",
    "err": 0,
-   "horizon_days": 26
+   "horizon_days": 26,
+   "peers": 8,
+   "edge": 0.25
   },
   {
    "id": "c043",
@@ -1323,7 +1596,9 @@
    "actual": "+25 bp",
    "why": "Fed moved +25 bp by that meeting.",
    "err": 25,
-   "horizon_days": 26
+   "horizon_days": 26,
+   "peers": 8,
+   "edge": -0.312
   },
   {
    "id": "c044",
@@ -1340,7 +1615,9 @@
    "actual": "+25 bp",
    "why": "Fed moved +25 bp by that meeting.",
    "err": 25,
-   "horizon_days": 26
+   "horizon_days": 26,
+   "peers": 8,
+   "edge": -0.312
   },
   {
    "id": "c045",
@@ -1357,7 +1634,9 @@
    "actual": "+25 bp",
    "why": "Fed moved +25 bp by that meeting.",
    "err": 0,
-   "horizon_days": 26
+   "horizon_days": 26,
+   "peers": 8,
+   "edge": 0.25
   },
   {
    "id": "c046",
@@ -1374,7 +1653,9 @@
    "actual": "+25 bp",
    "why": "Fed moved +25 bp by that meeting.",
    "err": 0,
-   "horizon_days": 26
+   "horizon_days": 26,
+   "peers": 8,
+   "edge": 0.25
   },
   {
    "id": "c047",
@@ -1391,7 +1672,9 @@
    "actual": "+25 bp",
    "why": "Fed moved +25 bp by that meeting.",
    "err": 0,
-   "horizon_days": 26
+   "horizon_days": 26,
+   "peers": 8,
+   "edge": 0.25
   },
   {
    "id": "c048",
@@ -1408,7 +1691,9 @@
    "actual": "+25 bp",
    "why": "Fed moved +25 bp by that meeting.",
    "err": 25,
-   "horizon_days": 26
+   "horizon_days": 26,
+   "peers": 8,
+   "edge": -0.312
   },
   {
    "id": "c049",
@@ -1425,7 +1710,9 @@
    "actual": "+25 bp",
    "why": "Fed moved +25 bp by that meeting.",
    "err": 25,
-   "horizon_days": 26
+   "horizon_days": 26,
+   "peers": 8,
+   "edge": -0.312
   },
   {
    "id": "c050",
@@ -1442,7 +1729,9 @@
    "actual": "5.375%",
    "why": "Off by -225 bp.",
    "err": -225,
-   "horizon_days": 407
+   "horizon_days": 407,
+   "peers": 9,
+   "edge": -0.222
   },
   {
    "id": "c051",
@@ -1459,7 +1748,9 @@
    "actual": "5.375%",
    "why": "Off by -150 bp.",
    "err": -150,
-   "horizon_days": 407
+   "horizon_days": 407,
+   "peers": 9,
+   "edge": -0.222
   },
   {
    "id": "c052",
@@ -1476,7 +1767,9 @@
    "actual": "5.375%",
    "why": "Off by -50 bp.",
    "err": -50,
-   "horizon_days": 407
+   "horizon_days": 407,
+   "peers": 9,
+   "edge": -0.222
   },
   {
    "id": "c053",
@@ -1493,7 +1786,9 @@
    "actual": "5.375%",
    "why": "Off by -100 bp.",
    "err": -100,
-   "horizon_days": 407
+   "horizon_days": 407,
+   "peers": 9,
+   "edge": -0.222
   },
   {
    "id": "c054",
@@ -1510,7 +1805,9 @@
    "actual": "5.375%",
    "why": "Off by -100 bp.",
    "err": -100,
-   "horizon_days": 407
+   "horizon_days": 407,
+   "peers": 9,
+   "edge": -0.222
   },
   {
    "id": "c055",
@@ -1527,7 +1824,9 @@
    "actual": "5.375%",
    "why": "Off by -50 bp.",
    "err": -50,
-   "horizon_days": 407
+   "horizon_days": 407,
+   "peers": 9,
+   "edge": -0.222
   },
   {
    "id": "c056",
@@ -1544,7 +1843,9 @@
    "actual": "5.375%",
    "why": "Off by -25 bp.",
    "err": -25,
-   "horizon_days": 407
+   "horizon_days": 407,
+   "peers": 9,
+   "edge": 0.333
   },
   {
    "id": "c057",
@@ -1561,7 +1862,9 @@
    "actual": "5.375%",
    "why": "Off by -25 bp.",
    "err": -25,
-   "horizon_days": 407
+   "horizon_days": 407,
+   "peers": 9,
+   "edge": 0.333
   },
   {
    "id": "c058",
@@ -1578,7 +1881,9 @@
    "actual": "5.375%",
    "why": "Off by -50 bp.",
    "err": -50,
-   "horizon_days": 407
+   "horizon_days": 407,
+   "peers": 9,
+   "edge": -0.222
   },
   {
    "id": "c059",
@@ -1595,7 +1900,9 @@
    "actual": "5.375%",
    "why": "Same target range.",
    "err": 0,
-   "horizon_days": 407
+   "horizon_days": 407,
+   "peers": 9,
+   "edge": 0.889
   },
   {
    "id": "c060",
@@ -1612,7 +1919,9 @@
    "actual": "-100 bp in 2024",
    "why": "Off by -25 bp.",
    "err": -25,
-   "horizon_days": 384
+   "horizon_days": 384,
+   "peers": 2,
+   "edge": 0.0
   },
   {
    "id": "c061",
@@ -1629,7 +1938,9 @@
    "actual": "First cut: 18 Sep 2024",
    "why": "Came 182 days later than called.",
    "err": 182,
-   "horizon_days": 98
+   "horizon_days": 98,
+   "peers": 0,
+   "edge": null
   },
   {
    "id": "c062",
@@ -1646,7 +1957,9 @@
    "actual": "-100 bp in 2024",
    "why": "Off by -25 bp.",
    "err": -25,
-   "horizon_days": 384
+   "horizon_days": 384,
+   "peers": 2,
+   "edge": 0.0
   },
   {
    "id": "c063",
@@ -1663,7 +1976,9 @@
    "actual": "First cut: 18 Sep 2024",
    "why": "Came 98 days later than called.",
    "err": 98,
-   "horizon_days": 182
+   "horizon_days": 182,
+   "peers": 1,
+   "edge": 0.0
   },
   {
    "id": "c064",
@@ -1680,7 +1995,9 @@
    "actual": "-100 bp in 2024",
    "why": "Off by +25 bp.",
    "err": 25,
-   "horizon_days": 384
+   "horizon_days": 384,
+   "peers": 2,
+   "edge": 0.0
   },
   {
    "id": "c065",
@@ -1697,7 +2014,9 @@
    "actual": "First cut: 18 Sep 2024",
    "why": "Came 98 days later than called.",
    "err": 98,
-   "horizon_days": 182
+   "horizon_days": 182,
+   "peers": 1,
+   "edge": 0.0
   },
   {
    "id": "c066",
@@ -1714,7 +2033,9 @@
    "actual": "4.375%",
    "why": "Same target range.",
    "err": 0,
-   "horizon_days": 312
+   "horizon_days": 312,
+   "peers": 2,
+   "edge": 0.25
   },
   {
    "id": "c067",
@@ -1731,7 +2052,9 @@
    "actual": "First cut: 18 Sep 2024",
    "why": "Came 98 days later than called.",
    "err": 98,
-   "horizon_days": 110
+   "horizon_days": 110,
+   "peers": 2,
+   "edge": 0.0
   },
   {
    "id": "c068",
@@ -1748,7 +2071,9 @@
    "actual": "4.375%",
    "why": "Off by +25 bp.",
    "err": 25,
-   "horizon_days": 312
+   "horizon_days": 312,
+   "peers": 2,
+   "edge": -0.5
   },
   {
    "id": "c069",
@@ -1765,7 +2090,9 @@
    "actual": "First cut: 18 Sep 2024",
    "why": "Came 98 days later than called.",
    "err": 98,
-   "horizon_days": 110
+   "horizon_days": 110,
+   "peers": 2,
+   "edge": 0.0
   },
   {
    "id": "c070",
@@ -1782,7 +2109,9 @@
    "actual": "4.375%",
    "why": "Same target range.",
    "err": 0,
-   "horizon_days": 312
+   "horizon_days": 312,
+   "peers": 2,
+   "edge": 0.25
   },
   {
    "id": "c071",
@@ -1799,7 +2128,9 @@
    "actual": "First cut: 18 Sep 2024",
    "why": "Came 98 days later than called.",
    "err": 98,
-   "horizon_days": 110
+   "horizon_days": 110,
+   "peers": 2,
+   "edge": 0.0
   },
   {
    "id": "c072",
@@ -1816,7 +2147,9 @@
    "actual": "-25 bp",
    "why": "Fed moved -25 bp by that meeting.",
    "err": 0,
-   "horizon_days": 19
+   "horizon_days": 19,
+   "peers": 11,
+   "edge": 0.045
   },
   {
    "id": "c073",
@@ -1833,7 +2166,9 @@
    "actual": "-25 bp",
    "why": "Fed moved -25 bp by that meeting.",
    "err": 0,
-   "horizon_days": 19
+   "horizon_days": 19,
+   "peers": 11,
+   "edge": 0.045
   },
   {
    "id": "c074",
@@ -1850,7 +2185,9 @@
    "actual": "-25 bp",
    "why": "Fed moved -25 bp by that meeting.",
    "err": 0,
-   "horizon_days": 19
+   "horizon_days": 19,
+   "peers": 11,
+   "edge": 0.045
   },
   {
    "id": "c075",
@@ -1867,7 +2204,9 @@
    "actual": "-25 bp",
    "why": "Fed moved -25 bp by that meeting.",
    "err": 0,
-   "horizon_days": 19
+   "horizon_days": 19,
+   "peers": 11,
+   "edge": 0.045
   },
   {
    "id": "c076",
@@ -1884,7 +2223,9 @@
    "actual": "-25 bp",
    "why": "Fed moved -25 bp by that meeting.",
    "err": 0,
-   "horizon_days": 19
+   "horizon_days": 19,
+   "peers": 11,
+   "edge": 0.045
   },
   {
    "id": "c077",
@@ -1901,7 +2242,9 @@
    "actual": "-25 bp",
    "why": "Fed moved -25 bp by that meeting.",
    "err": 0,
-   "horizon_days": 19
+   "horizon_days": 19,
+   "peers": 11,
+   "edge": 0.045
   },
   {
    "id": "c078",
@@ -1918,7 +2261,9 @@
    "actual": "-25 bp",
    "why": "Fed moved -25 bp by that meeting.",
    "err": 0,
-   "horizon_days": 19
+   "horizon_days": 19,
+   "peers": 11,
+   "edge": 0.045
   },
   {
    "id": "c079",
@@ -1935,7 +2280,9 @@
    "actual": "-25 bp",
    "why": "Fed moved -25 bp by that meeting.",
    "err": 0,
-   "horizon_days": 19
+   "horizon_days": 19,
+   "peers": 11,
+   "edge": 0.045
   },
   {
    "id": "c080",
@@ -1952,7 +2299,9 @@
    "actual": "-25 bp",
    "why": "Fed moved -25 bp by that meeting.",
    "err": 0,
-   "horizon_days": 19
+   "horizon_days": 19,
+   "peers": 11,
+   "edge": 0.045
   },
   {
    "id": "c081",
@@ -1969,7 +2318,9 @@
    "actual": "-25 bp",
    "why": "Fed moved -25 bp by that meeting.",
    "err": 0,
-   "horizon_days": 19
+   "horizon_days": 19,
+   "peers": 11,
+   "edge": 0.045
   },
   {
    "id": "c082",
@@ -1986,7 +2337,9 @@
    "actual": "-25 bp",
    "why": "Fed moved -25 bp by that meeting.",
    "err": 0,
-   "horizon_days": 19
+   "horizon_days": 19,
+   "peers": 11,
+   "edge": 0.045
   },
   {
    "id": "c083",
@@ -2003,7 +2356,9 @@
    "actual": "-25 bp",
    "why": "Fed moved -25 bp by that meeting.",
    "err": -25,
-   "horizon_days": 19
+   "horizon_days": 19,
+   "peers": 11,
+   "edge": -0.5
   },
   {
    "id": "c084",
@@ -2020,7 +2375,9 @@
    "actual": "4.375%",
    "why": "Off by -50 bp.",
    "err": -50,
-   "horizon_days": 213
+   "horizon_days": 213,
+   "peers": 1,
+   "edge": 0.0
   },
   {
    "id": "c085",
@@ -2037,7 +2394,9 @@
    "actual": "3.625%",
    "why": "Off by +25 bp.",
    "err": 25,
-   "horizon_days": 397
+   "horizon_days": 397,
+   "peers": 7,
+   "edge": 0.214
   },
   {
    "id": "c086",
@@ -2054,7 +2413,9 @@
    "actual": "4.375%",
    "why": "Off by -100 bp.",
    "err": -100,
-   "horizon_days": 213
+   "horizon_days": 213,
+   "peers": 1,
+   "edge": 0.0
   },
   {
    "id": "c087",
@@ -2071,7 +2432,9 @@
    "actual": "4.125%",
    "why": "Off by -75 bp.",
    "err": -75,
-   "horizon_days": 305
+   "horizon_days": 305,
+   "peers": 1,
+   "edge": 0.0
   },
   {
    "id": "c088",
@@ -2088,7 +2451,9 @@
    "actual": "4.125%",
    "why": "Off by -50 bp.",
    "err": -50,
-   "horizon_days": 305
+   "horizon_days": 305,
+   "peers": 1,
+   "edge": 0.0
   },
   {
    "id": "c089",
@@ -2105,7 +2470,9 @@
    "actual": "3.625%",
    "why": "Off by -50 bp.",
    "err": -50,
-   "horizon_days": 397
+   "horizon_days": 397,
+   "peers": 7,
+   "edge": -0.357
   },
   {
    "id": "c090",
@@ -2122,7 +2489,9 @@
    "actual": "3.625%",
    "why": "Off by -25 bp.",
    "err": -25,
-   "horizon_days": 397
+   "horizon_days": 397,
+   "peers": 7,
+   "edge": 0.214
   },
   {
    "id": "c091",
@@ -2139,7 +2508,9 @@
    "actual": "3.625%",
    "why": "Off by -25 bp.",
    "err": -25,
-   "horizon_days": 397
+   "horizon_days": 397,
+   "peers": 7,
+   "edge": 0.214
   },
   {
    "id": "c092",
@@ -2156,7 +2527,9 @@
    "actual": "3.625%",
    "why": "Off by -25 bp.",
    "err": -25,
-   "horizon_days": 397
+   "horizon_days": 397,
+   "peers": 7,
+   "edge": 0.214
   },
   {
    "id": "c093",
@@ -2173,7 +2546,9 @@
    "actual": "3.625%",
    "why": "Off by +50 bp.",
    "err": 50,
-   "horizon_days": 397
+   "horizon_days": 397,
+   "peers": 7,
+   "edge": -0.357
   },
   {
    "id": "c094",
@@ -2190,7 +2565,9 @@
    "actual": "3.625%",
    "why": "Off by -25 bp.",
    "err": -25,
-   "horizon_days": 397
+   "horizon_days": 397,
+   "peers": 7,
+   "edge": 0.214
   },
   {
    "id": "c095",
@@ -2207,7 +2584,9 @@
    "actual": "3.625%",
    "why": "Off by +75 bp.",
    "err": 75,
-   "horizon_days": 397
+   "horizon_days": 397,
+   "peers": 7,
+   "edge": -0.357
   },
   {
    "id": "c096",
@@ -2224,7 +2603,9 @@
    "actual": "3.625%",
    "why": "Off by +75 bp.",
    "err": 75,
-   "horizon_days": 350
+   "horizon_days": 350,
+   "peers": 11,
+   "edge": -0.273
   },
   {
    "id": "c097",
@@ -2241,7 +2622,9 @@
    "actual": "3.625%",
    "why": "Off by +50 bp.",
    "err": 50,
-   "horizon_days": 350
+   "horizon_days": 350,
+   "peers": 11,
+   "edge": -0.273
   },
   {
    "id": "c098",
@@ -2258,7 +2641,9 @@
    "actual": "3.625%",
    "why": "Off by +75 bp.",
    "err": 75,
-   "horizon_days": 350
+   "horizon_days": 350,
+   "peers": 11,
+   "edge": -0.273
   },
   {
    "id": "c099",
@@ -2275,7 +2660,9 @@
    "actual": "3.625%",
    "why": "Off by +25 bp.",
    "err": 25,
-   "horizon_days": 350
+   "horizon_days": 350,
+   "peers": 11,
+   "edge": 0.273
   },
   {
    "id": "c100",
@@ -2292,7 +2679,9 @@
    "actual": "3.625%",
    "why": "Off by +25 bp.",
    "err": 25,
-   "horizon_days": 350
+   "horizon_days": 350,
+   "peers": 11,
+   "edge": 0.273
   },
   {
    "id": "c101",
@@ -2309,7 +2698,9 @@
    "actual": "3.625%",
    "why": "Off by +75 bp.",
    "err": 75,
-   "horizon_days": 350
+   "horizon_days": 350,
+   "peers": 11,
+   "edge": -0.273
   },
   {
    "id": "c102",
@@ -2326,7 +2717,9 @@
    "actual": "3.625%",
    "why": "Same target range.",
    "err": 0,
-   "horizon_days": 350
+   "horizon_days": 350,
+   "peers": 11,
+   "edge": 0.818
   },
   {
    "id": "c103",
@@ -2343,7 +2736,9 @@
    "actual": "3.625%",
    "why": "Off by +25 bp.",
    "err": 25,
-   "horizon_days": 350
+   "horizon_days": 350,
+   "peers": 11,
+   "edge": 0.273
   },
   {
    "id": "c104",
@@ -2360,7 +2755,9 @@
    "actual": "3.625%",
    "why": "Off by -50 bp.",
    "err": -50,
-   "horizon_days": 350
+   "horizon_days": 350,
+   "peers": 11,
+   "edge": -0.273
   },
   {
    "id": "c105",
@@ -2377,7 +2774,9 @@
    "actual": "3.625%",
    "why": "Off by +50 bp.",
    "err": 50,
-   "horizon_days": 350
+   "horizon_days": 350,
+   "peers": 11,
+   "edge": -0.273
   },
   {
    "id": "c106",
@@ -2394,7 +2793,9 @@
    "actual": "3.625%",
    "why": "Off by +75 bp.",
    "err": 75,
-   "horizon_days": 350
+   "horizon_days": 350,
+   "peers": 11,
+   "edge": -0.273
   },
   {
    "id": "c107",
@@ -2411,7 +2812,9 @@
    "actual": "3.625%",
    "why": "Off by +25 bp.",
    "err": 25,
-   "horizon_days": 350
+   "horizon_days": 350,
+   "peers": 11,
+   "edge": 0.273
   },
   {
    "id": "c108",
@@ -2428,7 +2831,9 @@
    "actual": "4.375%",
    "why": "Off by -50 bp.",
    "err": -50,
-   "horizon_days": 166
+   "horizon_days": 166,
+   "peers": 0,
+   "edge": null
   },
   {
    "id": "c109",
@@ -2445,7 +2850,9 @@
    "actual": "First cut: 17 Sep 2025",
    "why": "Came 91 days later than called.",
    "err": 91,
-   "horizon_days": 154
+   "horizon_days": 154,
+   "peers": 2,
+   "edge": 0.0
   },
   {
    "id": "c110",
@@ -2462,7 +2869,9 @@
    "actual": "First cut: 17 Sep 2025",
    "why": "Came 91 days later than called.",
    "err": 91,
-   "horizon_days": 154
+   "horizon_days": 154,
+   "peers": 2,
+   "edge": 0.0
   },
   {
    "id": "c111",
@@ -2479,7 +2888,9 @@
    "actual": "First cut: 17 Sep 2025",
    "why": "Came 91 days later than called.",
    "err": 91,
-   "horizon_days": 154
+   "horizon_days": 154,
+   "peers": 2,
+   "edge": 0.0
   },
   {
    "id": "c112",
@@ -2496,7 +2907,9 @@
    "actual": "First cut: 17 Sep 2025",
    "why": "Came 133 days later than called.",
    "err": 133,
-   "horizon_days": 112
+   "horizon_days": 112,
+   "peers": 0,
+   "edge": null
   },
   {
    "id": "c113",
@@ -2513,7 +2926,9 @@
    "actual": "First cut: 17 Sep 2025",
    "why": "Came on time.",
    "err": 0,
-   "horizon_days": 245
+   "horizon_days": 245,
+   "peers": 0,
+   "edge": null
   },
   {
    "id": "c114",
@@ -2746,7 +3161,9 @@
    "actual": "First hike: 16 Sep 2026",
    "why": "Came on time.",
    "err": 0,
-   "horizon_days": 86
+   "horizon_days": 86,
+   "peers": 0,
+   "edge": null
   },
   {
    "id": "c127",
@@ -2763,7 +3180,9 @@
    "actual": "First hike: 16 Sep 2026",
    "why": "Came on time.",
    "err": 0,
-   "horizon_days": 86
+   "horizon_days": 86,
+   "peers": 0,
+   "edge": null
   },
   {
    "id": "c128",

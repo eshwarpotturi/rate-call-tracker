@@ -89,6 +89,46 @@ details.more>div{display:flex;flex-direction:column;gap:14px}
 @media (max-width:560px){
   .row{grid-template-columns:1fr 64px;grid-template-areas:"lab pct" "bar bar"}
   .bench .hdr{display:none} .key{position:static} }
+/* league table */
+.sortby{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.sortby button{font:500 13px var(--body);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:5px 12px;cursor:pointer}
+.sortby button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-fill)}
+#league{min-width:0}
+#league td{vertical-align:middle}
+#league .rk{font:600 20px var(--display);color:var(--accent);width:44px;text-align:center}
+#league tr.top .rk{color:var(--c-correct)} #league tr.bottom .rk{color:var(--c-wrong)}
+#league .hn{font-weight:600;white-space:nowrap} #league .hn small{display:block;font:400 12px var(--body);color:var(--muted)}
+#league .bar{height:20px;min-width:150px}
+.edge{display:grid;grid-template-columns:1fr 2px 1fr;align-items:center;width:150px;height:20px}
+.edge .mid{background:var(--muted);height:100%}
+.edge .neg,.edge .pos{height:12px;display:flex}
+.edge .neg{justify-content:flex-end} .edge .neg i{background:var(--c-wrong);border-radius:3px 0 0 3px;height:100%}
+.edge .pos i{background:var(--c-correct);border-radius:0 3px 3px 0;height:100%}
+.ev{font:600 14px var(--mono);white-space:nowrap} .ev.up{color:var(--c-correct)} .ev.down{color:var(--c-wrong)}
+#league tr.main td{border-bottom:0;padding-bottom:2px}
+#league td.calls{font-size:12.5px;color:var(--muted);padding-top:0;white-space:normal;font-weight:400}
+#league td.calls .cl{display:flex;flex-wrap:wrap;gap:4px 22px}
+#league td.calls b{font-weight:600}
+@media (max-width:640px){
+  #league,#league tbody{display:block;width:100%}
+  #league thead{display:none}
+  #league tr.main{display:grid;grid-template-columns:34px 1fr auto;grid-template-areas:"rk hn edge" "rk rec rec" "rk sc ms";gap:6px 10px;padding:12px 10px 0}
+  #league tr.main td{display:block;padding:0;border:0}
+  #league td.rk{grid-area:rk} #league td.hn{grid-area:hn;white-space:normal} #league td.rec{grid-area:rec}
+  #league td.edgec{grid-area:edge} #league td.edgec .edge{display:none}
+  #league td.sc{grid-area:sc;text-align:left} #league td.ms{grid-area:ms;text-align:right}
+  #league td.sc::before{content:"Score "} #league td.ms::before{content:"Avg miss "}
+  #league td.sc::before,#league td.ms::before{font:400 12px var(--body);color:var(--muted)}
+  #league tr.sub{display:block;padding:6px 10px 12px 54px;border-bottom:1px solid var(--line)}
+  #league tr.sub td{display:block;padding:0;border:0}
+  #league td.calls .cl{flex-direction:column}
+  #league .bar{min-width:0}
+}
+.callout{background:var(--accent-soft);border-left:4px solid var(--accent);padding:12px 16px;border-radius:0 6px 6px 0}
+.unranked{display:flex;flex-wrap:wrap;gap:6px}
+.unranked span{font:500 12px var(--body);background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:3px 8px}
+.unranked b{font-family:var(--mono)}
+.unranked .up{color:var(--c-correct)} .unranked .down{color:var(--c-wrong)}
 </style>
 
 <div class="wrap">
@@ -110,6 +150,19 @@ details.more>div{display:flex;flex-direction:column;gap:14px}
     <div class="cards" id="cards"></div>
   </section>
 
+  <section id="ranking">
+    <h2>League table: who forecasts the Fed best</h2>
+    <p>Houses are ranked by how often they <b>beat the pack</b>: for each forecast, we compare the house with every other house that answered the same question in the same report. <span class="ev up">+0.14</span> means it scored 14 points better per forecast than the houses it was up against. This is fairer than a raw score, because some houses mostly answered easy, near-term questions.</p>
+    <div class="callout" id="leaguecallout"></div>
+    <div class="sortby" id="sortby"><span class="count">Rank by:</span>
+      <button data-s="edge" aria-pressed="true">Beat the pack</button>
+      <button data-s="score" aria-pressed="false">Raw score</button>
+      <button data-s="miss" aria-pressed="false">Smallest average miss</button>
+    </div>
+    <div class="scroll"><table id="league"></table></div>
+    <div><h3 style="margin-bottom:8px">Not enough forecasts to rank yet (fewer than <span id="minrank"></span> checked)</h3><div class="unranked" id="unranked"></div></div>
+  </section>
+
   <section>
     <h2>The further ahead, the worse the call</h2>
     <p class="muted">Checked forecasts, by how long before the deadline they were made.</p>
@@ -129,12 +182,6 @@ details.more>div{display:flex;flex-direction:column;gap:14px}
       <div class="box k-needs_revision" id="dead"></div>
       <div class="box k-untested" id="alive"></div>
     </div>
-  </section>
-
-  <section>
-    <h2>Which houses beat the Fed's own forecast?</h2>
-    <p class="muted">Houses with at least 5 checked forecasts. Score = correct + half of partly, out of 1. Dashed line = the Fed's own dot plot. Green scores beat it; red scores do not.</p>
-    <div class="bench" id="bench"></div>
   </section>
 
   <section>
@@ -206,14 +253,15 @@ const H = V.horizon, short = H[0];
 const longer = H.slice(1).reduce((a, b) => ({n: a.n + b.n, correct: a.correct + b.correct}), {n:0, correct:0});
 const y19 = V.years.find(r => r.year === "2019");
 const fomc = V.houses.find(h => h.house.startsWith("FOMC"));
-const bigH = V.houses.filter(h => h.judged >= 5 && !h.house.startsWith("FOMC")), beat = bigH.filter(h => h.score > fomc.score);
+const ranked = V.houses.filter(h => h.ranked), leader = ranked[0];
+const byScore = [...ranked].sort((a, b) => b.score - a.score || b.edge - a.edge)[0];
 $("cards").innerHTML = [
   ["correct", `${pct(short.correct, short.n)} <small>vs ${pct(longer.correct, longer.n)}</small>`, "Short calls work, long calls don't",
    `Forecasts made up to 2 months ahead were right ${short.correct} of ${short.n} times. Further out: ${longer.correct} of ${longer.n}.`],
   ["wrong", `0 <small>of ${y19.correct + y19.partly + y19.wrong}</small>`, "Nobody saw 2019 coming",
    "Everyone expected hikes in 2019; the Fed cut three times. In 2022 every bank under-called the hikes by 250 bp or more."],
-  ["partly", `${beat.length} <small>of ${bigH.length}</small>`, "Few banks beat the Fed's own forecast",
-   `Only ${beat.map(h => h.house).join(" and ")} scored above the Fed's dot plot (${fomc.score.toFixed(2)}).`],
+  ["partly", `#1 <small>${esc(leader.house)}</small>`, "Best record head-to-head",
+   `${esc(leader.house)} beat the other houses on the same questions by ${(leader.edge * 100).toFixed(0)} points per forecast. Ranked by raw score instead, ${esc(byScore.house)} would top the table.`],
   ["needs_revision", `${T.needs_revision}`, "2026 calls already dead",
    "January's year-end calls for cuts can't happen after September's hike. Quoting them now means quoting stale research."],
 ].map(([k, n, h, p]) => `<div class="card k-${k}"><div class="n">${n}</div><b>${h}</b><p>${p}</p></div>`).join("");
@@ -243,16 +291,36 @@ function groups(k, title) {
 $("dead").innerHTML = groups("needs_revision", "Can no longer happen");
 $("alive").innerHTML = groups("untested", "Still possible");
 
-let html = `<div class="row"><div class="hdr lab">House</div><div class="hdr bar" style="height:auto">Its checked forecasts</div><div class="hdr pct" style="text-align:right">Score</div></div>`;
-V.houses.filter(h => h.judged >= 5).forEach(h => {
-  const isF = h.house.startsWith("FOMC");
-  const k = isF ? "untested" : h.score > fomc.score ? "correct" : "wrong";
-  if (isF) html += `<div class="yard"><span>Fed's own forecast: ${h.score.toFixed(2)}</span></div>`;
-  html += `<div class="row"><div class="name ${isF ? "fomc" : ""}">${esc(isF ? "The Fed itself (dot plot)" : h.house)}<small>${h.judged} checked</small></div><div class="bar" data-h="${esc(h.house)}"></div><div class="score k-${k}">${h.score.toFixed(2)}</div></div>`;
-  if (isF) html += `<div class="yard"></div>`;
-});
-$("bench").innerHTML = html;
-$("bench").querySelectorAll("[data-h]").forEach(b => bar(b, V.houses.find(h => h.house === b.dataset.h), ["correct", "partly", "wrong"]));
+const byId = Object.fromEntries(V.claims.map(c => [c.id, c]));
+const sgn = x => (x > 0 ? "+" : x < 0 ? "−" : "") + Math.abs(x).toFixed(2);
+const maxEdge = Math.max(...ranked.map(h => Math.abs(h.edge)));
+const callTxt = (id, kind) => { const c = byId[id]; if (!c) return "";
+  return kind === "best"
+    ? `<span><b style="color:var(--c-correct)">✓ Best call:</b> ${esc(c.stated.replace(" (midpoint)", ""))}, made ${fmt(c.made_on)}</span>`
+    : `<span><b style="color:var(--c-wrong)">✗ Biggest miss:</b> ${esc(c.stated.replace(" (midpoint)", ""))}, off by ${Math.abs(c.err)} ${c.kind === "first_move" ? "days" : "bp"}</span>`; };
+let sortKey = "edge";
+function league() {
+  const list = [...ranked].sort((a, b) => sortKey === "edge" ? b.edge - a.edge || b.score - a.score
+    : sortKey === "score" ? b.score - a.score || b.edge - a.edge : a.miss_bp - b.miss_bp || b.edge - a.edge);
+  $("league").innerHTML = `<thead><tr><th class="c">Rank</th><th>House</th><th>Its checked forecasts</th><th>Beat the pack</th><th class="c">Score</th><th class="c">Avg miss</th></tr></thead><tbody>` +
+    list.map((h, i) => {
+      const w = Math.round(100 * Math.abs(h.edge) / maxEdge);
+      const cls = i < 3 ? "top" : i >= list.length - 2 ? "bottom" : "";
+      return `<tr class="main ${cls}"><td class="rk" rowspan="2">${i + 1}</td><td class="hn">${esc(h.house)}<small>${h.judged} checked · ${h.edge_n} head-to-head</small></td>
+        <td class="rec"><div class="bar" data-h="${esc(h.house)}"></div></td>
+        <td class="edgec"><div style="display:flex;align-items:center;gap:10px"><div class="edge"><div class="neg">${h.edge < 0 ? `<i style="width:${w}%"></i>` : ""}</div><div class="mid"></div><div class="pos">${h.edge > 0 ? `<i style="width:${w}%"></i>` : ""}</div></div><span class="ev ${h.edge >= 0 ? "up" : "down"}">${sgn(h.edge)}</span></div></td>
+        <td class="c num sc">${Math.round(h.score * 100)}%</td><td class="c num ms">${h.miss_bp} bp</td></tr>
+        <tr class="sub ${cls}"><td colspan="5" class="calls"><div class="cl">${callTxt(h.best, "best")}${callTxt(h.worst, "worst")}</div></td></tr>`;
+    }).join("") + `</tbody>`;
+  $("league").querySelectorAll("[data-h]").forEach(b => bar(b, V.houses.find(h => h.house === b.dataset.h), ["correct", "partly", "wrong"]));
+}
+$("sortby").addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return;
+  sortKey = b.dataset.s; $("sortby").querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b)); league(); });
+league();
+$("minrank").textContent = V.min_rank;
+$("leaguecallout").innerHTML = `<b>Why a raw score misleads:</b> ${esc(byScore.house)} has the best raw score (${Math.round(byScore.score * 100)}%: correct plus half of partly), but many of its hits were on questions every house got right, so head-to-head it ranks #${ranked.indexOf(byScore) + 1}. ${esc(leader.house)} ranks #1 because it was right more often when others were wrong. For reference, the Fed's own dot plot scored ${Math.round(fomc.score * 100)}% on the same rules.`;
+$("unranked").innerHTML = V.houses.filter(h => !h.ranked && h.judged > 0 && !h.house.startsWith("FOMC")).map(h =>
+  `<span>${esc(h.house)} · ${h.judged} checked${h.edge != null ? ` · <b class="${h.edge >= 0 ? "up" : "down"}">${sgn(h.edge)}</b>` : ""}</span>`).join("");
 
 const opt = (el, all, vals) => $(el).innerHTML = `<option value="">${all}</option>` + vals.map(v => `<option>${esc(v)}</option>`).join("");
 opt("fhouse", "All houses", [...new Set(V.claims.map(c => c.house))].sort());
