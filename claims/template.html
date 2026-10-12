@@ -1,195 +1,279 @@
 <style>
-/* Extra styles for the claim catalog; base tokens come from the tracker's template.html */
-:root{ --part:#b7791f; --part-soft:#fbf1df }
-@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --part:#e0a84a; --part-soft:#3a2e17 } }
-:root[data-theme="dark"]{ --part:#e0a84a; --part-soft:#3a2e17 }
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
-.stat{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:14px 16px;display:flex;flex-direction:column;gap:4px}
-.stat b{font:600 28px/1.1 var(--display)}
-.stat span{font-size:13px;color:var(--muted)}
-.find{display:flex;flex-direction:column;gap:10px;margin:0;padding-left:20px}
-.stack{display:grid;grid-template-columns:minmax(110px,170px) 1fr;gap:8px 12px;align-items:center}
-.stack .lab{font-weight:500;min-width:0}
-.stack .lab small{display:block;font:400 12px var(--mono);color:var(--muted)}
-.stack .bar{display:flex;gap:2px;height:22px;min-width:0}
-.stack .seg{border-radius:0;display:flex;align-items:center;justify-content:center;font:500 12px var(--mono);color:var(--ink);min-width:0;overflow:hidden;cursor:default}
-.stack .seg:first-child{border-radius:4px 0 0 4px} .stack .seg:last-child{border-radius:0 4px 4px 0} .stack .seg:only-child{border-radius:4px}
-.seg.correct{background:var(--good-soft);box-shadow:inset 0 -3px 0 var(--good)}
-.seg.partly{background:var(--part-soft);box-shadow:inset 0 -3px 0 var(--part)}
-.seg.wrong{background:var(--bad-soft);box-shadow:inset 0 -3px 0 var(--bad)}
-.v{display:inline-block;padding:2px 7px;border-radius:3px;font:500 12px var(--mono);white-space:nowrap}
-.v.correct{background:var(--good-soft);color:var(--good)} .v.partly{background:var(--part-soft);color:var(--part)}
-.v.wrong{background:var(--bad-soft);color:var(--bad)} .v.untested{background:var(--accent-soft);color:var(--accent)}
-.v.needs_revision{background:var(--bad-soft);color:var(--bad);outline:1px dashed var(--bad)} .v.unjudgeable{background:var(--none-soft);color:var(--muted)}
-.filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+/* Claim catalog. Base fonts and tokens come from the tracker's template.html.
+   One colour per verdict, used everywhere on the page, always with an icon and a label:
+   correct = green, partly = amber (hatched), wrong = red, needs revision = purple, not yet testable = grey. */
+:root{
+  --c-correct:#1a7f37; --c-partly:#c27c0e; --c-wrong:#cf222e; --c-revise:#8250df; --c-open:#6e7781;
+  --t-correct:#e6f4ea; --t-partly:#fbf0dc; --t-wrong:#fbe5e6; --t-revise:#efe7fb; --t-open:#eef0f3;
+  --on-fill:#ffffff;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --c-correct:#2ea043; --c-partly:#c69026; --c-wrong:#da3633; --c-revise:#a371f7; --c-open:#8b949e;
+  --t-correct:#16301e; --t-partly:#3a2e14; --t-wrong:#3d1a1b; --t-revise:#2b2140; --t-open:#23272e; --on-fill:#ffffff } }
+:root[data-theme="dark"]{
+  --c-correct:#2ea043; --c-partly:#c69026; --c-wrong:#da3633; --c-revise:#a371f7; --c-open:#8b949e;
+  --t-correct:#16301e; --t-partly:#3a2e14; --t-wrong:#3d1a1b; --t-revise:#2b2140; --t-open:#23272e; --on-fill:#ffffff }
+
+.k-correct{--c:var(--c-correct);--t:var(--t-correct)} .k-partly{--c:var(--c-partly);--t:var(--t-partly)}
+.k-wrong{--c:var(--c-wrong);--t:var(--t-wrong)} .k-needs_revision{--c:var(--c-revise);--t:var(--t-revise)}
+.k-untested,.k-unjudgeable{--c:var(--c-open);--t:var(--t-open)}
+
+/* legend */
+.key{display:flex;flex-wrap:wrap;gap:8px 14px;position:sticky;top:0;z-index:3;background:var(--bg);padding:10px 0;border-bottom:1px solid var(--line)}
+.key small{color:var(--muted);font-size:12px;margin-left:5px}
+
+/* verdict pill: colour + icon + word */
+.pill{display:inline-flex;align-items:center;gap:6px;padding:3px 9px;border-radius:999px;background:var(--t);color:var(--ink);
+  font:500 12px var(--body);white-space:nowrap;border:1px solid var(--c)}
+.pill i{font-style:normal;display:inline-grid;place-items:center;width:16px;height:16px;border-radius:50%;background:var(--c);color:var(--on-fill);font:600 10px var(--mono)}
+button.pill{cursor:pointer} button.pill[aria-pressed="false"]{opacity:.4;background:var(--surface)}
+
+/* stacked bars */
+.bar{display:flex;gap:2px;height:30px;min-width:0}
+.bar.big{height:46px}
+.seg{background:var(--c);color:var(--on-fill);display:flex;align-items:center;justify-content:center;gap:4px;
+  font:600 12px var(--mono);min-width:0;overflow:hidden;white-space:nowrap;cursor:default}
+.bar.big .seg{font-size:14px}
+.seg:first-child{border-radius:5px 0 0 5px} .seg:last-child{border-radius:0 5px 5px 0} .seg:only-child{border-radius:5px}
+.seg.k-partly{background-image:repeating-linear-gradient(45deg,transparent 0 6px,rgba(255,255,255,.22) 6px 9px)}
+.rows,.bench{display:flex;flex-direction:column;gap:10px}
+.row{display:grid;grid-template-columns:minmax(120px,210px) 1fr 64px;grid-template-areas:"lab bar pct";gap:4px 12px;align-items:center}
+.row>.lab,.row>.name{grid-area:lab;min-width:0} .row>.bar{grid-area:bar} .row>.pct,.row>.score{grid-area:pct}
+.rows .lab{min-width:0;font-weight:500;line-height:1.25}
+.rows .lab small{display:block;color:var(--muted);font:400 12px var(--body)}
+.rows .pct{font:600 14px var(--mono);text-align:right;color:var(--c-correct)}
+.rows .pct small{display:block;font:400 11px var(--body);color:var(--muted)}
+
+/* headline cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);border-radius:6px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.card .n{font:600 34px/1 var(--display);color:var(--c)}
+.card .n small{font-size:16px;color:var(--muted);font-weight:500}
+.card b{font-weight:600}
+.card p{font-size:14px;color:var(--muted)}
+
+/* open calls */
+.open2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;align-items:start}
+.box{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--c);border-radius:6px;padding:14px 16px;display:flex;flex-direction:column;gap:12px}
+.box h3{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.grp{display:flex;flex-direction:column;gap:6px;padding-top:10px;border-top:1px solid var(--line)}
+.grp .what{font-weight:600}
+.grp .why{font-size:13px;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:500 12px var(--body);background:var(--t);color:var(--ink);border-radius:4px;padding:2px 8px;text-decoration:none}
+.chip:hover{text-decoration:underline}
+
+/* benchmark */
+.bench .hdr{font:500 12px var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.bench .bar{height:24px}
+.bench .yard{border-top:2px dashed var(--accent);height:0;position:relative}
+.bench .yard span{position:absolute;right:0;top:-11px;background:var(--bg);padding:0 6px;font:500 12px var(--mono);color:var(--accent)}
+.bench .name{font-weight:500;min-width:0}
+.bench .name small{display:block;font:400 12px var(--body);color:var(--muted)}
+.bench .fomc{color:var(--accent);font-weight:600}
+.score{justify-self:end;font:600 14px var(--mono);padding:2px 8px;border-radius:4px;background:var(--t);color:var(--ink);border:1px solid var(--c)}
+
+/* catalog */
+.filters{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .filters select,.filters input{font:400 14px var(--body);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:6px 8px;min-width:0}
 .filters input{flex:1 1 180px}
-.filters .count{font:500 13px var(--mono);color:var(--muted)}
-td .q{color:var(--muted);font-size:13px}
-td.n,th.n{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums}
-tr.fomc td{background:var(--accent-soft)}
+.count{font:500 13px var(--mono);color:var(--muted)}
+#catalog tbody td:first-child{border-left:5px solid var(--c)}
+#catalog td{font-size:13.5px} #catalog td .q{color:var(--muted);font-size:12.5px;margin-top:2px}
+#catalog td.nw{white-space:nowrap}
+details.more{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:14px 18px}
+details.more>div{display:flex;flex-direction:column;gap:14px}
 .flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
-.flow>div{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.flow>div{border:1px solid var(--line);border-radius:6px;padding:12px 14px;display:flex;flex-direction:column;gap:4px}
 .flow .step{font:500 12px var(--mono);color:var(--accent)}
-#catalog td:nth-child(1),#catalog td:nth-child(4),#opentable td:nth-child(3){white-space:nowrap} #catalog td:nth-child(3){min-width:200px} #catalog td:nth-child(7){min-width:180px}
+@media (max-width:560px){
+  .row{grid-template-columns:1fr 64px;grid-template-areas:"lab pct" "bar bar"}
+  .bench .hdr{display:none} .key{position:static} }
 </style>
 
 <div class="wrap">
   <header class="top">
-    <div class="eyebrow">Rate Call Tracker · claim catalog · data to <span id="asof"></span></div>
-    <h1>What forecasters said about the Fed, and what came true</h1>
-    <p>The <a href="./">tracker</a> starts from a rate decision and asks who saw it coming. This page starts from the other end. It takes what banks, surveys and the Fed itself said about the fed funds rate from 2016 to 2026, turns each statement into a claim with a deadline, and checks it against what the Fed did. Every claim links to the report it came from.</p>
+    <div class="eyebrow">Fed claim catalog · 2016–2026 · data to <span id="asof"></span></div>
+    <h1>Did the Fed forecasters get it right?</h1>
+    <p>We took <b id="ncl"></b> published forecasts of the US fed funds rate, from big banks, surveys and the Fed itself, and checked each one against what the Fed actually did. Each colour means the same thing everywhere on the page.</p>
   </header>
 
-  <div class="stats" id="stats"></div>
+  <div class="key" id="key" aria-label="Colour key"></div>
 
-  <section class="verdict">
-    <div class="eyebrow">What the catalog shows</div>
-    <ul class="find" id="findings"></ul>
+  <section>
+    <h2>All forecasts at a glance</h2>
+    <div class="bar big" id="overall"></div>
   </section>
 
   <section>
-    <h2>A rate forecast is worth little beyond two months</h2>
-    <p class="muted">Claims with a passed deadline, grouped by how far ahead of the deadline they were made.</p>
-    <div class="stack" id="byhorizon"></div>
-    <div class="legend"><span><i style="background:var(--good)"></i>Correct</span><span><i style="background:var(--part)"></i>Partly (one move off, or right direction, wrong size or meeting)</span><span><i style="background:var(--bad)"></i>Wrong</span></div>
+    <h2>Four things to take away</h2>
+    <div class="cards" id="cards"></div>
   </section>
 
   <section>
-    <h2>Turning points are where the calls fail</h2>
-    <p class="muted">The same claims by the year their deadline fell in. 2019 (cuts instead of hikes), 2022 (the fastest hiking cycle in forty years) and 2025 (cuts arriving later than called) stand out.</p>
-    <div class="stack" id="byyear"></div>
+    <h2>The further ahead, the worse the call</h2>
+    <p class="muted">Checked forecasts, by how long before the deadline they were made.</p>
+    <div class="rows" id="byhorizon"></div>
   </section>
 
   <section>
-    <h2>Open now: published calls that need revising</h2>
-    <p id="openlede"></p>
-    <div class="scroll"><table id="opentable"></table></div>
+    <h2>Turning points are where everyone missed</h2>
+    <p class="muted">Checked forecasts, by the year they were about.</p>
+    <div class="rows" id="byyear"></div>
   </section>
 
   <section>
-    <h2>House benchmark</h2>
-    <p>Houses with at least five checked claims. Score = (correct + half of partly) ÷ checked. The Fed's own dot plot is the yardstick row: a house only adds value if it beats the Fed's published view of itself.</p>
-    <div class="scroll"><table id="bench"></table></div>
-    <p class="muted">Read with care: houses differ in which claims the press reported, and short-horizon claims are easier. The table is a starting point for an analyst rating, not a ranking to publish.</p>
+    <h2>Forecasts for the rest of 2026</h2>
+    <p class="muted" id="openlede"></p>
+    <div class="open2">
+      <div class="box k-needs_revision" id="dead"></div>
+      <div class="box k-untested" id="alive"></div>
+    </div>
   </section>
 
   <section>
-    <h2>The full catalog</h2>
+    <h2>Which houses beat the Fed's own forecast?</h2>
+    <p class="muted">Houses with at least 5 checked forecasts. Score = correct + half of partly, out of 1. Dashed line = the Fed's own dot plot. Green scores beat it; red scores do not.</p>
+    <div class="bench" id="bench"></div>
+  </section>
+
+  <section>
+    <h2>Every forecast</h2>
+    <div class="filters" id="fverdict" aria-label="Show verdicts"></div>
     <div class="filters">
       <select id="fhouse" aria-label="House"></select>
-      <select id="fyear" aria-label="Deadline year"></select>
-      <select id="fverdict" aria-label="Verdict"></select>
-      <input id="fq" type="search" placeholder="Search claims and quotes" aria-label="Search">
+      <select id="fyear" aria-label="Year"></select>
+      <input id="fq" type="search" placeholder="Search" aria-label="Search">
       <span class="count" id="fcount"></span>
     </div>
     <div class="scroll"><table id="catalog"></table></div>
   </section>
 
-  <section class="pitch">
-    <div class="eyebrow">How it works</div>
-    <h2>Mine, check, benchmark: the same three steps on any research corpus</h2>
-    <div class="flow">
-      <div><span class="step">1 · Extract</span><b>Article in, claims out</b><p>An LLM reads each report and returns every forecast as a structured claim: who, when, what level or move, by what deadline, and the exact phrase it came from. <span class="num">claims/extract.py</span> runs this through LLM Foundry.</p></div>
-      <div><span class="step">2 · Verify</span><b>Claims against facts</b><p><span class="num">claims/verify.py</span> checks each claim against the Fed's actual rate path with fixed rules, so the same data always gives the same verdict. Claims still open are marked untested, or needing revision when the facts since make them unreachable.</p></div>
-      <div><span class="step">3 · Benchmark</span><b>Verdicts into a record</b><p>Verdicts roll up by house, by year and by horizon. Internally that rates analysts; externally it shows clients how much weight each source has earned.</p></div>
-    </div>
-    <div class="two">
-      <div>
-        <h3>Verdicts</h3>
-        <ul id="defs"></ul>
+  <details class="more">
+    <summary>How this works, and what to check before sending it outside</summary>
+    <div>
+      <div class="flow">
+        <div><span class="step">1 · Extract</span><b>Article in, forecasts out</b><p>An LLM reads each report and lists every forecast: who, when, what, by when, and the exact phrase. <span class="num">claims/extract.py</span> runs this through LLM Foundry.</p></div>
+        <div><span class="step">2 · Verify</span><b>Forecasts against facts</b><p><span class="num">claims/verify.py</span> checks each forecast against the Fed's rate path with fixed rules. The LLM never decides a verdict.</p></div>
+        <div><span class="step">3 · Benchmark</span><b>Verdicts into a record</b><p>Verdicts roll up by house, year and horizon: a rating for analysts inside, a track record for clients outside.</p></div>
       </div>
-      <div>
-        <h3>Where it goes next</h3>
-        <ul>
-          <li>Run it on a research team's own notes, not press coverage, to rate its analysts the way McKinsey's energy outlooks were checked.</li>
-          <li>Re-run nightly: a claim flips to "needs revision" the day a data print or decision makes it unreachable, which is the moment to update a client note.</li>
-          <li>Same code for ECB, BoE and RBI rates, then GDP, inflation and earnings estimates: only the fact table changes.</li>
-        </ul>
-      </div>
+      <ul>
+        <li><b>Correct</b> = rate in the same target range as called, by the deadline. <b>Partly</b> = one 25 bp move off, or right direction but wrong size, or the right move up to 60 days off. <b>Wrong</b> = anything further off. <b>Needs revision</b> = deadline ahead, but it now needs more moves than meetings left, or a reversal of the Fed's last move.</li>
+        <li>Forecasts come from news coverage of each house's view, not the original research notes. Run on a team's own notes, the same steps rate its analysts.</li>
+        <li>The 2023 levels come from a Bloomberg table of single numbers, read as the top of the target range. J.P. Morgan's "3.75% through September 2025" is read the same way.</li>
+        <li>The Fed's rate path and dot-plot medians were entered from the Fed's tables; spot-check a few against the linked pages. Open forecasts assume meetings on 28 October and 9 December 2026.</li>
+      </ul>
     </div>
-  </section>
-
-  <section>
-    <div class="eyebrow">Limits</div>
-    <h2>Check before sending outside</h2>
-    <ul>
-      <li>Claims come from news coverage of each house's forecast, not the original research notes. A house's record here is only as complete as what the press reported.</li>
-      <li>The 2023 levels come from a Bloomberg table that gives single numbers; they are read as the top of the target range.</li>
-      <li>J.P. Morgan's "3.75% through September 2025" is read as the top of the 3.50%-3.75% range.</li>
-      <li>The Fed's dot-plot medians and the rate path were entered from the Fed's published tables; spot-check a few against the linked pages.</li>
-      <li>Open-claim checks assume Fed meetings on 28 October and 9 December 2026.</li>
-    </ul>
-  </section>
-  <footer>Built from public reports. Not investment advice. Verdicts are computed by <span class="num">claims/verify.py</span> from <span class="num">claims/claims.json</span> and <span class="num">claims/fed_path.json</span>; nothing on this page is typed in by hand except the commentary. <a href="./">Back to the Rate Call Tracker</a>.</footer>
+  </details>
+  <footer>Built from public reports. Not investment advice. Verdicts are computed by <span class="num">claims/verify.py</span>. <a href="./">Back to the Rate Call Tracker</a>.</footer>
 </div>
 
 <script>
 const V = /*VERDICTS*/;
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const LABEL = {correct:"Correct", partly:"Partly", wrong:"Wrong", untested:"Not yet testable", needs_revision:"Needs revision", unjudgeable:"Hard to say"};
+const K = {
+  correct:        {label:"Correct",          icon:"✓", tip:"happened as called"},
+  partly:         {label:"Partly",           icon:"≈", tip:"one move off"},
+  wrong:          {label:"Wrong",            icon:"✗", tip:"missed"},
+  needs_revision: {label:"Needs revision",   icon:"!", tip:"can no longer happen"},
+  untested:       {label:"Not yet testable", icon:"…", tip:"deadline still ahead"},
+  unjudgeable:    {label:"Hard to say",      icon:"?", tip:"nothing to check"},
+};
+const ORDER = ["correct", "partly", "wrong", "needs_revision", "untested", "unjudgeable"];
+const pill = k => `<span class="pill k-${k}"><i>${K[k].icon}</i>${K[k].label}</span>`;
 const fmt = d => new Date(d + "T00:00:00").toLocaleDateString("en-GB", {day:"numeric", month:"short", year:"numeric"});
 const pct = (a, b) => b ? Math.round(100 * a / b) + "%" : "–";
-const T = V.tally, judged = (T.correct||0) + (T.partly||0) + (T.wrong||0);
-const src = id => V.sources[id];
+const src = c => V.sources[c.src];
+const T = V.tally;
 
 $("asof").textContent = fmt(V.as_of);
-$("stats").innerHTML = [
-  [V.claims.length, "claims extracted from " + Object.keys(V.sources).length + " sources"],
-  [judged, "with a deadline that has passed"],
-  [pct(T.correct, judged), "of those came true exactly"],
-  [(T.needs_revision||0) + (T.untested||0), "still open, " + (T.needs_revision||0) + " needing revision"],
-].map(([b, s]) => `<div class="stat"><b class="num">${b}</b><span>${s}</span></div>`).join("");
+$("ncl").textContent = V.claims.length;
+$("key").innerHTML = ORDER.slice(0, 5).map(k => `<span>${pill(k)}<small>${K[k].tip}</small></span>`).join("");
 
-const H = V.horizon, short = H[0], longer = H.slice(1).reduce((a, b) => ({n: a.n + b.n, correct: a.correct + b.correct}), {n:0, correct:0});
-const y = Object.fromEntries(V.years.map(r => [r.year, r]));
-const fomc = V.houses.find(h => h.house.startsWith("FOMC"));
-$("findings").innerHTML = [
-  `<b>Near-term calls are reliable, longer ones are not.</b> Claims made up to two months before their deadline were exactly right ${short.correct} of ${short.n} times (${pct(short.correct, short.n)}). Beyond two months, ${longer.correct} of ${longer.n} (${pct(longer.correct, longer.n)}).`,
-  `<b>Every turn was missed.</b> None of the ${y["2019"].correct + y["2019"].partly + y["2019"].wrong} claims for 2019 came true: houses expected hikes and the Fed cut three times. All twelve 2022 year totals fell short of the Fed's 425 bp by 250 bp or more.`,
-  (() => { const big = V.houses.filter(h => h.judged >= 5 && !h.house.startsWith("FOMC")), beat = big.filter(h => h.score > fomc.score);
-    return `<b>Most houses did not beat the Fed's own forecast.</b> On the same rules the dot plot scored ${fomc.score.toFixed(2)}. Of ${big.length} houses with five or more checked claims, ${beat.length} scored higher (${beat.map(h => h.house).join(", ")}).`; })(),
-  `<b>${T.needs_revision} published 2026 calls are already dead.</b> The year-end forecasts in January's broker table, and the Fed's own December 2025 dot plot, assumed cuts; after September's hike they cannot come true without a reversal. A client note quoting them today would be quoting stale research.`,
-].map(s => `<li>${s}</li>`).join("");
-
-function stack(el, rows, labelOf) {
-  $(el).innerHTML = rows.map(r => {
-    const n = r.correct + r.partly + r.wrong;
-    const segs = ["correct", "partly", "wrong"].filter(k => r[k]).map(k =>
-      `<div class="seg ${k}" style="flex:${r[k]}" title="${LABEL[k]}: ${r[k]} of ${n}">${r[k] / n >= 0.1 ? r[k] : ""}</div>`).join("");
-    return `<div class="lab">${labelOf(r)}<small>${n} claims · ${pct(r.correct, n)} correct</small></div><div class="bar">${segs}</div>`;
+function bar(el, counts, keys, big) {
+  const n = keys.reduce((s, k) => s + (counts[k] || 0), 0);
+  el.innerHTML = keys.filter(k => counts[k]).map(k => {
+    const share = counts[k] / n;
+    const txt = share >= (big ? 0.05 : 0.08) ? `${K[k].icon} ${counts[k]}` : "";
+    const word = big && share >= 0.15 ? " " + K[k].label : "";
+    return `<div class="seg k-${k}" style="flex:${counts[k]}" title="${K[k].label}: ${counts[k]} of ${n} (${pct(counts[k], n)})">${txt}${word}</div>`;
   }).join("");
 }
-stack("byhorizon", H.filter(r => r.n), r => r.bucket);
-stack("byyear", V.years, r => r.year);
+bar($("overall"), T, ORDER.slice(0, 5), true);
 
-const open = V.claims.filter(c => c.verdict === "needs_revision" || c.verdict === "untested")
-  .sort((a, b) => (a.verdict === "needs_revision" ? 0 : 1) - (b.verdict === "needs_revision" ? 0 : 1) || a.house.localeCompare(b.house));
-$("openlede").innerHTML = `The fed funds rate is ${V.rate_now.toFixed(3)}% (midpoint) with ${V.remaining_meetings.length} meetings left this year. ${T.needs_revision} published claims can no longer come true without a reversal; ${T.untested} can still come true.`;
-const srcLink = c => `<a href="${esc(src(c.src).url)}" title="${esc(src(c.src).title)}">${fmt(c.made_on)}</a>`;
-$("opentable").innerHTML = `<thead><tr><th>House</th><th>Claim</th><th>Made</th><th>Status</th><th>Why</th></tr></thead><tbody>` +
-  open.map(c => `<tr><td>${esc(c.house)}</td><td>${esc(c.stated)}</td><td>${srcLink(c)}</td><td><span class="v ${c.verdict}">${LABEL[c.verdict]}</span></td><td>${esc(c.why)}</td></tr>`).join("") + `</tbody>`;
+const H = V.horizon, short = H[0];
+const longer = H.slice(1).reduce((a, b) => ({n: a.n + b.n, correct: a.correct + b.correct}), {n:0, correct:0});
+const y19 = V.years.find(r => r.year === "2019");
+const fomc = V.houses.find(h => h.house.startsWith("FOMC"));
+const bigH = V.houses.filter(h => h.judged >= 5 && !h.house.startsWith("FOMC")), beat = bigH.filter(h => h.score > fomc.score);
+$("cards").innerHTML = [
+  ["correct", `${pct(short.correct, short.n)} <small>vs ${pct(longer.correct, longer.n)}</small>`, "Short calls work, long calls don't",
+   `Forecasts made up to 2 months ahead were right ${short.correct} of ${short.n} times. Further out: ${longer.correct} of ${longer.n}.`],
+  ["wrong", `0 <small>of ${y19.correct + y19.partly + y19.wrong}</small>`, "Nobody saw 2019 coming",
+   "Everyone expected hikes in 2019; the Fed cut three times. In 2022 every bank under-called the hikes by 250 bp or more."],
+  ["partly", `${beat.length} <small>of ${bigH.length}</small>`, "Few banks beat the Fed's own forecast",
+   `Only ${beat.map(h => h.house).join(" and ")} scored above the Fed's dot plot (${fomc.score.toFixed(2)}).`],
+  ["needs_revision", `${T.needs_revision}`, "2026 calls already dead",
+   "January's year-end calls for cuts can't happen after September's hike. Quoting them now means quoting stale research."],
+].map(([k, n, h, p]) => `<div class="card k-${k}"><div class="n">${n}</div><b>${h}</b><p>${p}</p></div>`).join("");
 
-const bench = V.houses.filter(h => h.judged >= 5);
-$("bench").innerHTML = `<thead><tr><th>House</th><th class="n">Checked</th><th class="n">Correct</th><th class="n">Partly</th><th class="n">Wrong</th><th class="n">Score</th><th class="n">Open</th></tr></thead><tbody>` +
-  bench.map(h => `<tr class="${h.house.startsWith("FOMC") ? "fomc" : ""}"><td>${esc(h.house)}</td><td class="n">${h.judged}</td><td class="n">${h.correct}</td><td class="n">${h.partly}</td><td class="n">${h.wrong}</td><td class="n"><b>${h.score.toFixed(2)}</b></td><td class="n">${h.untested + h.needs_revision}</td></tr>`).join("") + `</tbody>`;
-
-const DEFS = {correct:"Deadline passed and the stated level or move happened (same target range).", partly:"Deadline passed; one 25 bp move off, or right direction but wrong size or meeting (within 60 days).", wrong:"Deadline passed; two or more moves off, the wrong direction, or the wrong meeting by more than 60 days.", untested:"Deadline still ahead and the claim can still come true.", needs_revision:"Deadline still ahead, but it now needs more moves than meetings left, or a reversal of the Fed's latest move.", unjudgeable:"No level, size or date that could be checked."};
-$("defs").innerHTML = Object.entries(DEFS).map(([k, s]) => `<li><span class="v ${k}">${LABEL[k]}</span> ${s}</li>`).join("");
-
-const opt = (el, all, vals) => $(el).innerHTML = `<option value="">${all}</option>` + vals.map(v => `<option value="${esc(v)}">${esc(LABEL[v] || v)}</option>`).join("");
-opt("fhouse", "All houses", [...new Set(V.claims.map(c => c.house))].sort());
-opt("fyear", "All deadline years", [...new Set(V.claims.map(c => c.deadline.slice(0, 4)))].sort());
-opt("fverdict", "All verdicts", Object.keys(LABEL));
-function draw() {
-  const h = $("fhouse").value, yr = $("fyear").value, v = $("fverdict").value, q = $("fq").value.toLowerCase();
-  const rows = [...V.claims].sort((a, b) => b.made_on.localeCompare(a.made_on) || a.house.localeCompare(b.house)).filter(c => (!h || c.house === h) && (!yr || c.deadline.startsWith(yr)) && (!v || c.verdict === v) &&
-    (!q || (c.stated + " " + c.quote + " " + c.house).toLowerCase().includes(q)));
-  $("fcount").textContent = rows.length + " of " + V.claims.length;
-  $("catalog").innerHTML = `<thead><tr><th>Made</th><th>House</th><th>Claim and source phrase</th><th>Deadline</th><th>Actual</th><th>Verdict</th><th>Why</th></tr></thead><tbody>` +
-    rows.map(c => `<tr><td>${srcLink(c)}</td><td>${esc(c.house)}</td><td>${esc(c.stated)}<div class="q">${c.table ? "Table entry: " + esc(c.quote) : "“" + esc(c.quote) + "”"}</div></td><td class="num">${fmt(c.deadline)}</td><td>${esc(c.actual || "–")}</td><td><span class="v ${c.verdict}">${LABEL[c.verdict]}</span></td><td>${esc(c.why)}</td></tr>`).join("") + `</tbody>`;
+function rows(el, data, label, note) {
+  $(el).innerHTML = data.map(r => {
+    const n = r.correct + r.partly + r.wrong;
+    return `<div class="row"><div class="lab">${label(r)}<small>${note(r, n)}</small></div><div class="bar" data-k></div><div class="pct">${pct(r.correct, n)}<small>correct</small></div></div>`;
+  }).join("");
+  [...$(el).querySelectorAll("[data-k]")].forEach((b, i) => bar(b, data[i], ["correct", "partly", "wrong"]));
 }
-["fhouse", "fyear", "fverdict", "fq"].forEach(id => $(id).addEventListener("input", draw));
+rows("byhorizon", H.filter(r => r.n), r => r.bucket + " ahead", (r, n) => n + " forecasts");
+const YEARNOTE = {"2019":"Fed cut; houses called hikes", "2020":"Covid: cut to zero", "2022":"Fastest hikes in 40 years",
+                  "2023":"Houses called cuts too early", "2025":"Cuts came later than called"};
+rows("byyear", V.years, r => r.year, (r, n) => (YEARNOTE[r.year] ? YEARNOTE[r.year] + " · " : "") + n + " forecasts");
+
+const openRows = V.claims.filter(c => c.verdict === "needs_revision" || c.verdict === "untested");
+$("openlede").textContent = `The rate today is ${V.rate_now.toFixed(3)}% (middle of the target range), with ${V.remaining_meetings.length} Fed meetings left this year. Houses making the same call are grouped together.`;
+function groups(k, title) {
+  const g = {}, mine = openRows.filter(c => c.verdict === k);
+  mine.forEach(c => (g[c.stated] = g[c.stated] || {why: c.why, c: []}).c.push(c));
+  const list = Object.entries(g).sort((a, b) => b[1].c.length - a[1].c.length);
+  return `<h3>${pill(k)} <span>${title} (${mine.length})</span></h3>` + list.map(([what, x]) =>
+    `<div class="grp"><div class="what">${esc(what.replace(" (midpoint)", ""))}</div><div class="chips">${x.c.map(c =>
+      `<a class="chip" href="${esc(src(c).url)}" title="Published ${fmt(c.made_on)}">${esc(c.house.replace("FOMC (dot plot median)", "The Fed's own dots"))}</a>`).join("")}</div><div class="why">${esc(x.why)}</div></div>`).join("");
+}
+$("dead").innerHTML = groups("needs_revision", "Can no longer happen");
+$("alive").innerHTML = groups("untested", "Still possible");
+
+let html = `<div class="row"><div class="hdr lab">House</div><div class="hdr bar" style="height:auto">Its checked forecasts</div><div class="hdr pct" style="text-align:right">Score</div></div>`;
+V.houses.filter(h => h.judged >= 5).forEach(h => {
+  const isF = h.house.startsWith("FOMC");
+  const k = isF ? "untested" : h.score > fomc.score ? "correct" : "wrong";
+  if (isF) html += `<div class="yard"><span>Fed's own forecast: ${h.score.toFixed(2)}</span></div>`;
+  html += `<div class="row"><div class="name ${isF ? "fomc" : ""}">${esc(isF ? "The Fed itself (dot plot)" : h.house)}<small>${h.judged} checked</small></div><div class="bar" data-h="${esc(h.house)}"></div><div class="score k-${k}">${h.score.toFixed(2)}</div></div>`;
+  if (isF) html += `<div class="yard"></div>`;
+});
+$("bench").innerHTML = html;
+$("bench").querySelectorAll("[data-h]").forEach(b => bar(b, V.houses.find(h => h.house === b.dataset.h), ["correct", "partly", "wrong"]));
+
+const opt = (el, all, vals) => $(el).innerHTML = `<option value="">${all}</option>` + vals.map(v => `<option>${esc(v)}</option>`).join("");
+opt("fhouse", "All houses", [...new Set(V.claims.map(c => c.house))].sort());
+opt("fyear", "All years", [...new Set(V.claims.map(c => c.deadline.slice(0, 4)))].sort());
+const on = new Set(ORDER);
+$("fverdict").innerHTML = `<span class="count">Show:</span>` + ORDER.map(k =>
+  `<button class="pill k-${k}" aria-pressed="true" data-k="${k}"><i>${K[k].icon}</i>${K[k].label} <span class="num">${T[k] || 0}</span></button>`).join("");
+$("fverdict").addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  on.has(b.dataset.k) ? on.delete(b.dataset.k) : on.add(b.dataset.k);
+  b.setAttribute("aria-pressed", on.has(b.dataset.k)); draw();
+});
+function draw() {
+  const h = $("fhouse").value, yr = $("fyear").value, q = $("fq").value.toLowerCase();
+  const list = [...V.claims].sort((a, b) => b.made_on.localeCompare(a.made_on) || a.house.localeCompare(b.house))
+    .filter(c => on.has(c.verdict) && (!h || c.house === h) && (!yr || c.deadline.startsWith(yr)) &&
+      (!q || (c.stated + " " + c.quote + " " + c.house).toLowerCase().includes(q)));
+  $("fcount").textContent = list.length + " of " + V.claims.length;
+  $("catalog").innerHTML = `<thead><tr><th>Verdict</th><th>House</th><th>Forecast</th><th>Made</th><th>Deadline</th><th>What happened</th></tr></thead><tbody>` +
+    list.map(c => `<tr class="k-${c.verdict}"><td class="nw">${pill(c.verdict)}</td><td>${esc(c.house)}</td><td>${esc(c.stated.replace(" (midpoint)", ""))}${c.table ? "" : `<div class="q">“${esc(c.quote)}”</div>`}</td><td class="nw"><a href="${esc(src(c).url)}" title="${esc(src(c).title)}">${fmt(c.made_on)}</a></td><td class="nw">${fmt(c.deadline)}</td><td>${esc((c.verdict === "untested" || c.verdict === "needs_revision") ? c.why : [c.actual, c.why].filter(Boolean).join(". "))}</td></tr>`).join("") + `</tbody>`;
+}
+["fhouse", "fyear", "fq"].forEach(id => $(id).addEventListener("input", draw));
 draw();
 </script>
