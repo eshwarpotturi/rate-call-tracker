@@ -24,7 +24,7 @@ The main finding from 2026: on the day of a decision almost everyone is right (8
 
 ## Who it is for
 
-SG Analytics, whose clients are asset managers, wealth managers and sell-side teams in the US and Europe. The Fed and ECB tabs use the houses those clients already read. Uses:
+Research and analytics teams whose clients are asset managers, wealth managers and sell-side teams in the US and Europe. The Fed and ECB tabs use the houses those clients already read. Uses:
 
 - one track-record line in each pre-meeting macro update or CIO newsletter;
 - an alert when a house with a good record breaks from the pack;
